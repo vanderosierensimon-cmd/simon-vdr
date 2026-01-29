@@ -1,0 +1,2246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simon Vande Rosieren | Senior Revenue Operations Consultant</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>S</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Navy Deep / Blue Theme */
+      --primary-50: #EFF6FF;
+      --primary-100: #DBEAFE;
+      --primary-200: #BFDBFE;
+      --primary-300: #93C5FD;
+      --primary-400: #60A5FA;
+      --primary-500: #3B82F6;
+      --primary-600: #2563EB;
+      --primary-700: #1D4ED8;
+      --primary-800: #1E40AF;
+      --primary-900: #1E3A8A;
+      --primary-950: #0F172A;
+      /* Indigo Accent */
+      --accent-400: #818CF8;
+      --accent-500: #6366F1;
+      --accent-600: #4F46E5;
+      /* Neutrals */
+      --neutral-50: #FAFAFA;
+      --neutral-100: #F5F5F5;
+      --neutral-200: #E5E5E5;
+      --neutral-300: #D4D4D4;
+      --neutral-400: #A3A3A3;
+      --neutral-500: #737373;
+      --neutral-600: #525252;
+      --neutral-700: #404040;
+      --neutral-800: #262626;
+      --neutral-900: #171717;
+      /* Gradients */
+      --gradient-primary: linear-gradient(135deg, #3B82F6, #1E40AF);
+      --gradient-accent: linear-gradient(135deg, #6366F1, #3B82F6);
+      --gradient-dark: linear-gradient(135deg, #0F172A, #1E40AF);
+      --gradient-light: linear-gradient(135deg, #DBEAFE, #EFF6FF);
+      --gradient-hero: linear-gradient(180deg, rgba(219, 234, 254, 0.5) 0%, white 40%);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--neutral-800);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ===== UTILITIES ===== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      color: var(--primary-600);
+      margin-bottom: 16px;
+      padding: 6px 16px;
+      background: var(--primary-50);
+      border-radius: 20px;
+      border: 1px solid var(--primary-100);
+    }
+
+    .section-title {
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 300;
+      color: var(--neutral-900);
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+
+    .section-title strong {
+      font-weight: 600;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--gradient-primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-700);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--neutral-800);
+      border: 1px solid var(--neutral-200);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--primary-300);
+      color: var(--primary-700);
+    }
+
+    /* ===== HEADER/NAV ===== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 20px 0;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    header.scrolled {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 4px 30px rgba(59, 130, 246, 0.08);
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+    }
+
+    header.scrolled .logo {
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      transition: all 0.3s ease;
+    }
+
+    .logo:hover {
+      transform: scale(1.02);
+      filter: brightness(1.1);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      color: var(--neutral-600);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-500);
+    }
+
+    .nav-cta {
+      padding: 10px 20px;
+      font-size: 13px;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: var(--gradient-hero);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, var(--primary-200) 0%, transparent 70%);
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -20%;
+      left: -10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, var(--accent-400) 0%, transparent 70%);
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+
+    .hero-content {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 120px 24px 80px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-photo {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 32px;
+    }
+
+    .hero-photo-glow {
+      position: absolute;
+      inset: -20px;
+      background: linear-gradient(135deg, var(--primary-400), var(--accent-500));
+      border-radius: 50%;
+      filter: blur(40px);
+      opacity: 0.5;
+    }
+
+    .hero-photo img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 15%;
+      border: 4px solid white;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: clamp(40px, 8vw, 72px);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      color: var(--neutral-900);
+      margin-bottom: 12px;
+      line-height: 1.1;
+    }
+
+    .hero-role {
+      font-size: clamp(18px, 2.5vw, 24px);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--primary-500);
+      margin-bottom: 24px;
+    }
+
+    .hero-tagline {
+      font-size: clamp(16px, 2.5vw, 20px);
+      color: var(--neutral-600);
+      max-width: 600px;
+      margin: 0 auto 32px;
+      line-height: 1.7;
+      font-weight: 400;
+    }
+
+    .hero-tagline strong {
+      color: var(--neutral-800);
+    }
+
+    .hero-location {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--neutral-500);
+      margin-bottom: 40px;
+    }
+
+    .hero-location svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--primary-400);
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: bounce 2s infinite;
+    }
+
+    .scroll-indicator svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--neutral-400);
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+      40% { transform: translateX(-50%) translateY(-10px); }
+      60% { transform: translateX(-50%) translateY(-5px); }
+    }
+
+    /* ===== SCROLL ANIMATIONS ===== */
+    /* Fade in from bottom */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Fade in from left */
+    .animate-from-left {
+      opacity: 0;
+      transform: translateX(-60px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .animate-from-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Fade in from right */
+    .animate-from-right {
+      opacity: 0;
+      transform: translateX(60px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .animate-from-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Scale in */
+    .animate-scale {
+      opacity: 0;
+      transform: scale(0.8);
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .animate-scale.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* Stagger delays for grid items */
+    .stagger-1 { transition-delay: 0.1s; }
+    .stagger-2 { transition-delay: 0.2s; }
+    .stagger-3 { transition-delay: 0.3s; }
+    .stagger-4 { transition-delay: 0.4s; }
+    .stagger-5 { transition-delay: 0.5s; }
+    .stagger-6 { transition-delay: 0.6s; }
+
+    /* Hero entrance animations */
+    .hero-content {
+      animation: heroFadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes heroFadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-photo {
+      animation: photoReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+      opacity: 0;
+    }
+
+    @keyframes photoReveal {
+      0% {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .hero h1 {
+      animation: textReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+      opacity: 0;
+    }
+
+    .hero-role {
+      animation: textReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
+      opacity: 0;
+    }
+
+    .hero-tagline {
+      animation: textReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+      opacity: 0;
+    }
+
+    .hero-location {
+      animation: textReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.7s forwards;
+      opacity: 0;
+    }
+
+    .hero-ctas {
+      animation: textReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.8s forwards;
+      opacity: 0;
+    }
+
+    @keyframes textReveal {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+
+    /* Counter animation for stats */
+    .stat-number {
+      display: inline-block;
+    }
+
+    /* Timeline item animations */
+    .timeline-item {
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .timeline-item.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Enhanced hover animations */
+    .expertise-card {
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .expertise-card:hover {
+      transform: translateY(-8px) scale(1.02);
+    }
+
+    .expertise-icon {
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .expertise-card:hover .expertise-icon {
+      transform: scale(1.1) rotate(5deg);
+      background: linear-gradient(135deg, var(--primary-200), var(--primary-100));
+    }
+
+    .stat-card {
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .stat-card:hover {
+      transform: translateY(-8px) scale(1.03);
+    }
+
+    .lead-magnet-card {
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .lead-magnet-card:hover {
+      transform: translateY(-12px);
+    }
+
+    .lead-magnet-preview {
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .lead-magnet-card:hover .lead-magnet-preview {
+      transform: scale(1.05);
+    }
+
+    /* Section label animation */
+    .section-label {
+      opacity: 0;
+      animation: none;
+    }
+
+    .section-label.visible {
+      animation: labelReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes labelReveal {
+      0% {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Floating animation for decorative elements */
+    @keyframes float {
+      0%, 100% { transform: translate(-50%, -50%) scale(1); }
+      50% { transform: translate(-50%, -52%) scale(1.02); }
+    }
+
+
+    /* Button pulse effect */
+    .btn-primary {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.6s;
+    }
+
+    .btn-primary:hover::after {
+      transform: translateX(100%);
+    }
+
+
+    /* Scroll progress indicator */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: var(--gradient-primary);
+      z-index: 1001;
+      transform-origin: left;
+      transform: scaleX(0);
+    }
+
+    /* ===== ABOUT ===== */
+    .about {
+      padding: 120px 0;
+      background: white;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-text p {
+      font-size: 18px;
+      color: var(--neutral-600);
+      margin-bottom: 24px;
+      line-height: 1.8;
+    }
+
+    .about-text strong {
+      color: var(--primary-700);
+      font-weight: 500;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .stat-card {
+      background: white;
+      border-radius: 16px;
+      padding: 28px;
+      text-align: center;
+      transition: all 0.3s ease;
+      border: 1px solid var(--neutral-200);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient-primary);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .stat-card:hover {
+      background: white;
+      box-shadow: 0 20px 40px rgba(59, 130, 246, 0.12);
+      transform: translateY(-4px);
+      border-color: var(--primary-200);
+    }
+
+    .stat-card:hover::before {
+      opacity: 1;
+    }
+
+    .stat-number {
+      font-size: 40px;
+      font-weight: 700;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: var(--neutral-500);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* ===== EXPERTISE ===== */
+    .expertise {
+      padding: 120px 0;
+      background: var(--neutral-50);
+    }
+
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .expertise-card {
+      background: white;
+      border-radius: 16px;
+      padding: 32px 24px;
+      border: 1px solid var(--neutral-200);
+      transition: all 0.3s ease;
+    }
+
+    .expertise-card:hover {
+      border-color: var(--primary-300);
+      box-shadow: 0 20px 40px rgba(59, 130, 246, 0.08);
+      transform: translateY(-4px);
+    }
+
+    .expertise-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--gradient-primary);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .expertise-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: white;
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .expertise-card:hover .expertise-icon {
+      transform: scale(1.1);
+      box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
+    }
+
+    .expertise-card h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--neutral-900);
+      margin-bottom: 12px;
+    }
+
+    .expertise-card p {
+      font-size: 14px;
+      color: var(--neutral-500);
+      line-height: 1.6;
+    }
+
+    /* ===== STACK SECTION ===== */
+    .stack {
+      padding: 120px 0;
+      background: white;
+      overflow: hidden;
+    }
+
+    .stack-intro {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 60px;
+    }
+
+    .stack-intro p {
+      font-size: 18px;
+      color: var(--neutral-600);
+    }
+
+    /* Stack Carousel */
+    .stack-carousel-wrapper {
+      position: relative;
+      margin-top: 48px;
+    }
+
+    .stack-carousel-wrapper::before,
+    .stack-carousel-wrapper::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .stack-carousel-wrapper::before {
+      left: 0;
+      background: linear-gradient(90deg, white 0%, transparent 100%);
+    }
+
+    .stack-carousel-wrapper::after {
+      right: 0;
+      background: linear-gradient(-90deg, white 0%, transparent 100%);
+    }
+
+    .stack-carousel {
+      display: flex;
+      gap: 32px;
+      animation: scrollCarousel 40s linear infinite;
+      width: max-content;
+    }
+
+    .stack-carousel:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes scrollCarousel {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .stack-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      padding: 24px 20px;
+      background: var(--neutral-50);
+      border-radius: 16px;
+      border: 1px solid var(--neutral-200);
+      min-width: 120px;
+      transition: all 0.3s ease;
+    }
+
+    .stack-item:hover {
+      background: var(--primary-50);
+      border-color: var(--primary-200);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(59, 130, 246, 0.1);
+    }
+
+    .stack-item-logo {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      background: white;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      padding: 8px;
+    }
+
+    .stack-item-logo img {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+    }
+
+    .stack-item-logo svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    .stack-item-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--neutral-700);
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    /* Second row - reverse direction */
+    .stack-carousel.reverse {
+      animation: scrollCarouselReverse 35s linear infinite;
+    }
+
+    @keyframes scrollCarouselReverse {
+      0% {
+        transform: translateX(-50%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    .stack-row {
+      margin-bottom: 24px;
+    }
+
+    .stack-row:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ===== LEAD MAGNETS ===== */
+    .lead-magnets {
+      padding: 120px 0;
+      background: var(--neutral-50);
+    }
+
+    .lead-magnets-intro {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 60px;
+    }
+
+    .lead-magnets-intro p {
+      font-size: 18px;
+      color: var(--neutral-600);
+    }
+
+    .lead-magnets-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    .lead-magnet-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--neutral-200);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .lead-magnet-card:hover {
+      border-color: var(--primary-300);
+      box-shadow: 0 20px 60px rgba(59, 130, 246, 0.12);
+      transform: translateY(-8px);
+    }
+
+    .lead-magnet-preview {
+      position: relative;
+      height: 280px;
+      background: linear-gradient(135deg, var(--primary-900), var(--primary-700));
+      overflow: hidden;
+    }
+
+    .lead-magnet-preview iframe {
+      width: 200%;
+      height: 200%;
+      border: none;
+      transform: scale(0.5);
+      transform-origin: top left;
+      pointer-events: none;
+    }
+
+    .lead-magnet-preview-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.4) 100%);
+    }
+
+    .lead-magnet-content {
+      padding: 28px;
+    }
+
+    .lead-magnet-badge {
+      display: inline-block;
+      background: var(--primary-100);
+      color: var(--primary-700);
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 6px 12px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+
+    .lead-magnet-card h3 {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--neutral-900);
+      margin-bottom: 12px;
+    }
+
+    .lead-magnet-card p {
+      font-size: 15px;
+      color: var(--neutral-500);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .lead-magnet-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--primary-500);
+    }
+
+    .lead-magnet-link svg {
+      width: 16px;
+      height: 16px;
+      transition: transform 0.2s;
+    }
+
+    .lead-magnet-card:hover .lead-magnet-link svg {
+      transform: translateX(4px);
+    }
+
+    /* ===== MAKE SCENARIOS ===== */
+    .make-scenarios {
+      padding: 120px 0;
+      background: white;
+    }
+
+    .make-scenarios-intro {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 60px;
+    }
+
+    .make-scenarios-intro p {
+      font-size: 18px;
+      color: var(--neutral-600);
+    }
+
+    .scenarios-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .scenario-card {
+      background: var(--neutral-50);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--neutral-200);
+      transition: all 0.3s ease;
+    }
+
+    .scenario-card:hover {
+      border-color: var(--primary-200);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+      transform: translateY(-6px);
+    }
+
+    .scenario-card {
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .scenario-preview {
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .scenario-card:hover .scenario-preview {
+      background: linear-gradient(135deg, #7C3AED 0%, #A855F7 100%);
+    }
+
+    .scenario-preview {
+      height: 180px;
+      background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .scenario-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .scenario-preview-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      color: white;
+    }
+
+    .scenario-preview-placeholder svg {
+      width: 48px;
+      height: 48px;
+      opacity: 0.8;
+    }
+
+    .scenario-preview-placeholder span {
+      font-size: 12px;
+      opacity: 0.7;
+    }
+
+    .scenario-content {
+      padding: 20px;
+    }
+
+    .scenario-card h4 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--neutral-800);
+      margin-bottom: 8px;
+    }
+
+    .scenario-card p {
+      font-size: 13px;
+      color: var(--neutral-500);
+      line-height: 1.5;
+    }
+
+    /* ===== EXPERIENCE ===== */
+    .experience {
+      padding: 120px 0;
+      background: var(--neutral-50);
+    }
+
+    .timeline {
+      max-width: 800px;
+      margin: 48px auto 0;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: var(--gradient-primary);
+      border-radius: 2px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 40px;
+      padding-bottom: 48px;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -6px;
+      top: 4px;
+      width: 14px;
+      height: 14px;
+      background: var(--primary-500);
+      border-radius: 50%;
+      border: 3px solid white;
+      box-shadow: 0 0 0 4px var(--primary-100);
+    }
+
+    .timeline-date {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--primary-500);
+      margin-bottom: 8px;
+    }
+
+    .timeline-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--neutral-900);
+      margin-bottom: 4px;
+    }
+
+    .timeline-company {
+      font-size: 14px;
+      color: var(--neutral-500);
+      margin-bottom: 12px;
+    }
+
+    .timeline-desc {
+      font-size: 15px;
+      color: var(--neutral-600);
+      line-height: 1.7;
+    }
+
+    .timeline-list {
+      list-style: none;
+      margin-top: 12px;
+    }
+
+    .timeline-list li {
+      position: relative;
+      padding-left: 16px;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: var(--neutral-600);
+      line-height: 1.6;
+    }
+
+    .timeline-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 6px;
+      height: 6px;
+      background: var(--primary-400);
+      border-radius: 50%;
+    }
+
+    .timeline-kpis {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 16px;
+      padding: 20px;
+      background: var(--gradient-light);
+      border-radius: 16px;
+      border: 1px solid var(--primary-200);
+    }
+
+    .kpi-item {
+      display: flex;
+      flex-direction: column;
+      min-width: 120px;
+      padding: 12px 16px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);
+    }
+
+    .kpi-value {
+      font-size: 24px;
+      font-weight: 700;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+    }
+
+    .kpi-label {
+      font-size: 12px;
+      color: var(--neutral-500);
+      margin-top: 4px;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact {
+      padding: 120px 0;
+      background: var(--gradient-dark);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, var(--primary-700) 0%, transparent 60%);
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .contact-info h2 {
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 300;
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+
+    .contact-info h2 strong {
+      font-weight: 600;
+    }
+
+    .contact-info p {
+      font-size: 18px;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 16px;
+      transition: all 0.2s;
+    }
+
+    .contact-link:hover {
+      color: var(--primary-400);
+    }
+
+    .contact-link svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .contact-form {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(20px);
+      border-radius: 24px;
+      padding: 40px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 18px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      color: white;
+      font-size: 15px;
+      font-family: inherit;
+      transition: all 0.2s;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: rgba(255,255,255,0.4);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary-500);
+      background: rgba(255,255,255,0.12);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-submit {
+      width: 100%;
+      padding: 16px;
+      background: var(--primary-500);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .form-submit:hover {
+      background: var(--primary-500);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      padding: 40px 0;
+      background: var(--neutral-900);
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: rgba(255,255,255,0.5);
+      font-size: 14px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary-400);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .expertise-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .expertise-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .lead-magnets-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .scenarios-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- HEADER -->
+  <header id="header">
+    <div class="container">
+      <nav>
+        <a href="#hero" class="logo">Simon Vande Rosieren</a>
+        <ul class="nav-links">
+          <li><a href="#about">Profil</a></li>
+          <li><a href="#expertise">Expertise</a></li>
+          <li><a href="#stack">Stack</a></li>
+          <li><a href="#experience">Parcours</a></li>
+        </ul>
+        <a href="#contact" class="btn btn-primary nav-cta">Me contacter</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-photo">
+        <div class="hero-photo-glow"></div>
+        <img src="DSC06925-2.jpeg" alt="Simon Vande Rosieren">
+      </div>
+      <h1>Simon Vande Rosieren</h1>
+      <p class="hero-role">Marketing, Growth &amp; Revenue Operations</p>
+      <p class="hero-tagline">
+        J'aide les &eacute;quipes B2B &agrave; structurer, automatiser et scaler leur <strong>g&eacute;n&eacute;ration de revenus</strong>.
+      </p>
+      <p class="hero-location">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+        Lille, France &middot; Remote
+      </p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          Me contacter
+        </a>
+        <a href="https://linkedin.com/in/simon-vanderosieren" target="_blank" class="btn btn-secondary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text animate-from-left">
+          <span class="section-label">Qui je suis</span>
+          <h2 class="section-title">Profil <strong>orient&eacute; impact</strong></h2>
+          <p>
+            Apr&egrave;s un d&eacute;but sur le terrain en tant que <strong>commercial</strong>, j'ai &eacute;volu&eacute; vers le <strong>Growth Marketing</strong>, puis les <strong>Revenue Operations</strong>.
+          </p>
+          <p>
+            Ce parcours m'a appris &agrave; connecter les logiques business, marketing et sales pour cr&eacute;er des syst&egrave;mes qui g&eacute;n&egrave;rent du revenu de mani&egrave;re pr&eacute;visible.
+          </p>
+          <p>
+            Aujourd'hui, je travaille avec des &eacute;quipes B2B pour <strong>structurer leurs op&eacute;rations</strong>, automatiser les process, et optimiser le funnel de conversion.
+          </p>
+        </div>
+        <div class="about-stats animate-from-right">
+          <div class="stat-card animate-scale stagger-1" data-count="7" data-suffix="+">
+            <div class="stat-number">7+</div>
+            <div class="stat-label">Ann&eacute;es B2B SaaS</div>
+          </div>
+          <div class="stat-card animate-scale stagger-2" data-count="3" data-suffix="">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Solutions pilot&eacute;es</div>
+          </div>
+          <div class="stat-card animate-scale stagger-3" data-count="15" data-suffix="+">
+            <div class="stat-number">15+</div>
+            <div class="stat-label">Outils ma&icirc;tris&eacute;s</div>
+          </div>
+          <div class="stat-card animate-scale stagger-4" data-count="100" data-suffix="%">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Full Remote</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERTISE -->
+  <section class="expertise" id="expertise">
+    <div class="container">
+      <div class="animate-on-scroll" style="text-align: center; max-width: 600px; margin: 0 auto;">
+        <span class="section-label">Ce sur quoi j'interviens</span>
+        <h2 class="section-title">Domaines <strong>d'expertise</strong></h2>
+      </div>
+      <div class="expertise-grid">
+        <div class="expertise-card animate-on-scroll stagger-1">
+          <div class="expertise-icon">
+            <svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M18 9l-5 5-4-4-3 3"/></svg>
+          </div>
+          <h3>Revenue Operations</h3>
+          <p>Structuration du funnel, lead scoring, alignement Marketing-Sales, revenue attribution et forecasting.</p>
+        </div>
+        <div class="expertise-card animate-on-scroll stagger-2">
+          <div class="expertise-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <h3>Growth Marketing</h3>
+          <p>Demand generation, strat&eacute;gie d'acquisition, lead nurturing et optimisation des conversions.</p>
+        </div>
+        <div class="expertise-card animate-on-scroll stagger-3">
+          <div class="expertise-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+          </div>
+          <h3>CRM &amp; Automation</h3>
+          <p>Architecture CRM, workflows avanc&eacute;s, int&eacute;grations API, gestion de la donn&eacute;e et enrichissement.</p>
+        </div>
+        <div class="expertise-card animate-on-scroll stagger-4">
+          <div class="expertise-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h3>Outbound &amp; Sales Ops</h3>
+          <p>Prospection multicanal, s&eacute;quences automatis&eacute;es, sales enablement et optimisation pipeline.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STACK -->
+  <section class="stack" id="stack">
+    <div class="container">
+      <div class="stack-intro animate-on-scroll">
+        <span class="section-label">Stack technique</span>
+        <h2 class="section-title">Les <strong>outils</strong> que je ma&icirc;trise</h2>
+        <p>Une stack compl&egrave;te pour couvrir l'ensemble du cycle revenue.</p>
+      </div>
+    </div>
+
+    <!-- Row 1 - Scrolling left -->
+    <div class="stack-row">
+      <div class="stack-carousel-wrapper">
+        <div class="stack-carousel" id="stackCarousel1">
+          <!-- HubSpot -->
+          <div class="stack-item">
+            <div class="stack-item-logo">
+              <svg viewBox="0 0 24 24" fill="#FF7A59"><path d="M18.164 7.93V5.084a2.198 2.198 0 001.267-1.984 2.21 2.21 0 00-4.42 0c0 .876.52 1.626 1.267 1.984v2.87a5.206 5.206 0 00-2.576 1.257L6.428 3.858a2.09 2.09 0 00.056-.466 2.044 2.044 0 00-4.088 0 2.044 2.044 0 002.044 2.044 2.02 2.02 0 001.078-.317l7.133 5.312a5.178 5.178 0 000 3.24l-7.16 5.326a2.02 2.02 0 00-1.051-.304 2.044 2.044 0 100 4.088 2.044 2.044 0 001.988-2.51l7.274-5.413a5.207 5.207 0 002.562 1.247v2.87a2.209 2.209 0 101.886.023v-2.87a5.224 5.224 0 10-3.986-9.198z"/></svg>
+            </div>
+            <span class="stack-item-name">HubSpot</span>
+          </div>
+          <!-- Pipedrive -->
+          <div class="stack-item">
+            <div class="stack-item-logo">
+              <svg viewBox="0 0 24 24" fill="#3E3E3E"><circle cx="12" cy="12" r="10" fill="#28292B"/><path d="M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z" fill="#4DD884"/></svg>
+            </div>
+            <span class="stack-item-name">Pipedrive</span>
+          </div>
+          <!-- noCRM -->
+          <div class="stack-item">
+            <div class="stack-item-logo">
+              <svg viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#1A73E8"/><text x="12" y="16" text-anchor="middle" fill="white" font-size="10" font-weight="bold">no</text></svg>
+            </div>
+            <span class="stack-item-name">noCRM</span>
+          </div>
+          <!-- Make.com -->
+          <div class="stack-item">
+            <div class="stack-item-logo">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#6D00CC"/><circle cx="12" cy="12" r="4" fill="white"/></svg>
+            </div>
+            <span class="stack-item-name">Make</span>
+          </div>
+          <!-- n8n -->
+          <div class="stack-item">
+            <div class="stack-item-logo">
+              <svg viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#EA4B71"/><path d="M6 12h4l2-4 2 8 2-4h4" stroke="white" stroke-width="2" fill="none"/></svg>
+            </div>
+            <span class="stack-item-name">n8n</span>
+          </div>
+          <!-- Zapier -->
+          <div class="stack-item">
+            <div class="stack-item-logo">
+              <svg viewBox="0 0 24 24" fill="#FF4A00"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <span class="stack-item-name">Zapier</span>
+          </div>
+          <!-- Lemlist -->
+          <div class="stack-item">
+            <div class="stack-item-logo">
+              <svg viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#5B61EB"/><path d="M7 8h10v2H7zM7 12h8v2H7zM7 16h6v2H7z" fill="white"/></svg>
+            </div>
+            <span class="stack-item-name">Lemlist</span>
+          </div>
+          <!-- Reply.io -->
+          <div class="stack-item">
+            <div class="stack-item-logo">
+              <svg viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#4353FF"/><path d="M8 8l4 4-4 4M12 16h6" stroke="white" stroke-width="2" fill="none"/></svg>
+            </div>
+            <span class="stack-item-name">Reply.io</span>
+          </div>
+          <!-- Sales Navigator -->
+          <div class="stack-item">
+            <div class="stack-item-logo">
+              <svg viewBox="0 0 24 24" fill="#0077B5"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </div>
+            <span class="stack-item-name">Sales Nav</span>
+          </div>
+          <!-- Duplicate for seamless loop -->
+          <div class="stack-item">
+            <div class="stack-item-logo">
+              <svg viewBox="0 0 24 24" fill="#FF7A59"><path d="M18.164 7.93V5.084a2.198 2.198 0 001.267-1.984 2.21 2.21 0 00-4.42 0c0 .876.52 1.626 1.267 1.984v2.87a5.206 5.206 0 00-2.576 1.257L6.428 3.858a2.09 2.09 0 00.056-.466 2.044 2.044 0 00-4.088 0 2.044 2.044 0 002.044 2.044 2.02 2.02 0 001.078-.317l7.133 5.312a5.178 5.178 0 000 3.24l-7.16 5.326a2.02 2.02 0 00-1.051-.304 2.044 2.044 0 100 4.088 2.044 2.044 0 001.988-2.51l7.274-5.413a5.207 5.207 0 002.562 1.247v2.87a2.209 2.209 0 101.886.023v-2.87a5.224 5.224 0 10-3.986-9.198z"/></svg>
+            </div>
+            <span class="stack-item-name">HubSpot</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-logo">
+              <svg viewBox="0 0 24 24" fill="#3E3E3E"><circle cx="12" cy="12" r="10" fill="#28292B"/><path d="M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z" fill="#4DD884"/></svg>
+            </div>
+            <span class="stack-item-name">Pipedrive</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-logo">
+              <svg viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#1A73E8"/><text x="12" y="16" text-anchor="middle" fill="white" font-size="10" font-weight="bold">no</text></svg>
+            </div>
+            <span class="stack-item-name">noCRM</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-logo">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#6D00CC"/><circle cx="12" cy="12" r="4" fill="white"/></svg>
+            </div>
+            <span class="stack-item-name">Make</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-logo">
+              <svg viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#EA4B71"/><path d="M6 12h4l2-4 2 8 2-4h4" stroke="white" stroke-width="2" fill="none"/></svg>
+            </div>
+            <span class="stack-item-name">n8n</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-logo">
+              <svg viewBox="0 0 24 24" fill="#FF4A00"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <span class="stack-item-name">Zapier</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-logo">
+              <svg viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#5B61EB"/><path d="M7 8h10v2H7zM7 12h8v2H7zM7 16h6v2H7z" fill="white"/></svg>
+            </div>
+            <span class="stack-item-name">Lemlist</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-logo">
+              <svg viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#4353FF"/><path d="M8 8l4 4-4 4M12 16h6" stroke="white" stroke-width="2" fill="none"/></svg>
+            </div>
+            <span class="stack-item-name">Reply.io</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-logo">
+              <svg viewBox="0 0 24 24" fill="#0077B5"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </div>
+            <span class="stack-item-name">Sales Nav</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2 - Scrolling right (reverse) -->
+    <div class="stack-row">
+      <div class="stack-carousel-wrapper">
+        <div class="stack-carousel reverse" id="stackCarousel2">
+          <!-- Livestorm -->
+          <div class="stack-item">
+            <div class="stack-item-logo">
+              <svg viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#4633FF"/><polygon points="10,8 16,12 10,16" fill="white"/></svg>
+            </div>
+            <span class="stack-item-name">Livestorm</span>
+          </div>
+          <!-- FullEnrich -->
+          <div class="stack-item">
+            <div class="stack-item-logo">
+              <svg viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#10B981"/><path d="M12 6v12M6 12h12" stroke="white" stroke-width="2"/></svg>
+            </div>
+            <span class="stack-item-name">FullEnrich</span>
+          </div>
+          <!-- Dropcontact -->
+          <div class="stack-item">
+            <div class="stack-item-logo">
+              <svg viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#00D4AA"/><path d="M12 6c-2 4-4 6-4 9a4 4 0 008 0c0-3-2-5-4-9z" fill="white"/></svg>
+            </div>
+            <span class="stack-item-name">Dropcontact</span>
+          </div>
+          <!-- Phantombuster -->
+          <div class="stack-item">
+            <div class="stack-item-logo">
+              <svg viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#5B21B6"/><circle cx="12" cy="10" r="4" fill="white"/><path d="M8 18c0-2.2 1.8-4 4-4s4 1.8 4 4" stroke="white" stroke-width="2" fill="none"/></svg>
+            </div>
+            <span class="stack-item-name">Phantombuster</span>
+          </div>
+          <!-- GA4 -->
+          <div class="stack-item">
+            <div class="stack-item-logo">
+              <svg viewBox="0 0 24 24" fill="#F9AB00"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12s4.477 10 10 10c1.404 0 2.74-.29 3.95-.815l-3.95-6.835L8.05 21.185A10.002 10.002 0 0122 12z"/><circle cx="12" cy="12" r="3" fill="#E37400"/></svg>
+            </div>
+            <span class="stack-item-name">GA4</span>
+          </div>
+          <!-- Google Ads -->
+          <div class="stack-item">
+            <div class="stack-item-logo">
+              <svg viewBox="0 0 24 24"><circle cx="6" cy="18" r="4" fill="#FBBC04"/><circle cx="18" cy="18" r="4" fill="#34A853"/><circle cx="12" cy="6" r="4" fill="#4285F4"/></svg>
+            </div>
+            <span class="stack-item-name">Google Ads</span>
+          </div>
+          <!-- LinkedIn Ads -->
+          <div class="stack-item">
+            <div class="stack-item-logo">
+              <svg viewBox="0 0 24 24" fill="#0077B5"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </div>
+            <span class="stack-item-name">LinkedIn Ads</span>
+          </div>
+          <!-- Sarbacane -->
+          <div class="stack-item">
+            <div class="stack-item-logo">
+              <svg viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#00C2D1"/><path d="M6 8l6 4 6-4M6 12l6 4 6-4" stroke="white" stroke-width="2" fill="none"/></svg>
+            </div>
+            <span class="stack-item-name">Sarbacane</span>
+          </div>
+          <!-- User.com -->
+          <div class="stack-item">
+            <div class="stack-item-logo">
+              <svg viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#FF6B35"/><circle cx="12" cy="9" r="4" fill="white"/><path d="M6 20c0-3.3 2.7-6 6-6s6 2.7 6 6" fill="white"/></svg>
+            </div>
+            <span class="stack-item-name">User.com</span>
+          </div>
+          <!-- Duplicate for seamless loop -->
+          <div class="stack-item">
+            <div class="stack-item-logo">
+              <svg viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#4633FF"/><polygon points="10,8 16,12 10,16" fill="white"/></svg>
+            </div>
+            <span class="stack-item-name">Livestorm</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-logo">
+              <svg viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#10B981"/><path d="M12 6v12M6 12h12" stroke="white" stroke-width="2"/></svg>
+            </div>
+            <span class="stack-item-name">FullEnrich</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-logo">
+              <svg viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#00D4AA"/><path d="M12 6c-2 4-4 6-4 9a4 4 0 008 0c0-3-2-5-4-9z" fill="white"/></svg>
+            </div>
+            <span class="stack-item-name">Dropcontact</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-logo">
+              <svg viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#5B21B6"/><circle cx="12" cy="10" r="4" fill="white"/><path d="M8 18c0-2.2 1.8-4 4-4s4 1.8 4 4" stroke="white" stroke-width="2" fill="none"/></svg>
+            </div>
+            <span class="stack-item-name">Phantombuster</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-logo">
+              <svg viewBox="0 0 24 24" fill="#F9AB00"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12s4.477 10 10 10c1.404 0 2.74-.29 3.95-.815l-3.95-6.835L8.05 21.185A10.002 10.002 0 0122 12z"/><circle cx="12" cy="12" r="3" fill="#E37400"/></svg>
+            </div>
+            <span class="stack-item-name">GA4</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-logo">
+              <svg viewBox="0 0 24 24"><circle cx="6" cy="18" r="4" fill="#FBBC04"/><circle cx="18" cy="18" r="4" fill="#34A853"/><circle cx="12" cy="6" r="4" fill="#4285F4"/></svg>
+            </div>
+            <span class="stack-item-name">Google Ads</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-logo">
+              <svg viewBox="0 0 24 24" fill="#0077B5"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </div>
+            <span class="stack-item-name">LinkedIn Ads</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-logo">
+              <svg viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#00C2D1"/><path d="M6 8l6 4 6-4M6 12l6 4 6-4" stroke="white" stroke-width="2" fill="none"/></svg>
+            </div>
+            <span class="stack-item-name">Sarbacane</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-logo">
+              <svg viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#FF6B35"/><circle cx="12" cy="9" r="4" fill="white"/><path d="M6 20c0-3.3 2.7-6 6-6s6 2.7 6 6" fill="white"/></svg>
+            </div>
+            <span class="stack-item-name">User.com</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEAD MAGNETS -->
+  <section class="lead-magnets" id="lead-magnets">
+    <div class="container">
+      <div class="lead-magnets-intro animate-on-scroll">
+        <span class="section-label">Projets</span>
+        <h2 class="section-title">Mes <strong>Lead Magnets</strong></h2>
+        <p>Des outils interactifs que j'ai con&ccedil;us pour g&eacute;n&eacute;rer des leads qualifi&eacute;s.</p>
+      </div>
+      <div class="lead-magnets-grid">
+        <a href="https://black-friday-simulator.user.com" target="_blank" class="lead-magnet-card animate-on-scroll stagger-1">
+          <div class="lead-magnet-preview">
+            <iframe src="https://black-friday-simulator.user.com" title="Black Friday Simulator" loading="lazy"></iframe>
+            <div class="lead-magnet-preview-overlay"></div>
+          </div>
+          <div class="lead-magnet-content">
+            <span class="lead-magnet-badge">Simulateur</span>
+            <h3>Black Friday Booster</h3>
+            <p>Simulateur interactif pour planifier et optimiser les campagnes Black Friday. Calcul du ROI et recommandations personnalis&eacute;es.</p>
+            <span class="lead-magnet-link">
+              D&eacute;couvrir
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </span>
+          </div>
+        </a>
+        <a href="https://smart-plan.sarbacane.com" target="_blank" class="lead-magnet-card animate-on-scroll stagger-2">
+          <div class="lead-magnet-preview">
+            <iframe src="https://smart-plan.sarbacane.com" title="Smart Plan Sarbacane" loading="lazy"></iframe>
+            <div class="lead-magnet-preview-overlay"></div>
+          </div>
+          <div class="lead-magnet-content">
+            <span class="lead-magnet-badge">Planificateur</span>
+            <h3>Smart Plan</h3>
+            <p>Outil de planification intelligent pour structurer sa strat&eacute;gie emailing annuelle. G&eacute;n&eacute;ration automatique du calendrier marketing.</p>
+            <span class="lead-magnet-link">
+              D&eacute;couvrir
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAKE SCENARIOS -->
+  <section class="make-scenarios" id="scenarios">
+    <div class="container">
+      <div class="make-scenarios-intro animate-on-scroll">
+        <span class="section-label">Automatisations</span>
+        <h2 class="section-title">Sc&eacute;narios <strong>Make</strong></h2>
+        <p>Exemples de workflows automatis&eacute;s que j'ai d&eacute;velopp&eacute;s pour optimiser les op&eacute;rations.</p>
+      </div>
+      <div class="scenarios-grid">
+        <div class="scenario-card animate-on-scroll stagger-1">
+          <div class="scenario-preview">
+            <div class="scenario-preview-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <path d="M3 9h18"/>
+                <path d="M9 21V9"/>
+              </svg>
+              <span>Screenshot &agrave; venir</span>
+            </div>
+          </div>
+          <div class="scenario-content">
+            <h4>Lead Scoring Automation</h4>
+            <p>Qualification automatique des leads entrants avec enrichissement et routing.</p>
+          </div>
+        </div>
+        <div class="scenario-card animate-on-scroll stagger-2">
+          <div class="scenario-preview">
+            <div class="scenario-preview-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <path d="M3 9h18"/>
+                <path d="M9 21V9"/>
+              </svg>
+              <span>Screenshot &agrave; venir</span>
+            </div>
+          </div>
+          <div class="scenario-content">
+            <h4>CRM Sync Multi-tools</h4>
+            <p>Synchronisation bidirectionnelle entre CRM, outils marketing et data enrichment.</p>
+          </div>
+        </div>
+        <div class="scenario-card animate-on-scroll stagger-3">
+          <div class="scenario-preview">
+            <div class="scenario-preview-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <path d="M3 9h18"/>
+                <path d="M9 21V9"/>
+              </svg>
+              <span>Screenshot &agrave; venir</span>
+            </div>
+          </div>
+          <div class="scenario-content">
+            <h4>Reporting Automatis&eacute;</h4>
+            <p>G&eacute;n&eacute;ration et envoi automatique de rapports de performance hebdomadaires.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="experience" id="experience">
+    <div class="container">
+      <div class="animate-on-scroll" style="text-align: center; max-width: 600px; margin: 0 auto;">
+        <span class="section-label">Parcours</span>
+        <h2 class="section-title">Exp&eacute;rience <strong>professionnelle</strong></h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Janvier 2025 &mdash; Aujourd'hui</div>
+          <h3 class="timeline-title">Senior RevOps / Growth Marketing Manager</h3>
+          <p class="timeline-company">Positive (Groupe SaaS : Sarbacane, User.com, noCRM)</p>
+          <ul class="timeline-list">
+            <li>D&eacute;ploiement de strat&eacute;gies inbound &amp; outbound g&eacute;n&eacute;rant un flux r&eacute;gulier de leads qualifi&eacute;s pour les 3 solutions SaaS du groupe</li>
+            <li>Pilotage d'une stack de +10 outils (Sales Navigator, Lemlist, Reply.io, Phantombuster, Dropcontact, Livestorm, Make...) avec logique d'efficacit&eacute; et contr&ocirc;le des co&ucirc;ts</li>
+            <li>Gestion directe des agences et prestataires pour maximiser l'efficacit&eacute; et garantir le ROI des campagnes</li>
+            <li>Structuration des process de qualification leads et alignement Marketing-Sales</li>
+          </ul>
+          <div class="timeline-kpis">
+            <div class="kpi-item">
+              <span class="kpi-value">+2 400</span>
+              <span class="kpi-label">Comptes cr&eacute;&eacute;s / mois</span>
+            </div>
+            <div class="kpi-item">
+              <span class="kpi-value">+45%</span>
+              <span class="kpi-label">Taux de conversion MQL&rarr;SQL</span>
+            </div>
+            <div class="kpi-item">
+              <span class="kpi-value">850K&euro;</span>
+              <span class="kpi-label">Pipeline g&eacute;n&eacute;r&eacute; / trimestre</span>
+            </div>
+            <div class="kpi-item">
+              <span class="kpi-value">-30%</span>
+              <span class="kpi-label">Co&ucirc;t d'acquisition</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Juillet 2022 &mdash; Janvier 2025</div>
+          <h3 class="timeline-title">Marketing Project Manager &mdash; Acquisition</h3>
+          <p class="timeline-company">Sarbacane Software</p>
+          <ul class="timeline-list">
+            <li>Optimisation des parcours de conversion et d&eacute;ploiement d'assets marketing orient&eacute;s Sales Enablement pour soutenir l'efficacit&eacute; commerciale</li>
+            <li>Refonte et relance du programme d'affiliation avec KPIs et tracking de performance</li>
+            <li>Mise en place de partenariats strat&eacute;giques (m&eacute;dias, &eacute;cosyst&egrave;me B2B)</li>
+            <li>Reporting acquisition (CAC, pipeline velocity, conversion rates)</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Septembre 2019 &mdash; Juillet 2022</div>
+          <h3 class="timeline-title">Marketing Project Manager &mdash; Sarbacane Chat</h3>
+          <p class="timeline-company">Sarbacane Software</p>
+          <ul class="timeline-list">
+            <li>Lancement et gestion marketing de la solution Sarbacane Chat (livechat + chatbot)</li>
+            <li>Coordination produit, marketing et sales pour soutenir l'adoption</li>
+            <li>Strat&eacute;gies d'activation, nurturing et analyse data conversion</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Mars 2018 &mdash; Septembre 2019</div>
+          <h3 class="timeline-title">Consultant E-Marketing</h3>
+          <p class="timeline-company">Sarbacane Software</p>
+          <ul class="timeline-list">
+            <li>Conseil, formation et support clients sur l'ensemble des solutions marketing (emailing, SMS, automation)</li>
+            <li>Audit de strat&eacute;gie digitale et accompagnement op&eacute;rationnel des campagnes</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info animate-from-left">
+          <span class="section-label" style="color: var(--primary-400);">Contact</span>
+          <h2 class="section-title" style="color: white;">Travaillons <strong>ensemble</strong></h2>
+          <p>
+            Disponible pour des missions RevOps, Growth Marketing et automatisation.
+            &Eacute;changeons sur vos enjeux B2B.
+          </p>
+          <div class="contact-links">
+            <a href="mailto:vanderosieren.simon@gmail.com" class="contact-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+              vanderosieren.simon@gmail.com
+            </a>
+            <a href="https://linkedin.com/in/simon-vanderosieren" target="_blank" class="contact-link">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+              LinkedIn
+            </a>
+            <a href="tel:0612431027" class="contact-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+              </svg>
+              06 12 43 10 27
+            </a>
+          </div>
+        </div>
+        <form class="contact-form animate-from-right">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Nom complet</label>
+              <input type="text" placeholder="Votre nom">
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" placeholder="votre@email.com">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Entreprise</label>
+            <input type="text" placeholder="Votre entreprise">
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea placeholder="D&eacute;crivez votre projet..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Envoyer le message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <span>&copy; 2025 Simon Vande Rosieren. Tous droits r&eacute;serv&eacute;s.</span>
+        <div class="footer-links">
+          <a href="mailto:vanderosieren.simon@gmail.com">Email</a>
+          <a href="https://linkedin.com/in/simon-vanderosieren" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Header scroll effect
+    const header = document.getElementById('header');
+    const scrollProgress = document.getElementById('scrollProgress');
+
+    window.addEventListener('scroll', () => {
+      // Header effect
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+
+      // Scroll progress indicator
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = scrollTop / docHeight;
+      scrollProgress.style.transform = `scaleX(${scrollPercent})`;
+
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px 0px -100px 0px',
+      threshold: 0.1
+    };
+
+    const observerCallback = (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+
+          // Counter animation for stat cards
+          if (entry.target.classList.contains('stat-card')) {
+            animateCounter(entry.target);
+          }
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    // Observe all animated elements
+    document.querySelectorAll('.animate-on-scroll, .animate-from-left, .animate-from-right, .animate-scale, .timeline-item, .section-label').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Counter animation function
+    function animateCounter(card) {
+      const numberEl = card.querySelector('.stat-number');
+      if (!numberEl || numberEl.dataset.animated) return;
+
+      numberEl.dataset.animated = 'true';
+      const countTo = parseInt(card.dataset.count) || 0;
+      const suffix = card.dataset.suffix || '';
+      const duration = 2000;
+      const startTime = performance.now();
+
+      function updateCounter(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        // Easing function (ease-out-expo)
+        const easeProgress = 1 - Math.pow(1 - progress, 4);
+        const currentCount = Math.round(easeProgress * countTo);
+
+        numberEl.textContent = currentCount + suffix;
+
+        if (progress < 1) {
+          requestAnimationFrame(updateCounter);
+        }
+      }
+
+      requestAnimationFrame(updateCounter);
+    }
+
+    // Add visible class to timeline items with stagger
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    const timelineObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 150);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    timelineItems.forEach(item => timelineObserver.observe(item));
+
+    // Animate section labels when their parent section comes into view
+    const sections = document.querySelectorAll('section');
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const label = entry.target.querySelector('.section-label');
+          if (label) {
+            label.classList.add('visible');
+          }
+        }
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach(section => sectionObserver.observe(section));
+  </script>
+
+</body>
+</html>

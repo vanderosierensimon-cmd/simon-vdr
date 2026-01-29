@@ -1,0 +1,4 @@
+.DS_Store
+node_modules/
+*.log
+photo_b64.txt
