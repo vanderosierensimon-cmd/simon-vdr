@@ -2142,25 +2142,26 @@
             </a>
           </div>
         </div>
-        <form class="contact-form animate-from-right">
+        <form class="contact-form animate-from-right" action="https://formspree.io/f/xnjbnkqp" method="POST">
           <div class="form-row">
             <div class="form-group">
               <label>Nom complet</label>
-              <input type="text" placeholder="Votre nom">
+              <input type="text" name="name" placeholder="Votre nom" required>
             </div>
             <div class="form-group">
               <label>Email</label>
-              <input type="email" placeholder="votre@email.com">
+              <input type="email" name="email" placeholder="votre@email.com" required>
             </div>
           </div>
           <div class="form-group">
             <label>Entreprise</label>
-            <input type="text" placeholder="Votre entreprise">
+            <input type="text" name="company" placeholder="Votre entreprise">
           </div>
           <div class="form-group">
             <label>Message</label>
-            <textarea placeholder="D&eacute;crivez votre projet..."></textarea>
+            <textarea name="message" placeholder="D&eacute;crivez votre projet..." required></textarea>
           </div>
+          <input type="hidden" name="_subject" value="Nouveau message depuis simon-vdr.com">
           <button type="submit" class="form-submit">Envoyer le message</button>
         </form>
       </div>
