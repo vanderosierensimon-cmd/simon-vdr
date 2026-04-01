@@ -3,1568 +3,460 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simon Vande Rosieren | Marketing, Growth &amp; Revenue Operations</title>
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>S</text></svg>">
-
+  <title>Simon Vande Rosieren | Marketing, Growth & Revenue Operations</title>
+  <meta name="description" content="Portfolio de Simon Vande Rosieren — Revenue Operations, Growth Marketing & ABM en B2B SaaS.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      /* Navy Deep / Blue Theme */
-      --primary-50: #EFF6FF;
-      --primary-100: #DBEAFE;
-      --primary-200: #BFDBFE;
-      --primary-300: #93C5FD;
-      --primary-400: #60A5FA;
-      --primary-500: #3B82F6;
-      --primary-600: #2563EB;
-      --primary-700: #1D4ED8;
-      --primary-800: #1E40AF;
-      --primary-900: #1E3A8A;
-      --primary-950: #0F172A;
-      /* Indigo Accent */
-      --accent-400: #818CF8;
-      --accent-500: #6366F1;
-      --accent-600: #4F46E5;
-      /* Neutrals */
-      --neutral-50: #FAFAFA;
-      --neutral-100: #F5F5F5;
-      --neutral-200: #E5E5E5;
-      --neutral-300: #D4D4D4;
-      --neutral-400: #A3A3A3;
-      --neutral-500: #737373;
-      --neutral-600: #525252;
-      --neutral-700: #404040;
-      --neutral-800: #262626;
-      --neutral-900: #171717;
-      /* Gradients */
-      --gradient-primary: linear-gradient(135deg, #3B82F6, #1E40AF);
-      --gradient-accent: linear-gradient(135deg, #6366F1, #3B82F6);
-      --gradient-dark: linear-gradient(135deg, #0F172A, #1E40AF);
-      --gradient-light: linear-gradient(135deg, #DBEAFE, #EFF6FF);
-      --gradient-hero: linear-gradient(180deg, rgba(219, 234, 254, 0.5) 0%, white 40%);
+      --dark:       #080D1A;
+      --dark-2:     #0F1629;
+      --dark-card:  #141B2D;
+      --blue:       #1246F5;
+      --blue-h:     #0E3BD4;
+      --mint:       #00E5A0;
+      --white:      #FFFFFF;
+      --off:        #F5F4F0;
+      --g100:       #EEECE6;
+      --g200:       #E2DFD8;
+      --g400:       #9CA3AF;
+      --text:       #0F1629;
+      --muted:      #6B7280;
+      --r:          16px;
+      --r-sm:       8px;
+      --sh:         0 4px 24px rgba(0,0,0,.06);
+      --sh-lg:      0 12px 48px rgba(0,0,0,.12);
+      --ff-d:       'Space Grotesk', sans-serif;
+      --ff-b:       'Inter', sans-serif;
     }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--ff-b); color: var(--text); background: var(--white); line-height: 1.6; overflow-x: hidden; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+    h1,h2,h3,h4 { font-family: var(--ff-d); }
+    a { text-decoration: none; color: inherit; }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    /* ── SECTION LABEL ── */
+    .sl {
+      display: inline-block; font-size: 11px; font-weight: 600;
+      letter-spacing: .15em; text-transform: uppercase; color: var(--blue);
+      background: rgba(18,70,245,.08); padding: 6px 14px;
+      border-radius: 100px; margin-bottom: 16px;
     }
+    .sl-dark { background: rgba(255,255,255,.06); color: rgba(255,255,255,.45); }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    /* ── SECTION TITLE ── */
+    .st { font-family: var(--ff-d); font-size: clamp(2rem,3.5vw,2.8rem); font-weight: 700; line-height: 1.15; color: var(--text); }
+    .st strong { color: var(--blue); font-weight: 800; }
+    .st.light { color: #fff; }
+    .st.light strong { color: var(--blue); }
 
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      color: var(--neutral-800);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    /* ===== UTILITIES ===== */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    .section-label {
-      display: inline-block;
-      font-size: 12px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.3em;
-      color: var(--primary-600);
-      margin-bottom: 16px;
-      padding: 6px 16px;
-      background: var(--primary-50);
-      border-radius: 20px;
-      border: 1px solid var(--primary-100);
-    }
-
-    .section-title {
-      font-size: clamp(32px, 5vw, 48px);
-      font-weight: 300;
-      color: var(--neutral-900);
-      margin-bottom: 24px;
-      line-height: 1.2;
-    }
-
-    .section-title strong {
-      font-weight: 600;
-      background: var(--gradient-primary);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
+    /* ── BUTTONS ── */
     .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 14px 28px;
-      border-radius: 50px;
-      font-size: 14px;
-      font-weight: 500;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      border: none;
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 26px; border-radius: 100px;
+      font-family: var(--ff-b); font-size: 14px; font-weight: 500;
+      transition: all .2s; cursor: pointer; border: none;
     }
+    .btn svg { width: 15px; height: 15px; flex-shrink: 0; }
+    .btn-p { background: var(--blue); color: #fff; }
+    .btn-p:hover { background: var(--blue-h); transform: translateY(-1px); }
+    .btn-s { background: transparent; color: var(--text); border: 1.5px solid var(--g200); }
+    .btn-s:hover { border-color: var(--blue); color: var(--blue); }
 
-    .btn-primary {
-      background: var(--gradient-primary);
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: var(--primary-700);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
-    }
-
-    .btn-secondary {
-      background: white;
-      color: var(--neutral-800);
-      border: 1px solid var(--neutral-200);
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--primary-300);
-      color: var(--primary-700);
-    }
-
-    /* ===== HEADER/NAV ===== */
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      padding: 20px 0;
-      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    header.scrolled {
-      background: rgba(255, 255, 255, 0.9);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      box-shadow: 0 4px 30px rgba(59, 130, 246, 0.08);
-      padding: 12px 0;
-      border-bottom: 1px solid rgba(59, 130, 246, 0.1);
-    }
-
-    header.scrolled .logo {
-      background: var(--gradient-primary);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
+    /* ══════════════════════════════════════
+       NAV
+    ══════════════════════════════════════ */
     nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 18px 0; transition: all .3s;
     }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      background: var(--gradient-primary);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      transition: all 0.3s ease;
+    nav.scrolled {
+      background: rgba(255,255,255,.92); backdrop-filter: blur(20px);
+      box-shadow: 0 1px 0 rgba(0,0,0,.06); padding: 12px 0;
     }
-
-    .logo:hover {
-      transform: scale(1.02);
-      filter: brightness(1.1);
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 40px;
+      display: flex; align-items: center; justify-content: space-between;
     }
+    .nav-logo { font-family: var(--ff-d); font-weight: 700; font-size: 16px; color: var(--blue); }
+    .nav-links { display: flex; list-style: none; gap: 36px; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--muted); transition: color .2s; }
+    .nav-links a:hover { color: var(--blue); }
 
-    .nav-links {
-      display: flex;
-      gap: 32px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-size: 14px;
-      color: var(--neutral-600);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover {
-      color: var(--primary-500);
-    }
-
-    .nav-cta {
-      padding: 10px 20px;
-      font-size: 13px;
-    }
-
-    /* ===== HERO ===== */
+    /* ══════════════════════════════════════
+       HERO
+    ══════════════════════════════════════ */
     .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      background: var(--gradient-hero);
-      position: relative;
-      overflow: hidden;
+      min-height: 100vh; display: grid;
+      grid-template-columns: 55% 45%;
+      align-items: stretch; position: relative;
+      overflow: hidden; background: var(--off);
     }
-
+    /* dot grid */
     .hero::before {
-      content: '';
-      position: absolute;
-      top: -30%;
-      right: -20%;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, var(--primary-200) 0%, transparent 70%);
-      opacity: 0.5;
-      pointer-events: none;
+      content: ''; position: absolute; inset: 0; z-index: 0;
+      background-image: radial-gradient(circle, rgba(18,70,245,.13) 1px, transparent 1px);
+      background-size: 30px 30px;
+      mask-image: radial-gradient(ellipse 60% 80% at 20% 50%, transparent 30%, black 100%);
+      -webkit-mask-image: radial-gradient(ellipse 60% 80% at 20% 50%, transparent 30%, black 100%);
     }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: -20%;
-      left: -10%;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, var(--accent-400) 0%, transparent 70%);
-      opacity: 0.3;
-      pointer-events: none;
-    }
-
-
     .hero-content {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 120px 24px 80px;
-      position: relative;
-      z-index: 1;
+      padding: 120px 60px 80px 80px;
+      position: relative; z-index: 2;
+      display: flex; flex-direction: column; justify-content: center;
     }
-
-    .hero-photo {
-      position: relative;
-      display: inline-block;
-      margin-bottom: 32px;
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(18,70,245,.08); border: 1px solid rgba(18,70,245,.2);
+      color: var(--blue); padding: 6px 16px; border-radius: 100px;
+      font-size: 12px; font-weight: 500; width: fit-content; margin-bottom: 28px;
     }
-
-    .hero-photo-glow {
-      position: absolute;
-      inset: -20px;
-      background: linear-gradient(135deg, var(--primary-400), var(--accent-500));
-      border-radius: 50%;
-      filter: blur(40px);
-      opacity: 0.5;
+    .hero-badge-dot {
+      width: 7px; height: 7px; border-radius: 50%; background: var(--mint);
+      animation: blink 2s infinite;
     }
-
-    .hero-photo img {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      object-fit: cover;
-      object-position: center 15%;
-      border: 4px solid white;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-      position: relative;
-      z-index: 1;
-    }
-
+    @keyframes blink { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(.75)} }
     .hero h1 {
-      font-size: clamp(40px, 8vw, 72px);
-      font-weight: 300;
-      letter-spacing: -0.02em;
-      color: var(--neutral-900);
+      font-family: var(--ff-d); font-size: clamp(3rem,5vw,5rem);
+      font-weight: 800; line-height: 1.0; color: var(--text);
       margin-bottom: 12px;
-      line-height: 1.1;
     }
-
     .hero-role {
-      font-size: clamp(18px, 2.5vw, 24px);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: var(--primary-500);
-      margin-bottom: 12px;
-    }
-
-    .hero-subtitle {
-      font-size: clamp(14px, 2vw, 16px);
-      font-weight: 500;
-      color: var(--neutral-500);
-      margin-bottom: 24px;
-      letter-spacing: 0.1em;
-    }
-
-    .hero-tagline {
-      font-size: clamp(16px, 2.5vw, 20px);
-      color: var(--neutral-600);
-      max-width: 600px;
-      margin: 0 auto 32px;
-      line-height: 1.7;
-      font-weight: 400;
-    }
-
-    .hero-tagline strong {
-      color: var(--neutral-800);
-    }
-
-    .hero-location {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 14px;
-      color: var(--neutral-500);
-      margin-bottom: 40px;
-    }
-
-    .hero-location svg {
-      width: 16px;
-      height: 16px;
-      stroke: var(--primary-400);
-    }
-
-    .hero-ctas {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .scroll-indicator {
-      position: absolute;
-      bottom: 40px;
-      left: 50%;
-      transform: translateX(-50%);
-      animation: bounce 2s infinite;
-    }
-
-    .scroll-indicator svg {
-      width: 24px;
-      height: 24px;
-      stroke: var(--neutral-400);
-    }
-
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-      40% { transform: translateX(-50%) translateY(-10px); }
-      60% { transform: translateX(-50%) translateY(-5px); }
-    }
-
-    /* ===== SCROLL ANIMATIONS ===== */
-    /* Fade in from bottom */
-    .animate-on-scroll {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-                  transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .animate-on-scroll.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Fade in from left */
-    .animate-from-left {
-      opacity: 0;
-      transform: translateX(-60px);
-      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-                  transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .animate-from-left.visible {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    /* Fade in from right */
-    .animate-from-right {
-      opacity: 0;
-      transform: translateX(60px);
-      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-                  transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .animate-from-right.visible {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    /* Scale in */
-    .animate-scale {
-      opacity: 0;
-      transform: scale(0.8);
-      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-                  transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .animate-scale.visible {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    /* Stagger delays for grid items */
-    .stagger-1 { transition-delay: 0.1s; }
-    .stagger-2 { transition-delay: 0.2s; }
-    .stagger-3 { transition-delay: 0.3s; }
-    .stagger-4 { transition-delay: 0.4s; }
-    .stagger-5 { transition-delay: 0.5s; }
-    .stagger-6 { transition-delay: 0.6s; }
-    .stagger-7 { transition-delay: 0.7s; }
-
-    /* Hero entrance animations */
-    .hero-content {
-      animation: heroFadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    }
-
-    @keyframes heroFadeIn {
-      0% {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .hero-photo {
-      animation: photoReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
-      opacity: 0;
-    }
-
-    @keyframes photoReveal {
-      0% {
-        opacity: 0;
-        transform: scale(0.8);
-      }
-      100% {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
-    .hero h1 {
-      animation: textReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
-      opacity: 0;
-    }
-
-    .hero-role {
-      animation: textReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
-      opacity: 0;
-    }
-
-    .hero-subtitle {
-      animation: textReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.55s forwards;
-      opacity: 0;
-    }
-
-    .hero-tagline {
-      animation: textReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
-      opacity: 0;
-    }
-
-    .hero-location {
-      animation: textReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.7s forwards;
-      opacity: 0;
-    }
-
-    .hero-ctas {
-      animation: textReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.8s forwards;
-      opacity: 0;
-    }
-
-    @keyframes textReveal {
-      0% {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-
-    /* Counter animation for stats */
-    .stat-number {
-      display: inline-block;
-    }
-
-    /* Timeline item animations */
-    .timeline-item {
-      opacity: 0;
-      transform: translateX(-30px);
-      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-                  transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .timeline-item.visible {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    /* Enhanced hover animations */
-    .expertise-card {
-      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .expertise-card:hover {
-      transform: translateY(-8px) scale(1.02);
-    }
-
-    .expertise-icon {
-      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .expertise-card:hover .expertise-icon {
-      transform: scale(1.1) rotate(5deg);
-      background: linear-gradient(135deg, var(--primary-200), var(--primary-100));
-    }
-
-    .stat-card {
-      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .stat-card:hover {
-      transform: translateY(-8px) scale(1.03);
-    }
-
-    .lead-magnet-card {
-      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .lead-magnet-card:hover {
-      transform: translateY(-12px);
-    }
-
-    .lead-magnet-preview {
-      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .lead-magnet-card:hover .lead-magnet-preview {
-      transform: scale(1.05);
-    }
-
-    /* Section label animation */
-    .section-label {
-      opacity: 0;
-      animation: none;
-    }
-
-    .section-label.visible {
-      animation: labelReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    }
-
-    @keyframes labelReveal {
-      0% {
-        opacity: 0;
-        transform: translateY(10px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Floating animation for decorative elements */
-    @keyframes float {
-      0%, 100% { transform: translate(-50%, -50%) scale(1); }
-      50% { transform: translate(-50%, -52%) scale(1.02); }
-    }
-
-
-    /* Button pulse effect */
-    .btn-primary {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .btn-primary::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-      transform: translateX(-100%);
-      transition: transform 0.6s;
-    }
-
-    .btn-primary:hover::after {
-      transform: translateX(100%);
-    }
-
-
-    /* Scroll progress indicator */
-    .scroll-progress {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 3px;
-      background: var(--gradient-primary);
-      z-index: 1001;
-      transform-origin: left;
-      transform: scaleX(0);
-    }
-
-    /* ===== ABOUT ===== */
-    .about {
-      padding: 120px 0;
-      background: white;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-
-    .about-text p {
-      font-size: 18px;
-      color: var(--neutral-600);
-      margin-bottom: 24px;
-      line-height: 1.8;
-    }
-
-    .about-text strong {
-      color: var(--primary-700);
-      font-weight: 500;
-    }
-
-    .about-stats {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-    }
-
-    .stat-card {
-      background: white;
-      border-radius: 16px;
-      padding: 28px;
-      text-align: center;
-      transition: all 0.3s ease;
-      border: 1px solid var(--neutral-200);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .stat-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: var(--gradient-primary);
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-
-    .stat-card:hover {
-      background: white;
-      box-shadow: 0 20px 40px rgba(59, 130, 246, 0.12);
-      transform: translateY(-4px);
-      border-color: var(--primary-200);
-    }
-
-    .stat-card:hover::before {
-      opacity: 1;
-    }
-
-    .stat-number {
-      font-size: 40px;
-      font-weight: 700;
-      background: var(--gradient-primary);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-
-    .stat-label {
-      font-size: 13px;
-      color: var(--neutral-500);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-
-    /* ===== EXPERTISE ===== */
-    .expertise {
-      padding: 120px 0;
-      background: var(--neutral-50);
-    }
-
-    .expertise-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-      margin-top: 48px;
-    }
-
-    .expertise-card {
-      background: white;
-      border-radius: 16px;
-      padding: 32px 24px;
-      border: 1px solid var(--neutral-200);
-      transition: all 0.3s ease;
-    }
-
-    .expertise-card:hover {
-      border-color: var(--primary-300);
-      box-shadow: 0 20px 40px rgba(59, 130, 246, 0.08);
-      transform: translateY(-4px);
-    }
-
-    .expertise-icon {
-      width: 48px;
-      height: 48px;
-      background: var(--gradient-primary);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-      transition: all 0.3s ease;
-    }
-
-    .expertise-icon svg {
-      width: 24px;
-      height: 24px;
-      stroke: white;
-      fill: none;
-      stroke-width: 1.5;
-    }
-
-    .expertise-card:hover .expertise-icon {
-      transform: scale(1.1);
-      box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
-    }
-
-    .expertise-card h3 {
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--neutral-900);
-      margin-bottom: 12px;
-    }
-
-    .expertise-card p {
-      font-size: 14px;
-      color: var(--neutral-500);
-      line-height: 1.6;
-    }
-
-    /* ===== STACK SECTION ===== */
-    .stack {
-      padding: 120px 0;
-      background: white;
-      overflow: hidden;
-    }
-
-    .stack-intro {
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto 60px;
-    }
-
-    .stack-intro p {
-      font-size: 18px;
-      color: var(--neutral-600);
-    }
-
-    /* Stack Carousel */
-    .stack-carousel-wrapper {
-      position: relative;
-      margin-top: 48px;
-    }
-
-    .stack-carousel-wrapper::before,
-    .stack-carousel-wrapper::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 100px;
-      z-index: 2;
-      pointer-events: none;
-    }
-
-    .stack-carousel-wrapper::before {
-      left: 0;
-      background: linear-gradient(90deg, white 0%, transparent 100%);
-    }
-
-    .stack-carousel-wrapper::after {
-      right: 0;
-      background: linear-gradient(-90deg, white 0%, transparent 100%);
-    }
-
-    .stack-carousel {
-      display: flex;
-      gap: 32px;
-      animation: scrollCarousel 40s linear infinite;
-      width: max-content;
-    }
-
-    .stack-carousel:hover {
-      animation-play-state: paused;
-    }
-
-    @keyframes scrollCarousel {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-
-    .stack-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-      padding: 24px 20px;
-      background: var(--neutral-50);
-      border-radius: 16px;
-      border: 1px solid var(--neutral-200);
-      min-width: 120px;
-      transition: all 0.3s ease;
-    }
-
-    .stack-item:hover {
-      background: var(--primary-50);
-      border-color: var(--primary-200);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 24px rgba(59, 130, 246, 0.1);
-    }
-
-    .stack-item-logo {
-      width: 48px;
-      height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 12px;
-      background: white;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-      padding: 8px;
-    }
-
-    .stack-item-logo img {
-      width: 32px;
-      height: 32px;
-      object-fit: contain;
-    }
-
-    .stack-item-logo svg {
-      width: 32px;
-      height: 32px;
-    }
-
-    .stack-item-name {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--neutral-700);
-      text-align: center;
-      white-space: nowrap;
-    }
-
-    /* Second row - reverse direction */
-    .stack-carousel.reverse {
-      animation: scrollCarouselReverse 35s linear infinite;
-    }
-
-    @keyframes scrollCarouselReverse {
-      0% {
-        transform: translateX(-50%);
-      }
-      100% {
-        transform: translateX(0);
-      }
-    }
-
-    .stack-row {
-      margin-bottom: 24px;
-    }
-
-    .stack-row:last-child {
-      margin-bottom: 0;
-    }
-
-    /* ===== LEAD MAGNETS ===== */
-    .lead-magnets {
-      padding: 120px 0;
-      background: var(--neutral-50);
-    }
-
-    .lead-magnets-intro {
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto 60px;
-    }
-
-    .lead-magnets-intro p {
-      font-size: 18px;
-      color: var(--neutral-600);
-    }
-
-    .lead-magnets-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 32px;
-    }
-
-    .lead-magnet-card {
-      background: white;
-      border-radius: 20px;
-      overflow: hidden;
-      border: 1px solid var(--neutral-200);
-      transition: all 0.3s ease;
-      text-decoration: none;
-      color: inherit;
-      display: block;
-    }
-
-    .lead-magnet-card:hover {
-      border-color: var(--primary-300);
-      box-shadow: 0 20px 60px rgba(59, 130, 246, 0.12);
-      transform: translateY(-8px);
-    }
-
-    .lead-magnet-preview {
-      position: relative;
-      height: 280px;
-      background: linear-gradient(135deg, var(--primary-900), var(--primary-700));
-      overflow: hidden;
-    }
-
-    .lead-magnet-preview iframe {
-      width: 200%;
-      height: 200%;
-      border: none;
-      transform: scale(0.5);
-      transform-origin: top left;
-      pointer-events: none;
-    }
-
-    .lead-magnet-preview-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.4) 100%);
-    }
-
-    .lead-magnet-content {
-      padding: 28px;
-    }
-
-    .lead-magnet-badge {
-      display: inline-block;
-      background: var(--primary-100);
-      color: var(--primary-700);
-      font-size: 11px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      padding: 6px 12px;
-      border-radius: 20px;
-      margin-bottom: 16px;
-    }
-
-    .lead-magnet-card h3 {
-      font-size: 20px;
-      font-weight: 600;
-      color: var(--neutral-900);
-      margin-bottom: 12px;
-    }
-
-    .lead-magnet-card p {
-      font-size: 15px;
-      color: var(--neutral-500);
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-
-    .lead-magnet-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--primary-500);
-    }
-
-    .lead-magnet-link svg {
-      width: 16px;
-      height: 16px;
-      transition: transform 0.2s;
-    }
-
-    .lead-magnet-card:hover .lead-magnet-link svg {
-      transform: translateX(4px);
-    }
-
-    /* ===== MAKE SCENARIOS ===== */
-    .make-scenarios {
-      padding: 120px 0;
-      background: white;
-    }
-
-    .make-scenarios-intro {
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto 60px;
-    }
-
-    .make-scenarios-intro p {
-      font-size: 18px;
-      color: var(--neutral-600);
-    }
-
-    .scenarios-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 28px;
-    }
-
-    .scenario-card {
-      background: var(--neutral-50);
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid var(--neutral-200);
-      transition: all 0.3s ease;
-    }
-
-    .scenario-card:hover {
-      border-color: var(--primary-200);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
-      transform: translateY(-6px);
-    }
-
-    .scenario-card {
-      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .scenario-preview {
-      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .scenario-card:hover .scenario-preview {
-      background: linear-gradient(135deg, #7C3AED 0%, #A855F7 100%);
-    }
-
-    .scenario-preview {
-      height: 220px;
-      background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .scenario-preview img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .scenario-card:hover .scenario-preview img {
-      transform: scale(1.05);
-    }
-
-    .scenario-preview-placeholder {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-      color: white;
-    }
-
-    .scenario-preview-placeholder svg {
-      width: 48px;
-      height: 48px;
-      opacity: 0.8;
-    }
-
-    .scenario-preview-placeholder span {
-      font-size: 12px;
-      opacity: 0.7;
-    }
-
-    .scenario-content {
-      padding: 20px;
-    }
-
-    .scenario-card h4 {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--neutral-800);
-      margin-bottom: 8px;
-    }
-
-    .scenario-card p {
-      font-size: 13px;
-      color: var(--neutral-500);
-      line-height: 1.5;
-    }
-
-    /* ===== EXPERIENCE ===== */
-    .experience {
-      padding: 120px 0;
-      background: var(--neutral-50);
-    }
-
-    .timeline {
-      max-width: 800px;
-      margin: 48px auto 0;
-      position: relative;
-    }
-
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 3px;
-      background: var(--gradient-primary);
-      border-radius: 2px;
-    }
-
-    .timeline-item {
-      position: relative;
-      padding-left: 40px;
-      padding-bottom: 48px;
-    }
-
-    .timeline-item:last-child {
-      padding-bottom: 0;
-    }
-
-    .timeline-dot {
-      position: absolute;
-      left: -6px;
-      top: 4px;
-      width: 14px;
-      height: 14px;
-      background: var(--primary-500);
-      border-radius: 50%;
-      border: 3px solid white;
-      box-shadow: 0 0 0 4px var(--primary-100);
-    }
-
-    .timeline-date {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--primary-500);
-      margin-bottom: 8px;
-    }
-
-    .timeline-title {
-      font-size: 20px;
-      font-weight: 600;
-      color: var(--neutral-900);
-      margin-bottom: 4px;
-    }
-
-    .timeline-company {
-      font-size: 14px;
-      color: var(--neutral-500);
-      margin-bottom: 12px;
-    }
-
-    .timeline-desc {
-      font-size: 15px;
-      color: var(--neutral-600);
-      line-height: 1.7;
-    }
-
-    .timeline-list {
-      list-style: none;
-      margin-top: 12px;
-    }
-
-    .timeline-list li {
-      position: relative;
-      padding-left: 16px;
-      margin-bottom: 8px;
-      font-size: 14px;
-      color: var(--neutral-600);
-      line-height: 1.6;
-    }
-
-    .timeline-list li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 8px;
-      width: 6px;
-      height: 6px;
-      background: var(--primary-400);
-      border-radius: 50%;
-    }
-
-    .timeline-kpis {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin-top: 16px;
-      padding: 20px;
-      background: var(--gradient-light);
-      border-radius: 16px;
-      border: 1px solid var(--primary-200);
-    }
-
-    .kpi-item {
-      display: flex;
-      flex-direction: column;
-      min-width: 120px;
-      padding: 12px 16px;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);
-    }
-
-    .kpi-value {
-      font-size: 24px;
-      font-weight: 700;
-      background: var(--gradient-primary);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      line-height: 1;
-    }
-
-    .kpi-label {
-      font-size: 12px;
-      color: var(--neutral-500);
-      margin-top: 4px;
-    }
-
-    /* ===== CONTACT ===== */
-    .contact {
-      padding: 120px 0;
-      background: var(--gradient-dark);
-      color: white;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .contact::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -20%;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, var(--primary-700) 0%, transparent 60%);
-      opacity: 0.3;
-      pointer-events: none;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-
-    .contact-info h2 {
-      font-size: clamp(32px, 5vw, 48px);
-      font-weight: 300;
-      margin-bottom: 24px;
-      line-height: 1.2;
-    }
-
-    .contact-info h2 strong {
-      font-weight: 600;
-    }
-
-    .contact-info p {
-      font-size: 18px;
-      color: rgba(255,255,255,0.7);
-      margin-bottom: 32px;
-      line-height: 1.7;
-    }
-
-    .contact-links {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .contact-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      color: rgba(255,255,255,0.8);
-      text-decoration: none;
-      font-size: 16px;
-      transition: all 0.2s;
-    }
-
-    .contact-link:hover {
-      color: var(--primary-400);
-    }
-
-    .contact-link svg {
-      width: 20px;
-      height: 20px;
-    }
-
-    .contact-form {
-      background: rgba(255,255,255,0.05);
-      backdrop-filter: blur(20px);
-      border-radius: 24px;
-      padding: 40px;
-      border: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-group.full-width {
-      grid-column: 1 / -1;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 13px;
-      font-weight: 500;
-      color: rgba(255,255,255,0.6);
-      margin-bottom: 8px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: 14px 18px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 12px;
-      color: white;
-      font-size: 15px;
-      font-family: inherit;
-      transition: all 0.2s;
-    }
-
-    .form-group input::placeholder,
-    .form-group textarea::placeholder {
-      color: rgba(255,255,255,0.4);
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: var(--primary-500);
-      background: rgba(255,255,255,0.12);
-    }
-
-    .form-group textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
-
-    .form-submit {
-      width: 100%;
-      padding: 16px;
-      background: var(--primary-500);
-      color: white;
-      border: none;
-      border-radius: 12px;
-      font-size: 15px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .form-submit:hover {
-      background: var(--primary-500);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
-    }
-
-    .form-success {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    .form-success svg {
-      width: 64px;
-      height: 64px;
-      color: var(--primary-400);
-    }
-
-    .form-success p {
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: var(--text-primary);
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-      padding: 40px 0;
-      background: var(--neutral-900);
-      border-top: 1px solid rgba(255,255,255,0.05);
-    }
-
-    .footer-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: rgba(255,255,255,0.5);
-      font-size: 14px;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 24px;
-    }
-
-    .footer-links a {
-      color: rgba(255,255,255,0.5);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .footer-links a:hover {
-      color: var(--primary-400);
-    }
-
-    /* ===== RESPONSIVE ===== */
+      font-family: var(--ff-d); font-size: clamp(1rem,2vw,1.25rem);
+      font-weight: 600; color: var(--blue); margin-bottom: 20px;
+    }
+    .hero-tagline { font-size: 16px; line-height: 1.75; color: var(--muted); max-width: 460px; margin-bottom: 24px; }
+    .hero-tagline strong { color: var(--text); font-weight: 600; }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 32px; }
+    .hero-tag {
+      font-size: 12px; font-weight: 500; color: var(--muted);
+      background: #fff; border: 1px solid var(--g200);
+      padding: 5px 12px; border-radius: 6px;
+    }
+    .hero-ctas { display: flex; gap: 12px; margin-bottom: 32px; }
+    .hero-loc { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--muted); }
+    .hero-loc svg { width: 14px; height: 14px; }
+
+    /* hero visual */
+    .hero-visual { position: relative; overflow: hidden; }
+    .hero-visual img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+    .hero-visual::before {
+      content: ''; position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(to right, var(--off) 0%, rgba(245,244,240,0) 25%);
+    }
+    .hero-float {
+      position: absolute; bottom: 60px; left: -20px; z-index: 3;
+      background: #fff; border-radius: var(--r); padding: 16px 20px;
+      box-shadow: var(--sh-lg); display: flex; align-items: center; gap: 14px; min-width: 210px;
+    }
+    .hero-float-icon {
+      width: 44px; height: 44px; border-radius: 12px; background: var(--blue);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .hero-float-icon svg { width: 20px; height: 20px; color: #fff; }
+    .hero-float-text strong { display: block; font-size: 15px; font-weight: 700; font-family: var(--ff-d); }
+    .hero-float-text span { font-size: 12px; color: var(--muted); }
+
+    /* ══════════════════════════════════════
+       ABOUT
+    ══════════════════════════════════════ */
+    .about { padding: 100px 0; background: #fff; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .about-text { padding-right: 20px; }
+    .about-text p { font-size: 16px; line-height: 1.8; color: var(--muted); margin-bottom: 16px; }
+    .about-text p strong { color: var(--text); font-weight: 600; }
+    .about-text p:last-child { margin-bottom: 0; }
+    .about-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; border-radius: var(--r); overflow: hidden; }
+    .sc { background: var(--off); padding: 32px 24px; transition: background .2s; }
+    .sc:hover { background: var(--g100); }
+    .sc:first-child { background: var(--dark); }
+    .sc:first-child .sn { color: #fff; }
+    .sc:first-child .sl2 { color: rgba(255,255,255,.4); }
+    .sn { font-family: var(--ff-d); font-size: 2.8rem; font-weight: 800; color: var(--blue); line-height: 1; margin-bottom: 6px; }
+    .sl2 { font-size: 12px; font-weight: 500; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
+
+    /* ══════════════════════════════════════
+       EXPERTISE (dark)
+    ══════════════════════════════════════ */
+    .expertise { padding: 100px 0; background: var(--dark); }
+    .exp-hd { max-width: 560px; margin: 0 auto 60px; text-align: center; }
+    .exp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
+    .exp-card {
+      background: var(--dark-card); padding: 48px 44px;
+      position: relative; overflow: hidden; transition: background .3s;
+    }
+    .exp-card:hover { background: #1A2340; }
+    .exp-num {
+      position: absolute; top: -8px; right: 16px;
+      font-family: var(--ff-d); font-size: 7rem; font-weight: 800;
+      color: rgba(255,255,255,.03); line-height: 1; pointer-events: none; user-select: none;
+    }
+    .exp-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+    .exp-card:nth-child(1)::before { background: #1246F5; }
+    .exp-card:nth-child(2)::before { background: #00C875; }
+    .exp-card:nth-child(3)::before { background: #8B5CF6; }
+    .exp-card:nth-child(4)::before { background: #F59E0B; }
+    .exp-icon {
+      width: 46px; height: 46px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center; margin-bottom: 22px;
+    }
+    .exp-card:nth-child(1) .exp-icon { background: rgba(18,70,245,.15); }
+    .exp-card:nth-child(2) .exp-icon { background: rgba(0,200,117,.15); }
+    .exp-card:nth-child(3) .exp-icon { background: rgba(139,92,246,.15); }
+    .exp-card:nth-child(4) .exp-icon { background: rgba(245,158,11,.15); }
+    .exp-icon svg { width: 22px; height: 22px; }
+    .exp-card:nth-child(1) .exp-icon svg { color: #1246F5; }
+    .exp-card:nth-child(2) .exp-icon svg { color: #00C875; }
+    .exp-card:nth-child(3) .exp-icon svg { color: #8B5CF6; }
+    .exp-card:nth-child(4) .exp-icon svg { color: #F59E0B; }
+    .exp-card h3 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 12px; }
+    .exp-card p { font-size: 14px; line-height: 1.7; color: rgba(255,255,255,.45); }
+    .exp-card p strong { color: rgba(255,255,255,.7); }
+
+    /* ══════════════════════════════════════
+       STACK (marquee carrousel)
+    ══════════════════════════════════════ */
+    .stack { padding: 100px 0; background: var(--off); overflow: hidden; }
+    .stack-hd { max-width: 560px; margin: 0 auto 52px; text-align: center; }
+    .stack-hd p { font-size: 15px; color: var(--muted); margin-top: 10px; }
+    .marquee-wrap { display: flex; flex-direction: column; gap: 12px; }
+    .marquee-row { overflow: hidden; mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent); }
+    .marquee-track {
+      display: flex; gap: 10px; width: max-content;
+      animation: marquee-scroll 35s linear infinite;
+    }
+    .marquee-track.rev { animation-direction: reverse; animation-duration: 40s; }
+    .marquee-item {
+      display: flex; align-items: center; gap: 9px;
+      padding: 9px 18px; border-radius: 100px;
+      background: #fff; border: 1px solid var(--g200);
+      white-space: nowrap; flex-shrink: 0;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .marquee-item:hover { border-color: rgba(18,70,245,.3); box-shadow: 0 2px 12px rgba(18,70,245,.08); }
+    .marquee-item img { width: 22px; height: 22px; object-fit: contain; border-radius: 5px; }
+    .marquee-item img.fav { background: #fff; }
+    .marquee-item span { font-size: 13px; font-weight: 500; color: var(--text); }
+    .stack-cat-lbl { display: none; }
+    @keyframes marquee-scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ══════════════════════════════════════
+       PROJETS
+    ══════════════════════════════════════ */
+    .projets { padding: 100px 0; background: #fff; }
+    .projets-hd { margin-bottom: 12px; }
+    .projets-sub { font-size: 16px; color: var(--muted); max-width: 520px; margin-bottom: 44px; }
+    .projets-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .projet-card {
+      border-radius: var(--r); overflow: hidden;
+      border: 1px solid var(--g200); transition: all .3s;
+      display: block; background: #fff;
+    }
+    .projet-card:hover { transform: translateY(-4px); box-shadow: var(--sh-lg); border-color: rgba(18,70,245,.2); }
+    .projet-preview { height: 220px; overflow: hidden; }
+    .projet-preview img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform .4s; }
+    .projet-card:hover .projet-preview img { transform: scale(1.04); }
+    .projet-content { padding: 24px; }
+    .projet-badge {
+      display: inline-block; font-size: 10px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: .1em; color: var(--blue);
+      background: rgba(18,70,245,.08); padding: 4px 10px; border-radius: 100px; margin-bottom: 10px;
+    }
+    .projet-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; color: var(--text); }
+    .projet-card p { font-size: 14px; line-height: 1.65; color: var(--muted); margin-bottom: 16px; }
+    .projet-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--blue); }
+    .projet-link svg { width: 13px; height: 13px; transition: transform .2s; }
+    .projet-card:hover .projet-link svg { transform: translateX(3px); }
+
+    /* ══════════════════════════════════════
+       SCÉNARIOS MAKE (dark)
+    ══════════════════════════════════════ */
+    .scenarios { padding: 100px 0; background: var(--dark); }
+    .scenarios-hd { max-width: 560px; margin: 0 auto 56px; text-align: center; }
+    .scenarios-hd p { font-size: 15px; color: rgba(255,255,255,.4); margin-top: 10px; line-height: 1.7; }
+    .scenarios-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+    .sc-card { background: var(--dark-card); overflow: hidden; border-radius: 12px; transition: background .3s; }
+    .sc-card:hover { background: #1A2340; }
+    .sc-prev { height: 150px; overflow: hidden; background: #0A0F1E; }
+    .sc-prev img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; opacity: .85; transition: opacity .3s, transform .4s; }
+    .sc-card:hover .sc-prev img { opacity: 1; transform: scale(1.03); }
+    .sc-body { padding: 20px 24px; }
+    .sc-body h4 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .sc-body p { font-size: 13.5px; line-height: 1.65; color: rgba(255,255,255,.4); margin-bottom: 16px; }
+    .sc-result {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 11.5px; font-weight: 600; color: var(--mint);
+      background: rgba(0,229,160,.1); padding: 5px 12px; border-radius: 100px;
+    }
+    .sc-result svg { width: 11px; height: 11px; }
+
+    /* ══════════════════════════════════════
+       EXPERIENCE
+    ══════════════════════════════════════ */
+    .xp { padding: 100px 0; background: var(--off); }
+    .xp-hd { max-width: 560px; margin: 0 auto 60px; text-align: center; }
+    .timeline { position: relative; max-width: 800px; margin: 0 auto; padding-left: 32px; }
+    .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: var(--g200); }
+    .tl-item { padding: 0 0 52px 24px; position: relative; }
+    .tl-item:last-child { padding-bottom: 0; }
+    .tl-dot {
+      position: absolute; left: -20px; top: 5px;
+      width: 12px; height: 12px; border-radius: 50%;
+      background: #fff; border: 2px solid var(--g200); transition: all .25s;
+    }
+    .tl-item:hover .tl-dot { border-color: var(--blue); background: var(--blue); }
+    .tl-date { font-size: 11.5px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 8px; }
+    .tl-title { font-size: 1.05rem; font-weight: 700; color: var(--text); margin-bottom: 3px; }
+    .tl-co { font-size: 13.5px; font-weight: 500; color: var(--blue); margin-bottom: 10px; }
+    .tl-desc { font-size: 14px; line-height: 1.7; color: var(--muted); margin-bottom: 12px; }
+    .tl-list { list-style: none; margin-bottom: 14px; }
+    .tl-list li { font-size: 13.5px; line-height: 1.7; color: var(--muted); padding-left: 14px; position: relative; margin-bottom: 3px; }
+    .tl-list li::before { content: ''; position: absolute; left: 0; top: 10px; width: 5px; height: 1px; background: var(--blue); }
+    .tl-kpis { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .kpi {
+      background: #fff; border: 1px solid var(--g200);
+      border-radius: var(--r-sm); padding: 8px 14px;
+    }
+    .kpi-v { display: block; font-family: var(--ff-d); font-size: 1.05rem; font-weight: 700; color: var(--blue); line-height: 1; }
+    .kpi-l { font-size: 11px; color: var(--muted); }
+
+    /* ══════════════════════════════════════
+       CONTACT
+    ══════════════════════════════════════ */
+    .contact { padding: 100px 0; background: var(--dark); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; align-items: start; }
+    .contact-info p { font-size: 15px; line-height: 1.75; color: rgba(255,255,255,.4); margin: 16px 0 32px; }
+    .c-links { display: flex; flex-direction: column; gap: 12px; }
+    .c-link { display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 500; color: rgba(255,255,255,.55); transition: color .2s; }
+    .c-link:hover { color: var(--mint); }
+    .c-link svg { width: 15px; height: 15px; flex-shrink: 0; }
+    .c-form { background: var(--dark-card); border-radius: var(--r); padding: 36px; border: 1px solid rgba(255,255,255,.06); }
+    .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+    .f-grp { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+    .f-row .f-grp { margin-bottom: 0; }
+    .f-grp label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .12em; color: rgba(255,255,255,.3); }
+    .f-grp input, .f-grp textarea {
+      background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08);
+      border-radius: var(--r-sm); padding: 11px 14px; font-size: 14px;
+      font-family: var(--ff-b); color: #fff; outline: none; transition: border-color .2s;
+    }
+    .f-grp input::placeholder, .f-grp textarea::placeholder { color: rgba(255,255,255,.18); }
+    .f-grp input:focus, .f-grp textarea:focus { border-color: var(--blue); }
+    .f-grp textarea { min-height: 110px; resize: vertical; }
+    .f-submit {
+      width: 100%; padding: 13px; background: var(--blue); color: #fff;
+      border: none; border-radius: var(--r-sm); font-size: 14px; font-weight: 600;
+      font-family: var(--ff-b); cursor: pointer; transition: background .2s, transform .2s;
+    }
+    .f-submit:hover { background: var(--blue-h); transform: translateY(-1px); }
+
+    /* ══════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════ */
+    footer { background: #04080F; padding: 22px 0; border-top: 1px solid rgba(255,255,255,.05); }
+    .foot { display: flex; justify-content: space-between; align-items: center; }
+    .foot span { font-size: 12px; color: rgba(255,255,255,.22); }
+    .foot-links { display: flex; gap: 22px; }
+    .foot-links a { font-size: 12px; color: rgba(255,255,255,.22); transition: color .2s; }
+    .foot-links a:hover { color: rgba(255,255,255,.6); }
+
+    /* ══════════════════════════════════════
+       ANIMATIONS
+    ══════════════════════════════════════ */
+    .anim, .anim-l, .anim-r {
+      opacity: 0; transition: opacity .65s ease, transform .65s ease;
+    }
+    .anim   { transform: translateY(20px); }
+    .anim-l { transform: translateX(-28px); }
+    .anim-r { transform: translateX(28px); }
+    .anim.v, .anim-l.v, .anim-r.v { opacity: 1; transform: none; }
+    .s1 { transition-delay: .1s; } .s2 { transition-delay: .2s; }
+    .s3 { transition-delay: .3s; } .s4 { transition-delay: .4s; }
+    .tl-item { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s ease; }
+    .tl-item.v { opacity: 1; transform: none; }
+
+    /* ══════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════ */
     @media (max-width: 1024px) {
-      .expertise-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      .hero { grid-template-columns: 1fr; }
+      .hero-visual { display: none; }
+      .hero-content { padding: 120px 40px 80px; }
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .exp-grid { grid-template-columns: 1fr; }
+      .stack-grid { grid-template-columns: 1fr 1fr; }
+      .scenarios-grid { grid-template-columns: 1fr; }
+      .projets-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
     }
-
     @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-      }
-
-      .about-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 48px;
-      }
-
-      .expertise-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .lead-magnets-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .scenarios-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .form-row {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-content {
-        flex-direction: column;
-        gap: 16px;
-        text-align: center;
-      }
+      .container { padding: 0 20px; }
+      .nav-links { display: none; }
+      .stack-grid { grid-template-columns: 1fr; }
+      .hero-ctas { flex-direction: column; align-items: flex-start; }
+      .about-stats { grid-template-columns: 1fr 1fr; }
+      .f-row { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Scroll Progress Indicator -->
-  <div class="scroll-progress" id="scrollProgress"></div>
-
-  <!-- HEADER -->
-  <header id="header">
-    <div class="container">
-      <nav>
-        <a href="#hero" class="logo">Simon Vande Rosieren</a>
-        <ul class="nav-links">
-          <li><a href="#about">Profil</a></li>
-          <li><a href="#expertise">Expertise</a></li>
-          <li><a href="#stack">Stack</a></li>
-          <li><a href="#experience">Parcours</a></li>
-        </ul>
-        <a href="#contact" class="btn btn-primary nav-cta">Me contacter</a>
-      </nav>
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">Simon Vande Rosieren</a>
+      <ul class="nav-links">
+        <li><a href="#about">Profil</a></li>
+        <li><a href="#expertise">Expertise</a></li>
+        <li><a href="#stack">Stack</a></li>
+        <li><a href="#xp">Parcours</a></li>
+      </ul>
+      <a href="#contact" class="btn btn-p" style="padding:10px 22px;font-size:13px;">Me contacter</a>
     </div>
-  </header>
-
+  </nav>
 
   <!-- HERO -->
-  <section class="hero" id="hero">
+  <section class="hero">
     <div class="hero-content">
-      <div class="hero-photo">
-        <div class="hero-photo-glow"></div>
-        <img src="DSC06925-2.jpeg" alt="Simon Vande Rosieren">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Disponible
       </div>
-      <h1>Simon Vande Rosieren</h1>
+      <h1>Simon<br><span style="white-space:nowrap">Vande Rosieren</span></h1>
       <p class="hero-role">Marketing, Growth &amp; Revenue Operations</p>
-      <p class="hero-subtitle">Sales Ops &middot; Marketing Ops &middot; CRM</p>
       <p class="hero-tagline">
-        Je structure vos funnels, aligne vos &eacute;quipes et automatise vos process pour <strong>transformer vos leads en revenus</strong>.
+        Revenue Ops, Growth, ABM : dix ans &agrave; <strong>faire fonctionner ensemble les &eacute;quipes qui font rentrer du chiffre</strong>.
       </p>
-      <p class="hero-location">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
-          <circle cx="12" cy="10" r="3"/>
-        </svg>
-        Lille, France &middot; Remote
-      </p>
+      <div class="hero-tags">
+        <span class="hero-tag">Sales Ops</span>
+        <span class="hero-tag">Marketing Ops</span>
+        <span class="hero-tag">CRM</span>
+        <span class="hero-tag">ABM</span>
+        <span class="hero-tag">Make / n8n</span>
+        <span class="hero-tag">B2B SaaS</span>
+      </div>
       <div class="hero-ctas">
-        <a href="#contact" class="btn btn-primary">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-            <polyline points="22,6 12,13 2,6"/>
-          </svg>
+        <a href="#contact" class="btn btn-p">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           Me contacter
         </a>
-        <a href="https://linkedin.com/in/simon-vanderosieren" target="_blank" class="btn btn-secondary">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-          </svg>
+        <a href="https://linkedin.com/in/simon-vanderosieren" target="_blank" class="btn btn-s">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
           LinkedIn
         </a>
       </div>
+      <p class="hero-loc">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Lille, France &middot; Remote
+      </p>
     </div>
-    <div class="scroll-indicator">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
-      </svg>
+    <div class="hero-visual">
+      <img src="DSC06925-2.jpeg" alt="Simon Vande Rosieren">
     </div>
   </section>
 
@@ -1572,35 +464,25 @@
   <section class="about" id="about">
     <div class="container">
       <div class="about-grid">
-        <div class="about-text animate-from-left">
-          <span class="section-label">Qui je suis</span>
-          <h2 class="section-title">Profil <strong>RevOps</strong></h2>
-          <p>
-            Plus de <strong>10 ans d'exp&eacute;rience en B2B SaaS</strong>, construit autour d'un parcours transversal Sales, Marketing et Growth.
-          </p>
-          <p>
-            J'accompagne les &eacute;quipes sur la <strong>structuration du funnel</strong>, le pilotage du CRM, l'automatisation des actions marketing et l'exploitation de la data, avec une attention constante port&eacute;e &agrave; la performance et aux objectifs business.
-          </p>
-          <p>
-            &Agrave; l'aise dans des contextes transverses, je collabore naturellement avec les &eacute;quipes <strong>marketing, commerciales, produit et tech</strong>, en veillant &agrave; cr&eacute;er un cadre de travail clair, align&eacute; et exploitable.
-          </p>
+        <div class="about-text anim-l">
+          <span class="sl">Qui je suis</span>
+          <h2 class="st" style="margin-bottom:24px;">Profil <strong>RevOps</strong></h2>
+          <p>Plus de <strong>10 ans d'exp&eacute;rience en B2B SaaS</strong>, b&acirc;ti sur un parcours transverse Sales, Marketing et Growth.</p>
+          <p>J'interviens sur le <strong>funnel, le CRM, l'automatisation et le reporting</strong> : l&agrave; o&ugrave; les silos cr&eacute;ent de la friction et o&ugrave; la donn&eacute;e peut d&eacute;bloquer la performance.</p>
+          <p>Je travaille avec les &eacute;quipes <strong>marketing, sales, produit et tech</strong>, avec un parti pris fort : que les syst&egrave;mes servent les gens, pas l'inverse.</p>
         </div>
-        <div class="about-stats animate-from-right">
-          <div class="stat-card animate-scale stagger-1" data-count="10" data-suffix="+">
-            <div class="stat-number">10+</div>
-            <div class="stat-label">Ann&eacute;es B2B SaaS</div>
+        <div class="about-stats anim-r">
+          <div class="sc s1">
+            <div class="sn">10+</div>
+            <div class="sl2">Ann&eacute;es B2B SaaS</div>
           </div>
-          <div class="stat-card animate-scale stagger-2" data-count="3" data-suffix="">
-            <div class="stat-number">3</div>
-            <div class="stat-label">Solutions SaaS pilot&eacute;es</div>
+          <div class="sc s2">
+            <div class="sn">3</div>
+            <div class="sl2">March&eacute;s SaaS en simultan&eacute;</div>
           </div>
-          <div class="stat-card animate-scale stagger-3" data-count="20" data-suffix="+">
-            <div class="stat-number">20+</div>
-            <div class="stat-label">Outils utilis&eacute;s au quotidien</div>
-          </div>
-          <div class="stat-card animate-scale stagger-4" data-count="100" data-suffix="%">
-            <div class="stat-number">100%</div>
-            <div class="stat-label">Full Remote</div>
+          <div class="sc s3">
+            <div class="sn">20+</div>
+            <div class="sl2">Outils au quotidien</div>
           </div>
         </div>
       </div>
@@ -1610,38 +492,44 @@
   <!-- EXPERTISE -->
   <section class="expertise" id="expertise">
     <div class="container">
-      <div class="animate-on-scroll" style="text-align: center; max-width: 600px; margin: 0 auto;">
-        <span class="section-label">Ce sur quoi j'interviens</span>
-        <h2 class="section-title">Domaines <strong>d'expertise</strong></h2>
+      <div class="exp-hd anim">
+        <span class="sl sl-dark">L&agrave; o&ugrave; j'interviens</span>
+        <h2 class="st light" style="margin-top:4px;">Domaines <strong>d'expertise</strong></h2>
       </div>
-      <div class="expertise-grid">
-        <div class="expertise-card animate-on-scroll stagger-1">
-          <div class="expertise-icon">
-            <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+    </div>
+    <div class="container" style="padding:0;">
+      <div class="exp-grid">
+        <div class="exp-card anim s1">
+          <span class="exp-num">01</span>
+          <div class="exp-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
           </div>
           <h3>Revenue, Growth &amp; Funnel</h3>
-          <p>Structuration de funnels B2B (inbound &amp; outbound). Qualification, scoring et nurturing. Pilotage MQL / SQL.</p>
+          <p>Structuration de funnels B2B inbound et outbound, avec une approche <strong>Account-Based Marketing (ABM)</strong> sur les comptes cibles. Qualification, scoring et pilotage des flux MQL / SQL.</p>
         </div>
-        <div class="expertise-card animate-on-scroll stagger-2">
-          <div class="expertise-icon">
-            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        <div class="exp-card anim s2">
+          <span class="exp-num">02</span>
+          <div class="exp-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
           </div>
           <h3>CRM &amp; Operations</h3>
-          <p>Architecture et administration CRM. Structuration des pipelines et du lifecycle client. R&egrave;gles de qualification, SLA et attribution.</p>
+          <p>Configuration CRM, structuration des pipelines et du lifecycle client, avec les r&egrave;gles de qualification, SLA et attribution qui vont avec.</p>
         </div>
-        <div class="expertise-card animate-on-scroll stagger-3">
-          <div class="expertise-icon">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+        <div class="exp-card anim s3">
+          <span class="exp-num">03</span>
+          <div class="exp-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06A1.65 1.65 0 004.6 9a1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9z"/></svg>
           </div>
           <h3>Automation &amp; Data</h3>
-          <p>Automatisation des workflows marketing et sales. Routing et enrichissement des donn&eacute;es. Synchronisation multi-outils.</p>
+          <p>Automatisation des workflows cl&eacute;s entre marketing, sales et produit. Routing, enrichissement et synchronisation de donn&eacute;es entre outils.</p>
         </div>
-        <div class="expertise-card animate-on-scroll stagger-4">
-          <div class="expertise-icon">
-            <svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M18 9l-5 5-4-4-3 3"/></svg>
+        <div class="exp-card anim s4">
+          <span class="exp-num">04</span>
+          <div class="exp-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 9l-5 5-4-4-3 3"/></svg>
           </div>
           <h3>Reporting &amp; Aide &agrave; la d&eacute;cision</h3>
-          <p>Reporting op&eacute;rationnel et strat&eacute;gique. Suivi de la performance. Collaboration transverse marketing, sales, produit et tech.</p>
+          <p>Construction de dashboards op&eacute;rationnels et strat&eacute;giques. Pilotage de la performance pipeline et des indicateurs cl&eacute;s.</p>
         </div>
       </div>
     </div>
@@ -1650,319 +538,102 @@
   <!-- STACK -->
   <section class="stack" id="stack">
     <div class="container">
-      <div class="stack-intro animate-on-scroll">
-        <span class="section-label">Stack technique</span>
-        <h2 class="section-title">Les <strong>outils</strong> que je ma&icirc;trise</h2>
+      <div class="stack-hd anim">
+        <span class="sl">Stack technique</span>
+        <h2 class="st" style="margin-top:4px;">Les <strong>outils</strong> que j'utilise</h2>
         <p>Une stack compl&egrave;te pour couvrir l'ensemble du cycle revenue.</p>
       </div>
+      <!-- titres restent dans le container -->
     </div>
-
-    <!-- Row 1 - Scrolling left -->
-    <div class="stack-row">
-      <div class="stack-carousel-wrapper">
-        <div class="stack-carousel" id="stackCarousel1">
-          <!-- HubSpot -->
-          <div class="stack-item">
-            <div class="stack-item-logo">
-              <svg viewBox="0 0 24 24" fill="#FF7A59"><path d="M18.164 7.93V5.084a2.198 2.198 0 001.267-1.984 2.21 2.21 0 00-4.42 0c0 .876.52 1.626 1.267 1.984v2.87a5.206 5.206 0 00-2.576 1.257L6.428 3.858a2.09 2.09 0 00.056-.466 2.044 2.044 0 00-4.088 0 2.044 2.044 0 002.044 2.044c.378 0 .728-.104 1.032-.28l7.19 5.353a5.2 5.2 0 00-.236 1.558c0 .553.085 1.085.244 1.585l-7.156 5.33a2.024 2.024 0 00-1.074-.31 2.044 2.044 0 102.044 2.044 2.04 2.04 0 00-.058-.478l7.108-5.292a5.214 5.214 0 002.538 1.108v2.894a2.2 2.2 0 00-1.268 1.978 2.21 2.21 0 004.42 0 2.2 2.2 0 00-1.267-1.978v-2.894a5.238 5.238 0 003.126-7.61 5.238 5.238 0 00-3.126-2.455zm-.992 7.61a2.327 2.327 0 01-2.328-2.327 2.327 2.327 0 014.656 0 2.327 2.327 0 01-2.328 2.328z"/></svg>
-            </div>
-            <span class="stack-item-name">HubSpot</span>
-          </div>
-          <!-- Pipedrive -->
-          <div class="stack-item">
-            <div class="stack-item-logo">
-              <svg viewBox="0 0 24 24" fill="#017737"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm-.8 4.8h1.6v6.4h-1.6V4.8zm.8 11.2a1.6 1.6 0 110-3.2 1.6 1.6 0 010 3.2z"/></svg>
-            </div>
-            <span class="stack-item-name">Pipedrive</span>
-          </div>
-          <!-- noCRM -->
-          <div class="stack-item">
-            <div class="stack-item-logo">
-              <svg viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#3F6EE8"/><text x="12" y="15" text-anchor="middle" fill="white" font-size="7" font-weight="700" font-family="Arial">noCRM</text></svg>
-            </div>
-            <span class="stack-item-name">noCRM</span>
-          </div>
-          <!-- Make.com -->
-          <div class="stack-item">
-            <div class="stack-item-logo">
-              <svg viewBox="0 0 24 24" fill="#6D00CC"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/></svg>
-            </div>
-            <span class="stack-item-name">Make</span>
-          </div>
-          <!-- n8n -->
-          <div class="stack-item">
-            <div class="stack-item-logo">
-              <svg viewBox="0 0 24 24" fill="#EA4B71"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-1 17H7v-4h4v4zm6 0h-4v-6h4v6zm0-8h-4V7h4v2zm-6 0H7V5h4v4z"/></svg>
-            </div>
-            <span class="stack-item-name">n8n</span>
-          </div>
-          <!-- Zapier -->
-          <div class="stack-item">
-            <div class="stack-item-logo">
-              <svg viewBox="0 0 24 24" fill="#FF4A00"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm5.5 13h-3.086l2.18 2.18a.75.75 0 01-1.06 1.06L13.5 14.086V17a.75.75 0 01-1.5 0v-2.914l-2.034 2.034a.75.75 0 11-1.06-1.06L11.086 13H8a.75.75 0 010-1.5h3.086l-2.18-2.18a.75.75 0 111.06-1.06l2.034 2.034V7.5a.75.75 0 011.5 0v2.914l2.034-2.034a.75.75 0 111.06 1.06L14.414 11.5H17.5a.75.75 0 010 1.5z"/></svg>
-            </div>
-            <span class="stack-item-name">Zapier</span>
-          </div>
-          <!-- Lemlist -->
-          <div class="stack-item">
-            <div class="stack-item-logo">
-              <svg viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#5B61EB"/><text x="12" y="15" text-anchor="middle" fill="white" font-size="6" font-weight="700" font-family="Arial">lemlist</text></svg>
-            </div>
-            <span class="stack-item-name">Lemlist</span>
-          </div>
-          <!-- Reply.io -->
-          <div class="stack-item">
-            <div class="stack-item-logo">
-              <svg viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#4353FF"/><path d="M7 8l4 4-4 4" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 16h5" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg>
-            </div>
-            <span class="stack-item-name">Reply.io</span>
-          </div>
-          <!-- Sales Navigator (LinkedIn) -->
-          <div class="stack-item">
-            <div class="stack-item-logo">
-              <svg viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            </div>
-            <span class="stack-item-name">Sales Nav</span>
-          </div>
-          <!-- Duplicate for seamless loop -->
-          <div class="stack-item">
-            <div class="stack-item-logo">
-              <svg viewBox="0 0 24 24" fill="#FF7A59"><path d="M18.164 7.93V5.084a2.198 2.198 0 001.267-1.984 2.21 2.21 0 00-4.42 0c0 .876.52 1.626 1.267 1.984v2.87a5.206 5.206 0 00-2.576 1.257L6.428 3.858a2.09 2.09 0 00.056-.466 2.044 2.044 0 00-4.088 0 2.044 2.044 0 002.044 2.044c.378 0 .728-.104 1.032-.28l7.19 5.353a5.2 5.2 0 00-.236 1.558c0 .553.085 1.085.244 1.585l-7.156 5.33a2.024 2.024 0 00-1.074-.31 2.044 2.044 0 102.044 2.044 2.04 2.04 0 00-.058-.478l7.108-5.292a5.214 5.214 0 002.538 1.108v2.894a2.2 2.2 0 00-1.268 1.978 2.21 2.21 0 004.42 0 2.2 2.2 0 00-1.267-1.978v-2.894a5.238 5.238 0 003.126-7.61 5.238 5.238 0 00-3.126-2.455zm-.992 7.61a2.327 2.327 0 01-2.328-2.327 2.327 2.327 0 014.656 0 2.327 2.327 0 01-2.328 2.328z"/></svg>
-            </div>
-            <span class="stack-item-name">HubSpot</span>
-          </div>
-          <div class="stack-item">
-            <div class="stack-item-logo">
-              <svg viewBox="0 0 24 24" fill="#017737"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm-.8 4.8h1.6v6.4h-1.6V4.8zm.8 11.2a1.6 1.6 0 110-3.2 1.6 1.6 0 010 3.2z"/></svg>
-            </div>
-            <span class="stack-item-name">Pipedrive</span>
-          </div>
-          <div class="stack-item">
-            <div class="stack-item-logo">
-              <svg viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#3F6EE8"/><text x="12" y="15" text-anchor="middle" fill="white" font-size="7" font-weight="700" font-family="Arial">noCRM</text></svg>
-            </div>
-            <span class="stack-item-name">noCRM</span>
-          </div>
-          <div class="stack-item">
-            <div class="stack-item-logo">
-              <svg viewBox="0 0 24 24" fill="#6D00CC"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/></svg>
-            </div>
-            <span class="stack-item-name">Make</span>
-          </div>
-          <div class="stack-item">
-            <div class="stack-item-logo">
-              <svg viewBox="0 0 24 24" fill="#EA4B71"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-1 17H7v-4h4v4zm6 0h-4v-6h4v6zm0-8h-4V7h4v2zm-6 0H7V5h4v4z"/></svg>
-            </div>
-            <span class="stack-item-name">n8n</span>
-          </div>
-          <div class="stack-item">
-            <div class="stack-item-logo">
-              <svg viewBox="0 0 24 24" fill="#FF4A00"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm5.5 13h-3.086l2.18 2.18a.75.75 0 01-1.06 1.06L13.5 14.086V17a.75.75 0 01-1.5 0v-2.914l-2.034 2.034a.75.75 0 11-1.06-1.06L11.086 13H8a.75.75 0 010-1.5h3.086l-2.18-2.18a.75.75 0 111.06-1.06l2.034 2.034V7.5a.75.75 0 011.5 0v2.914l2.034-2.034a.75.75 0 111.06 1.06L14.414 11.5H17.5a.75.75 0 010 1.5z"/></svg>
-            </div>
-            <span class="stack-item-name">Zapier</span>
-          </div>
-          <div class="stack-item">
-            <div class="stack-item-logo">
-              <svg viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#5B61EB"/><text x="12" y="15" text-anchor="middle" fill="white" font-size="6" font-weight="700" font-family="Arial">lemlist</text></svg>
-            </div>
-            <span class="stack-item-name">Lemlist</span>
-          </div>
-          <div class="stack-item">
-            <div class="stack-item-logo">
-              <svg viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#4353FF"/><path d="M7 8l4 4-4 4" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 16h5" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg>
-            </div>
-            <span class="stack-item-name">Reply.io</span>
-          </div>
-          <div class="stack-item">
-            <div class="stack-item-logo">
-              <svg viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            </div>
-            <span class="stack-item-name">Sales Nav</span>
-          </div>
+    <!-- marquee pleine largeur hors container -->
+    <div class="marquee-wrap anim">
+      <!-- Ligne 1 : CRM · Automation · Outbound (dupliqué pour loop) -->
+      <div class="marquee-row">
+        <div class="marquee-track">
+          <div class="marquee-item"><img src="https://cdn.simpleicons.org/hubspot/FF7A59" alt="HubSpot"><span>HubSpot</span></div>
+          <div class="marquee-item"><img src="https://www.google.com/s2/favicons?domain=pipedrive.com&sz=128" alt="Pipedrive" class="fav"><span>Pipedrive</span></div>
+          <div class="marquee-item"><img src="https://www.google.com/s2/favicons?domain=nocrm.io&sz=128" alt="noCRM" class="fav"><span>noCRM</span></div>
+          <div class="marquee-item"><img src="https://cdn.simpleicons.org/make/6D00CC" alt="Make"><span>Make</span></div>
+          <div class="marquee-item"><img src="https://cdn.simpleicons.org/n8n/EA4B71" alt="n8n"><span>n8n</span></div>
+          <div class="marquee-item"><img src="https://cdn.simpleicons.org/zapier/FF4A00" alt="Zapier"><span>Zapier</span></div>
+          <div class="marquee-item"><img src="https://www.google.com/s2/favicons?domain=lemlist.com&sz=128" alt="Lemlist" class="fav"><span>Lemlist</span></div>
+          <div class="marquee-item"><img src="https://www.google.com/s2/favicons?domain=reply.io&sz=128" alt="Reply.io" class="fav"><span>Reply.io</span></div>
+          <div class="marquee-item"><img src="https://www.google.com/s2/favicons?domain=linkedin.com&sz=128" alt="Sales Nav" class="fav"><span>Sales Navigator</span></div>
+          <!-- duplicate for seamless loop -->
+          <div class="marquee-item"><img src="https://cdn.simpleicons.org/hubspot/FF7A59" alt="HubSpot"><span>HubSpot</span></div>
+          <div class="marquee-item"><img src="https://www.google.com/s2/favicons?domain=pipedrive.com&sz=128" alt="Pipedrive" class="fav"><span>Pipedrive</span></div>
+          <div class="marquee-item"><img src="https://www.google.com/s2/favicons?domain=nocrm.io&sz=128" alt="noCRM" class="fav"><span>noCRM</span></div>
+          <div class="marquee-item"><img src="https://cdn.simpleicons.org/make/6D00CC" alt="Make"><span>Make</span></div>
+          <div class="marquee-item"><img src="https://cdn.simpleicons.org/n8n/EA4B71" alt="n8n"><span>n8n</span></div>
+          <div class="marquee-item"><img src="https://cdn.simpleicons.org/zapier/FF4A00" alt="Zapier"><span>Zapier</span></div>
+          <div class="marquee-item"><img src="https://www.google.com/s2/favicons?domain=lemlist.com&sz=128" alt="Lemlist" class="fav"><span>Lemlist</span></div>
+          <div class="marquee-item"><img src="https://www.google.com/s2/favicons?domain=reply.io&sz=128" alt="Reply.io" class="fav"><span>Reply.io</span></div>
+          <div class="marquee-item"><img src="https://www.google.com/s2/favicons?domain=linkedin.com&sz=128" alt="Sales Nav" class="fav"><span>Sales Navigator</span></div>
         </div>
       </div>
-    </div>
-
-    <!-- Row 2 - Scrolling right (reverse) -->
-    <div class="stack-row">
-      <div class="stack-carousel-wrapper">
-        <div class="stack-carousel reverse" id="stackCarousel2">
-          <!-- Livestorm -->
-          <div class="stack-item">
-            <div class="stack-item-logo">
-              <svg viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#4633FF"/><polygon points="10,7 17,12 10,17" fill="white"/></svg>
-            </div>
-            <span class="stack-item-name">Livestorm</span>
-          </div>
-          <!-- FullEnrich -->
-          <div class="stack-item">
-            <div class="stack-item-logo">
-              <svg viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#6366F1"/><path d="M12 6v12M6 12h12" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg>
-            </div>
-            <span class="stack-item-name">FullEnrich</span>
-          </div>
-          <!-- Dropcontact -->
-          <div class="stack-item">
-            <div class="stack-item-logo">
-              <svg viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#00D4AA"/><path d="M12 5c-2.5 5-5 7.5-5 11a5 5 0 0010 0c0-3.5-2.5-6-5-11z" fill="white"/></svg>
-            </div>
-            <span class="stack-item-name">Dropcontact</span>
-          </div>
-          <!-- Phantombuster -->
-          <div class="stack-item">
-            <div class="stack-item-logo">
-              <svg viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#5B21B6"/><circle cx="12" cy="9" r="4" fill="white"/><path d="M6 19c0-3.3 2.7-6 6-6s6 2.7 6 6" fill="white"/></svg>
-            </div>
-            <span class="stack-item-name">Phantombuster</span>
-          </div>
-          <!-- GA4 -->
-          <div class="stack-item">
-            <div class="stack-item-logo">
-              <svg viewBox="0 0 24 24" fill="#E37400"><path d="M22.84 2.998v17.876c0 .71-.59 1.286-1.32 1.286h-3.96c-.73 0-1.32-.576-1.32-1.286V2.998c0-.71.59-1.286 1.32-1.286h3.96c.73 0 1.32.576 1.32 1.286zM7.76 22.16h3.96c.73 0 1.32-.576 1.32-1.286v-8.938c0-.71-.59-1.286-1.32-1.286H7.76c-.73 0-1.32.576-1.32 1.286v8.938c0 .71.59 1.286 1.32 1.286zM1.16 22.16H5.12c.73 0 1.32-.576 1.32-1.286v-3.938c0-.71-.59-1.286-1.32-1.286H1.16c-.73 0-1.32.576-1.32 1.286v3.938c0 .71.59 1.286 1.32 1.286z"/></svg>
-            </div>
-            <span class="stack-item-name">GA4</span>
-          </div>
-          <!-- Google Ads -->
-          <div class="stack-item">
-            <div class="stack-item-logo">
-              <svg viewBox="0 0 24 24"><circle cx="6" cy="18" r="4" fill="#FBBC04"/><circle cx="18" cy="6" r="4" fill="#4285F4"/><rect x="4" y="10" width="16" height="4" rx="2" fill="#34A853" transform="rotate(-25 12 12)"/></svg>
-            </div>
-            <span class="stack-item-name">Google Ads</span>
-          </div>
-          <!-- LinkedIn Ads -->
-          <div class="stack-item">
-            <div class="stack-item-logo">
-              <svg viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            </div>
-            <span class="stack-item-name">LinkedIn Ads</span>
-          </div>
-          <!-- Sarbacane -->
-          <div class="stack-item">
-            <div class="stack-item-logo">
-              <svg viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#00C2D1"/><path d="M5 8l7 4 7-4M5 12l7 4 7-4" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
-            </div>
-            <span class="stack-item-name">Sarbacane</span>
-          </div>
-          <!-- User.com -->
-          <div class="stack-item">
-            <div class="stack-item-logo">
-              <svg viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#0066FF"/><circle cx="12" cy="9" r="4" fill="white"/><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7" fill="white"/></svg>
-            </div>
-            <span class="stack-item-name">User.com</span>
-          </div>
-          <!-- ChatGPT/OpenAI -->
-          <div class="stack-item">
-            <div class="stack-item-logo">
-              <svg viewBox="0 0 24 24" fill="#10A37F"><path d="M22.282 9.821a5.985 5.985 0 0 0-.516-4.91 6.046 6.046 0 0 0-6.51-2.9A6.065 6.065 0 0 0 4.981 4.18a5.985 5.985 0 0 0-3.998 2.9 6.046 6.046 0 0 0 .743 7.097 5.98 5.98 0 0 0 .51 4.911 6.051 6.051 0 0 0 6.515 2.9A5.985 5.985 0 0 0 13.26 24a6.056 6.056 0 0 0 5.772-4.206 5.99 5.99 0 0 0 3.997-2.9 6.056 6.056 0 0 0-.747-7.073zM13.26 22.43a4.476 4.476 0 0 1-2.876-1.04l.141-.081 4.779-2.758a.795.795 0 0 0 .392-.681v-6.737l2.02 1.168a.071.071 0 0 1 .038.052v5.583a4.504 4.504 0 0 1-4.494 4.494zM3.6 18.304a4.47 4.47 0 0 1-.535-3.014l.142.085 4.783 2.759a.771.771 0 0 0 .78 0l5.843-3.369v2.332a.08.08 0 0 1-.033.062L9.74 19.95a4.5 4.5 0 0 1-6.14-1.646zM2.34 7.896a4.485 4.485 0 0 1 2.366-1.973V11.6a.766.766 0 0 0 .388.676l5.815 3.355-2.02 1.168a.076.076 0 0 1-.071 0l-4.83-2.786A4.504 4.504 0 0 1 2.34 7.872zm16.597 3.855l-5.833-3.387L15.119 7.2a.076.076 0 0 1 .071 0l4.83 2.791a4.494 4.494 0 0 1-.676 8.105v-5.678a.79.79 0 0 0-.407-.667zm2.01-3.023l-.141-.085-4.774-2.782a.776.776 0 0 0-.785 0L9.409 9.23V6.897a.066.066 0 0 1 .028-.061l4.83-2.787a4.5 4.5 0 0 1 6.68 4.66zm-12.64 4.135l-2.02-1.164a.08.08 0 0 1-.038-.057V6.075a4.5 4.5 0 0 1 7.375-3.453l-.142.08L8.704 5.46a.795.795 0 0 0-.393.681zm1.097-2.365l2.602-1.5 2.607 1.5v2.999l-2.597 1.5-2.607-1.5z"/></svg>
-            </div>
-            <span class="stack-item-name">ChatGPT</span>
-          </div>
-          <!-- Duplicate for seamless loop -->
-          <div class="stack-item">
-            <div class="stack-item-logo">
-              <svg viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#4633FF"/><polygon points="10,7 17,12 10,17" fill="white"/></svg>
-            </div>
-            <span class="stack-item-name">Livestorm</span>
-          </div>
-          <div class="stack-item">
-            <div class="stack-item-logo">
-              <svg viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#6366F1"/><path d="M12 6v12M6 12h12" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg>
-            </div>
-            <span class="stack-item-name">FullEnrich</span>
-          </div>
-          <div class="stack-item">
-            <div class="stack-item-logo">
-              <svg viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#00D4AA"/><path d="M12 5c-2.5 5-5 7.5-5 11a5 5 0 0010 0c0-3.5-2.5-6-5-11z" fill="white"/></svg>
-            </div>
-            <span class="stack-item-name">Dropcontact</span>
-          </div>
-          <div class="stack-item">
-            <div class="stack-item-logo">
-              <svg viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#5B21B6"/><circle cx="12" cy="9" r="4" fill="white"/><path d="M6 19c0-3.3 2.7-6 6-6s6 2.7 6 6" fill="white"/></svg>
-            </div>
-            <span class="stack-item-name">Phantombuster</span>
-          </div>
-          <div class="stack-item">
-            <div class="stack-item-logo">
-              <svg viewBox="0 0 24 24" fill="#E37400"><path d="M22.84 2.998v17.876c0 .71-.59 1.286-1.32 1.286h-3.96c-.73 0-1.32-.576-1.32-1.286V2.998c0-.71.59-1.286 1.32-1.286h3.96c.73 0 1.32.576 1.32 1.286zM7.76 22.16h3.96c.73 0 1.32-.576 1.32-1.286v-8.938c0-.71-.59-1.286-1.32-1.286H7.76c-.73 0-1.32.576-1.32 1.286v8.938c0 .71.59 1.286 1.32 1.286zM1.16 22.16H5.12c.73 0 1.32-.576 1.32-1.286v-3.938c0-.71-.59-1.286-1.32-1.286H1.16c-.73 0-1.32.576-1.32 1.286v3.938c0 .71.59 1.286 1.32 1.286z"/></svg>
-            </div>
-            <span class="stack-item-name">GA4</span>
-          </div>
-          <div class="stack-item">
-            <div class="stack-item-logo">
-              <svg viewBox="0 0 24 24"><circle cx="6" cy="18" r="4" fill="#FBBC04"/><circle cx="18" cy="6" r="4" fill="#4285F4"/><rect x="4" y="10" width="16" height="4" rx="2" fill="#34A853" transform="rotate(-25 12 12)"/></svg>
-            </div>
-            <span class="stack-item-name">Google Ads</span>
-          </div>
-          <div class="stack-item">
-            <div class="stack-item-logo">
-              <svg viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            </div>
-            <span class="stack-item-name">LinkedIn Ads</span>
-          </div>
-          <div class="stack-item">
-            <div class="stack-item-logo">
-              <svg viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#00C2D1"/><path d="M5 8l7 4 7-4M5 12l7 4 7-4" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
-            </div>
-            <span class="stack-item-name">Sarbacane</span>
-          </div>
-          <div class="stack-item">
-            <div class="stack-item-logo">
-              <svg viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#0066FF"/><circle cx="12" cy="9" r="4" fill="white"/><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7" fill="white"/></svg>
-            </div>
-            <span class="stack-item-name">User.com</span>
-          </div>
-          <div class="stack-item">
-            <div class="stack-item-logo">
-              <svg viewBox="0 0 24 24" fill="#10A37F"><path d="M22.282 9.821a5.985 5.985 0 0 0-.516-4.91 6.046 6.046 0 0 0-6.51-2.9A6.065 6.065 0 0 0 4.981 4.18a5.985 5.985 0 0 0-3.998 2.9 6.046 6.046 0 0 0 .743 7.097 5.98 5.98 0 0 0 .51 4.911 6.051 6.051 0 0 0 6.515 2.9A5.985 5.985 0 0 0 13.26 24a6.056 6.056 0 0 0 5.772-4.206 5.99 5.99 0 0 0 3.997-2.9 6.056 6.056 0 0 0-.747-7.073zM13.26 22.43a4.476 4.476 0 0 1-2.876-1.04l.141-.081 4.779-2.758a.795.795 0 0 0 .392-.681v-6.737l2.02 1.168a.071.071 0 0 1 .038.052v5.583a4.504 4.504 0 0 1-4.494 4.494zM3.6 18.304a4.47 4.47 0 0 1-.535-3.014l.142.085 4.783 2.759a.771.771 0 0 0 .78 0l5.843-3.369v2.332a.08.08 0 0 1-.033.062L9.74 19.95a4.5 4.5 0 0 1-6.14-1.646zM2.34 7.896a4.485 4.485 0 0 1 2.366-1.973V11.6a.766.766 0 0 0 .388.676l5.815 3.355-2.02 1.168a.076.076 0 0 1-.071 0l-4.83-2.786A4.504 4.504 0 0 1 2.34 7.872zm16.597 3.855l-5.833-3.387L15.119 7.2a.076.076 0 0 1 .071 0l4.83 2.791a4.494 4.494 0 0 1-.676 8.105v-5.678a.79.79 0 0 0-.407-.667zm2.01-3.023l-.141-.085-4.774-2.782a.776.776 0 0 0-.785 0L9.409 9.23V6.897a.066.066 0 0 1 .028-.061l4.83-2.787a4.5 4.5 0 0 1 6.68 4.66zm-12.64 4.135l-2.02-1.164a.08.08 0 0 1-.038-.057V6.075a4.5 4.5 0 0 1 7.375-3.453l-.142.08L8.704 5.46a.795.795 0 0 0-.393.681zm1.097-2.365l2.602-1.5 2.607 1.5v2.999l-2.597 1.5-2.607-1.5z"/></svg>
-            </div>
-            <span class="stack-item-name">ChatGPT</span>
-          </div>
+      <!-- Ligne 2 : Enrichissement · Marketing Auto · Analytics (sens inverse) -->
+      <div class="marquee-row">
+        <div class="marquee-track rev">
+          <div class="marquee-item"><img src="https://www.google.com/s2/favicons?domain=dropcontact.com&sz=128" alt="Dropcontact" class="fav"><span>Dropcontact</span></div>
+          <div class="marquee-item"><img src="https://www.google.com/s2/favicons?domain=fullenrich.com&sz=128" alt="FullEnrich" class="fav"><span>FullEnrich</span></div>
+          <div class="marquee-item"><img src="https://www.google.com/s2/favicons?domain=phantombuster.com&sz=128" alt="Phantombuster" class="fav"><span>PhantomBuster</span></div>
+          <div class="marquee-item"><img src="https://www.google.com/s2/favicons?domain=sarbacane.com&sz=128" alt="Sarbacane" class="fav"><span>Sarbacane</span></div>
+          <div class="marquee-item"><img src="https://www.google.com/s2/favicons?domain=user.com&sz=128" alt="User.com" class="fav"><span>User.com</span></div>
+          <div class="marquee-item"><img src="https://cdn.simpleicons.org/googleanalytics/E37400" alt="GA4"><span>GA4</span></div>
+          <div class="marquee-item"><img src="https://cdn.simpleicons.org/googleads/4285F4" alt="Google Ads"><span>Google Ads</span></div>
+          <div class="marquee-item"><img src="https://www.google.com/s2/favicons?domain=linkedin.com&sz=128" alt="LinkedIn Ads" class="fav"><span>LinkedIn Ads</span></div>
+          <div class="marquee-item"><img src="https://www.google.com/s2/favicons?domain=openai.com&sz=128" alt="ChatGPT" class="fav"><span>ChatGPT</span></div>
+          <div class="marquee-item"><img src="https://www.google.com/s2/favicons?domain=livestorm.co&sz=128" alt="Livestorm" class="fav"><span>Livestorm</span></div>
+          <!-- duplicate -->
+          <div class="marquee-item"><img src="https://www.google.com/s2/favicons?domain=dropcontact.com&sz=128" alt="Dropcontact" class="fav"><span>Dropcontact</span></div>
+          <div class="marquee-item"><img src="https://www.google.com/s2/favicons?domain=fullenrich.com&sz=128" alt="FullEnrich" class="fav"><span>FullEnrich</span></div>
+          <div class="marquee-item"><img src="https://www.google.com/s2/favicons?domain=phantombuster.com&sz=128" alt="Phantombuster" class="fav"><span>PhantomBuster</span></div>
+          <div class="marquee-item"><img src="https://www.google.com/s2/favicons?domain=sarbacane.com&sz=128" alt="Sarbacane" class="fav"><span>Sarbacane</span></div>
+          <div class="marquee-item"><img src="https://www.google.com/s2/favicons?domain=user.com&sz=128" alt="User.com" class="fav"><span>User.com</span></div>
+          <div class="marquee-item"><img src="https://cdn.simpleicons.org/googleanalytics/E37400" alt="GA4"><span>GA4</span></div>
+          <div class="marquee-item"><img src="https://cdn.simpleicons.org/googleads/4285F4" alt="Google Ads"><span>Google Ads</span></div>
+          <div class="marquee-item"><img src="https://www.google.com/s2/favicons?domain=linkedin.com&sz=128" alt="LinkedIn Ads" class="fav"><span>LinkedIn Ads</span></div>
+          <div class="marquee-item"><img src="https://www.google.com/s2/favicons?domain=openai.com&sz=128" alt="ChatGPT" class="fav"><span>ChatGPT</span></div>
+          <div class="marquee-item"><img src="https://www.google.com/s2/favicons?domain=livestorm.co&sz=128" alt="Livestorm" class="fav"><span>Livestorm</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- LEAD MAGNETS -->
-  <section class="lead-magnets" id="lead-magnets">
+  <!-- PROJETS -->
+  <section class="projets" id="projets">
     <div class="container">
-      <div class="lead-magnets-intro animate-on-scroll">
-        <span class="section-label">Projets</span>
-        <h2 class="section-title">Mes <strong>Lead Magnets</strong></h2>
-        <p>Des outils interactifs que j'ai con&ccedil;us pour g&eacute;n&eacute;rer des leads qualifi&eacute;s.</p>
+      <div class="projets-hd anim">
+        <span class="sl">Projets</span>
+        <h2 class="st" style="margin-top:4px;">Mes <strong>Projets</strong></h2>
       </div>
-      <div class="lead-magnets-grid">
-        <a href="https://black-friday-simulator.user.com" target="_blank" class="lead-magnet-card animate-on-scroll stagger-1">
-          <div class="lead-magnet-preview">
-            <iframe src="https://black-friday-simulator.user.com" title="Black Friday Simulator" loading="lazy"></iframe>
-            <div class="lead-magnet-preview-overlay"></div>
+      <p class="projets-sub anim">Des outils interactifs que j'ai con&ccedil;us pour g&eacute;n&eacute;rer des leads qualifi&eacute;s.</p>
+      <div class="projets-grid">
+        <a href="https://black-friday-simulator.user.com" target="_blank" class="projet-card anim s1">
+          <div class="projet-preview">
+            <img src="lead-magnet-black-friday.jpg" alt="Black Friday Booster">
           </div>
-          <div class="lead-magnet-content">
-            <span class="lead-magnet-badge">Simulateur</span>
+          <div class="projet-content">
+            <span class="projet-badge">Simulateur</span>
             <h3>Black Friday Booster</h3>
-            <p>Simulateur interactif pour planifier et optimiser les campagnes Black Friday. Calcul du ROI et recommandations personnalis&eacute;es.</p>
-            <span class="lead-magnet-link">
+            <p>Simulateur cr&eacute;&eacute; pour User.com : aide les &eacute;quipes marketing &agrave; projeter le ROI de leurs campagnes Black Friday et &agrave; g&eacute;n&eacute;rer des recommandations automation personnalis&eacute;es.</p>
+            <span class="projet-link">
               D&eacute;couvrir
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </span>
           </div>
         </a>
-        <a href="https://smart-plan.sarbacane.com" target="_blank" class="lead-magnet-card animate-on-scroll stagger-2">
-          <div class="lead-magnet-preview">
-            <iframe src="https://smart-plan.sarbacane.com" title="Smart Plan Sarbacane" loading="lazy"></iframe>
-            <div class="lead-magnet-preview-overlay"></div>
+        <a href="https://smart-plan.sarbacane.com" target="_blank" class="projet-card anim s2">
+          <div class="projet-preview">
+            <img src="lead-magnet-smart-plan.jpg" alt="Smart Plan">
           </div>
-          <div class="lead-magnet-content">
-            <span class="lead-magnet-badge">Planificateur</span>
+          <div class="projet-content">
+            <span class="projet-badge">Planificateur</span>
             <h3>Smart Plan</h3>
-            <p>Outil de planification intelligent pour structurer sa strat&eacute;gie emailing annuelle. G&eacute;n&eacute;ration automatique du calendrier marketing.</p>
-            <span class="lead-magnet-link">
+            <p>Planificateur de strat&eacute;gie emailing con&ccedil;u pour Sarbacane : &agrave; partir du domaine et des objectifs, g&eacute;n&egrave;re automatiquement un calendrier marketing annuel.</p>
+            <span class="projet-link">
               D&eacute;couvrir
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </span>
           </div>
         </a>
@@ -1970,49 +641,65 @@
     </div>
   </section>
 
-  <!-- MAKE SCENARIOS -->
-  <section class="make-scenarios" id="scenarios">
+  <!-- SCÉNARIOS MAKE -->
+  <section class="scenarios" id="scenarios">
     <div class="container">
-      <div class="make-scenarios-intro animate-on-scroll">
-        <span class="section-label">Automatisations</span>
-        <h2 class="section-title">Sc&eacute;narios <strong>Make</strong></h2>
+      <div class="scenarios-hd anim">
+        <span class="sl sl-dark">Automatisations</span>
+        <h2 class="st light" style="margin-top:4px;">Sc&eacute;narios <strong>Automations</strong></h2>
         <p>Une s&eacute;lection de workflows automatis&eacute;s que j'ai con&ccedil;us pour couvrir l'ensemble du cycle lead generation : scoring, enrichissement, outbound et routage intelligent.</p>
       </div>
-      <div class="scenarios-grid">
-        <div class="scenario-card animate-on-scroll stagger-1">
-          <div class="scenario-preview">
-            <img src="Country Score & Freemium Score Update.PNG" alt="Sc&eacute;nario Lead Scoring">
-          </div>
-          <div class="scenario-content">
-            <h4>Lead Scoring Dynamique</h4>
-            <p>Scoring automatis&eacute; bas&eacute; sur le pays et le comportement freemium. Mise &agrave; jour en temps r&eacute;el des scores dans le CRM pour prioriser les leads &agrave; fort potentiel.</p>
+    </div>
+    <div class="scenarios-grid">
+      <div class="sc-card anim s1">
+        <div class="sc-prev">
+          <img src="Country Score &amp; Freemium Score Update.PNG" alt="Lead Scoring">
+        </div>
+        <div class="sc-body">
+          <h4>Lead Scoring Dynamique</h4>
+          <p>Scoring automatis&eacute; bas&eacute; sur le pays et le comportement freemium. Mise &agrave; jour en temps r&eacute;el des scores dans le CRM pour prioriser les leads &agrave; fort potentiel.</p>
+          <div class="sc-result">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            +60% conversion MQL&rarr;SQL
           </div>
         </div>
-        <div class="scenario-card animate-on-scroll stagger-2">
-          <div class="scenario-preview">
-            <img src="Reply.io Autoamtion Expired Freemium Campaign.PNG" alt="Sc&eacute;nario Outbound Freemium">
-          </div>
-          <div class="scenario-content">
-            <h4>Campagne Outbound Auto</h4>
-            <p>D&eacute;clenchement automatique de s&eacute;quences Reply.io pour les freemiums expir&eacute;s. Personnalisation des messages selon le profil et l'historique d'usage.</p>
+      </div>
+      <div class="sc-card anim s2">
+        <div class="sc-prev">
+          <img src="Reply.io Autoamtion Expired Freemium Campaign.PNG" alt="Campagne Outbound">
+        </div>
+        <div class="sc-body">
+          <h4>Campagne Outbound Auto</h4>
+          <p>D&eacute;clenchement automatique de s&eacute;quences Reply.io pour les freemiums expir&eacute;s. Personnalisation des messages selon le profil et l'historique d'usage.</p>
+          <div class="sc-result">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            +250 d&eacute;mos g&eacute;n&eacute;r&eacute;es
           </div>
         </div>
-        <div class="scenario-card animate-on-scroll stagger-3">
-          <div class="scenario-preview">
-            <img src="Reply.io Positive response to sql mql nocrm.PNG" alt="Sc&eacute;nario Routage Leads">
-          </div>
-          <div class="scenario-content">
-            <h4>Routage Intelligent des Leads</h4>
-            <p>Routing automatique vers les sales selon les retours de campagne. Les r&eacute;ponses positives passent en SQL/MQL et sont push&eacute;es dans noCRM pour traitement imm&eacute;diat.</p>
+      </div>
+      <div class="sc-card anim s3">
+        <div class="sc-prev">
+          <img src="Reply.io Positive response to sql mql nocrm.PNG" alt="Routage Leads">
+        </div>
+        <div class="sc-body">
+          <h4>Routage Intelligent des Leads</h4>
+          <p>Routing automatique vers les sales selon les retours de campagne. Les r&eacute;ponses positives passent en SQL/MQL et sont push&eacute;es dans noCRM pour traitement imm&eacute;diat.</p>
+          <div class="sc-result">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            0 leads perdus, routing temps r&eacute;el
           </div>
         </div>
-        <div class="scenario-card animate-on-scroll stagger-4">
-          <div class="scenario-preview">
-            <img src="Smart Gain into CRM.PNG" alt="Sc&eacute;nario LinkedIn Ads to CRM">
-          </div>
-          <div class="scenario-content">
-            <h4>LinkedIn Ads &rarr; CRM Enrichi</h4>
-            <p>Pipeline complet depuis LinkedIn Ads : capture du formulaire, enrichissement data (Dropcontact), recherche infos soci&eacute;t&eacute; via ChatGPT, puis injection dans le CRM avec scoring.</p>
+      </div>
+      <div class="sc-card anim s4">
+        <div class="sc-prev">
+          <img src="Smart Gain into CRM.PNG" alt="LinkedIn Ads CRM">
+        </div>
+        <div class="sc-body">
+          <h4>LinkedIn Ads &rarr; CRM Enrichi</h4>
+          <p>Pipeline complet depuis LinkedIn Ads : capture du formulaire, enrichissement data (Dropcontact), recherche infos soci&eacute;t&eacute; via ChatGPT, puis injection dans le CRM avec scoring.</p>
+          <div class="sc-result">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            Enrichissement 100% automatis&eacute;
           </div>
         </div>
       </div>
@@ -2020,110 +707,91 @@
   </section>
 
   <!-- EXPERIENCE -->
-  <section class="experience" id="experience">
+  <section class="xp" id="xp">
     <div class="container">
-      <div class="animate-on-scroll" style="text-align: center; max-width: 600px; margin: 0 auto;">
-        <span class="section-label">Parcours</span>
-        <h2 class="section-title">Exp&eacute;rience <strong>professionnelle</strong></h2>
+      <div class="xp-hd anim">
+        <span class="sl">Parcours</span>
+        <h2 class="st" style="margin-top:4px;">Exp&eacute;rience <strong>professionnelle</strong></h2>
       </div>
       <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">Juillet 2024 &mdash; Aujourd'hui</div>
-          <h3 class="timeline-title">Senior Revenue Operations / Growth Marketing</h3>
-          <p class="timeline-company">Positive &mdash; Sarbacane, User.com, noCRM</p>
-          <p class="timeline-desc">R&ocirc;le transverse entre marketing, sales et produit sur la structuration et l'op&eacute;ration des syst&egrave;mes marketing et commerciaux.</p>
-          <ul class="timeline-list">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-date">Juillet 2024 &middot; Mars 2026</div>
+          <h3 class="tl-title">Senior Revenue Operations / Growth Marketing</h3>
+          <p class="tl-co">Positive &middot; Sarbacane, User.com, noCRM</p>
+          <p class="tl-desc">Revenue operations sur trois march&eacute;s SaaS distincts en simultan&eacute;, du marketing automation jusqu'au pipeline sales.</p>
+          <ul class="tl-list">
             <li>Structuration du funnel marketing &rarr; sales (MQL / SQL)</li>
             <li>Mise en coh&eacute;rence des outils CRM, marketing automation et outreach</li>
             <li>Automatisation des process cl&eacute;s (routing, enrichissement, synchronisation de donn&eacute;es)</li>
-            <li>Collaboration &eacute;troite avec les &eacute;quipes commerciales et produit</li>
+            <li>Interface quotidienne entre marketing, sales et produit pour aligner les priorit&eacute;s et d&eacute;bloquer les sujets op&eacute;rationnels</li>
           </ul>
-          <div class="timeline-kpis">
-            <div class="kpi-item">
-              <span class="kpi-value">+2 300</span>
-              <span class="kpi-label">Comptes cr&eacute;&eacute;s / mois</span>
-            </div>
-            <div class="kpi-item">
-              <span class="kpi-value">+60%</span>
-              <span class="kpi-label">Conversion MQL&rarr;SQL</span>
-            </div>
-            <div class="kpi-item">
-              <span class="kpi-value">+250</span>
-              <span class="kpi-label">D&eacute;mos g&eacute;n&eacute;r&eacute;es</span>
-            </div>
-            <div class="kpi-item">
-              <span class="kpi-value">+20</span>
-              <span class="kpi-label">Campagnes LinkedIn Ads (2025)</span>
-            </div>
-            <div class="kpi-item">
-              <span class="kpi-value">+20</span>
-              <span class="kpi-label">Outils utilis&eacute;s au quotidien</span>
-            </div>
-            <div class="kpi-item">
-              <span class="kpi-value">10</span>
-              <span class="kpi-label">Sales &agrave; alimenter</span>
-            </div>
+          <div class="tl-kpis">
+            <div class="kpi"><span class="kpi-v">+2 300</span><span class="kpi-l">Comptes cr&eacute;&eacute;s / mois</span></div>
+            <div class="kpi"><span class="kpi-v">+60%</span><span class="kpi-l">Conversion MQL&rarr;SQL</span></div>
+            <div class="kpi"><span class="kpi-v">+250</span><span class="kpi-l">D&eacute;mos g&eacute;n&eacute;r&eacute;es</span></div>
+            <div class="kpi"><span class="kpi-v">+20</span><span class="kpi-l">Campagnes LinkedIn Ads (2025)</span></div>
+            <div class="kpi"><span class="kpi-v">10</span><span class="kpi-l">Sales &agrave; alimenter</span></div>
           </div>
         </div>
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">Juillet 2022 &mdash; Juillet 2024</div>
-          <h3 class="timeline-title">Marketing Project Manager &mdash; Acquisition</h3>
-          <p class="timeline-company">Sarbacane Software</p>
-          <p class="timeline-desc">R&ocirc;le orient&eacute; structuration et pilotage des leviers d'acquisition, avec une forte dimension transverse.</p>
-          <ul class="timeline-list">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-date">Juillet 2022 &middot; Juillet 2024</div>
+          <h3 class="tl-title">Marketing Project Manager, Acquisition</h3>
+          <p class="tl-co">Sarbacane Software</p>
+          <p class="tl-desc">Pilotage des leviers d'acquisition et de conversion, de la cr&eacute;ation d'assets au suivi de la performance.</p>
+          <ul class="tl-list">
             <li>Optimisation des parcours d'acquisition et de conversion</li>
-            <li>Cr&eacute;ation d'assets et de dispositifs orient&eacute;s sales enablement</li>
+            <li>Cr&eacute;ation d'assets et de contenus orient&eacute;s conversion et sales enablement</li>
             <li>Refonte et pilotage du programme d'affiliation</li>
-            <li>Contribution &agrave; la d&eacute;finition des priorit&eacute;s marketing et au suivi de la performance</li>
+            <li>D&eacute;finition des priorit&eacute;s marketing et suivi de la performance</li>
           </ul>
         </div>
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">Septembre 2019 &mdash; Juillet 2022</div>
-          <h3 class="timeline-title">Marketing Project Manager &mdash; Sarbacane Chat</h3>
-          <p class="timeline-company">Sarbacane Software</p>
-          <p class="timeline-desc">Participation au lancement et &agrave; la structuration marketing d'une solution SaaS, en lien &eacute;troit avec les &eacute;quipes sales et produit.</p>
-          <ul class="timeline-list">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-date">Septembre 2019 &middot; Juillet 2022</div>
+          <h3 class="tl-title">Marketing Project Manager, Sarbacane Chat</h3>
+          <p class="tl-co">Sarbacane Software</p>
+          <p class="tl-desc">Lancement et structuration marketing d'une solution SaaS chat, de la mise sur le march&eacute; au d&eacute;veloppement de l'adoption.</p>
+          <ul class="tl-list">
             <li>Pilotage marketing du produit (positionnement, activation, adoption)</li>
-            <li>Coordination marketing, sales et produit</li>
-            <li>Travail sur l'usage et l'engagement des clients</li>
+            <li>Coordination quotidienne entre marketing, sales et produit</li>
+            <li>D&eacute;veloppement de l'usage et de l'engagement client</li>
           </ul>
         </div>
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">Mars 2018 &mdash; Septembre 2019</div>
-          <h3 class="timeline-title">Consultant E-Marketing</h3>
-          <p class="timeline-company">Sarbacane Software</p>
-          <ul class="timeline-list">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-date">Mars 2018 &middot; Septembre 2019</div>
+          <h3 class="tl-title">Consultant E-Marketing</h3>
+          <p class="tl-co">Sarbacane Software</p>
+          <ul class="tl-list">
             <li>Conseil, formation et support clients sur l'ensemble des solutions marketing</li>
           </ul>
         </div>
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">2017</div>
-          <h3 class="timeline-title">Responsable Micro-Agence Web</h3>
-          <p class="timeline-company">Spark</p>
-          <ul class="timeline-list">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-date">2017</div>
+          <h3 class="tl-title">Responsable Micro-Agence Web</h3>
+          <p class="tl-co">Spark</p>
+          <ul class="tl-list">
             <li>Cr&eacute;ation et gestion d'une micro-agence web : strat&eacute;gie digitale, cr&eacute;ation de sites et accompagnement clients</li>
           </ul>
         </div>
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">2017</div>
-          <h3 class="timeline-title">Responsable Commercial</h3>
-          <p class="timeline-company">SSL247</p>
-          <ul class="timeline-list">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-date">2017</div>
+          <h3 class="tl-title">Responsable Commercial</h3>
+          <p class="tl-co">SSL247</p>
+          <ul class="tl-list">
             <li>D&eacute;veloppement commercial B2B dans le secteur de la cybers&eacute;curit&eacute; (certificats SSL)</li>
           </ul>
         </div>
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">2014 &mdash; 2016</div>
-          <h3 class="timeline-title">Alternances &amp; Stages</h3>
-          <p class="timeline-company">Wordline, Mercure, Club Med</p>
-          <ul class="timeline-list">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-date">2014 &middot; 2016</div>
+          <h3 class="tl-title">Alternances &amp; Stages</h3>
+          <p class="tl-co">Wordline, Mercure, Club Med</p>
+          <ul class="tl-list">
             <li>Premi&egrave;res exp&eacute;riences professionnelles en marketing et commerce dans des environnements vari&eacute;s</li>
           </ul>
         </div>
@@ -2135,56 +803,46 @@
   <section class="contact" id="contact">
     <div class="container">
       <div class="contact-grid">
-        <div class="contact-info animate-from-left">
-          <span class="section-label" style="color: var(--primary-400);">Contact</span>
-          <h2 class="section-title" style="color: white;">Travaillons <strong>ensemble</strong></h2>
-          <p>
-            Disponible pour des missions RevOps, Growth Marketing et automatisation.
-            &Eacute;changeons sur vos enjeux B2B SaaS.
-          </p>
-          <div class="contact-links">
-            <a href="mailto:vanderosieren.simon@gmail.com" class="contact-link">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                <polyline points="22,6 12,13 2,6"/>
-              </svg>
+        <div class="contact-info anim-l">
+          <span class="sl sl-dark">Contact</span>
+          <h2 class="st light" style="margin-top:4px;">Vous avez un <strong>projet&nbsp;?</strong></h2>
+          <p>Disponible pour des postes RevOps et Growth Marketing en B2B SaaS. &Eacute;changeons sur ce que vous construisez.</p>
+          <div class="c-links">
+            <a href="mailto:vanderosieren.simon@gmail.com" class="c-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               vanderosieren.simon@gmail.com
             </a>
-            <a href="https://linkedin.com/in/simon-vanderosieren" target="_blank" class="contact-link">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-              </svg>
+            <a href="https://linkedin.com/in/simon-vanderosieren" target="_blank" class="c-link">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
               LinkedIn
             </a>
-            <a href="tel:0612431027" class="contact-link">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
-              </svg>
+            <a href="tel:0612431027" class="c-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
               06 12 43 10 27
             </a>
           </div>
         </div>
-        <form class="contact-form animate-from-right" action="https://formspree.io/f/xnjbnkqp" method="POST">
-          <div class="form-row">
-            <div class="form-group">
+        <form class="c-form anim-r" action="https://formspree.io/f/xnjbnkqp" method="POST">
+          <div class="f-row">
+            <div class="f-grp">
               <label>Nom complet</label>
               <input type="text" name="name" placeholder="Votre nom" required>
             </div>
-            <div class="form-group">
+            <div class="f-grp">
               <label>Email</label>
               <input type="email" name="email" placeholder="votre@email.com" required>
             </div>
           </div>
-          <div class="form-group">
+          <div class="f-grp">
             <label>Entreprise</label>
             <input type="text" name="company" placeholder="Votre entreprise">
           </div>
-          <div class="form-group">
+          <div class="f-grp">
             <label>Message</label>
             <textarea name="message" placeholder="D&eacute;crivez votre projet..." required></textarea>
           </div>
           <input type="hidden" name="_subject" value="Nouveau message depuis simon-vdr.com">
-          <button type="submit" class="form-submit">Envoyer le message</button>
+          <button type="submit" class="f-submit">Envoyer le message</button>
         </form>
       </div>
     </div>
@@ -2193,9 +851,13 @@
   <!-- FOOTER -->
   <footer>
     <div class="container">
-      <div class="footer-content">
-        <span>&copy; 2025 Simon Vande Rosieren. Tous droits r&eacute;serv&eacute;s.</span>
-        <div class="footer-links">
+      <div class="foot">
+        <span>&copy; 2026 Simon Vande Rosieren &middot; Lille, France &middot; Remote</span>
+        <div class="foot-links">
+          <a href="#about">Profil</a>
+          <a href="#expertise">Expertise</a>
+          <a href="#stack">Stack</a>
+          <a href="#xp">Parcours</a>
           <a href="mailto:vanderosieren.simon@gmail.com">Email</a>
           <a href="https://linkedin.com/in/simon-vanderosieren" target="_blank">LinkedIn</a>
         </div>
@@ -2204,156 +866,16 @@
   </footer>
 
   <script>
-    // Contact form AJAX submission
-    const contactForm = document.querySelector('.contact-form');
-    contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const form = e.target;
-      const btn = form.querySelector('.form-submit');
-      btn.textContent = 'Envoi en cours...';
-      btn.disabled = true;
+    // Nav
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 20));
 
-      fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      }).then(function(response) {
-        if (response.ok) {
-          form.innerHTML = '<div class="form-success">' +
-            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>' +
-            '<p>Message envoy\u00e9, merci !</p>' +
-            '</div>';
-        } else {
-          btn.textContent = 'Envoyer le message';
-          btn.disabled = false;
-          alert('Une erreur est survenue. Veuillez r\u00e9essayer.');
-        }
-      }).catch(function() {
-        btn.textContent = 'Envoyer le message';
-        btn.disabled = false;
-        alert('Une erreur est survenue. Veuillez r\u00e9essayer.');
-      });
-    });
+    // Animations
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
 
-    // Header scroll effect
-    const header = document.getElementById('header');
-    const scrollProgress = document.getElementById('scrollProgress');
-
-    window.addEventListener('scroll', () => {
-      // Header effect
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-
-      // Scroll progress indicator
-      const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const scrollPercent = scrollTop / docHeight;
-      scrollProgress.style.transform = `scaleX(${scrollPercent})`;
-
-    });
-
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
-
-    // Intersection Observer for scroll animations
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px 0px -100px 0px',
-      threshold: 0.1
-    };
-
-    const observerCallback = (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-
-          // Counter animation for stat cards
-          if (entry.target.classList.contains('stat-card')) {
-            animateCounter(entry.target);
-          }
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-    // Observe all animated elements
-    document.querySelectorAll('.animate-on-scroll, .animate-from-left, .animate-from-right, .animate-scale, .timeline-item, .section-label').forEach(el => {
-      observer.observe(el);
-    });
-
-    // Counter animation function
-    function animateCounter(card) {
-      const numberEl = card.querySelector('.stat-number');
-      if (!numberEl || numberEl.dataset.animated) return;
-
-      numberEl.dataset.animated = 'true';
-      const countTo = parseInt(card.dataset.count) || 0;
-      const suffix = card.dataset.suffix || '';
-      const duration = 2000;
-      const startTime = performance.now();
-
-      function updateCounter(currentTime) {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-
-        // Easing function (ease-out-expo)
-        const easeProgress = 1 - Math.pow(1 - progress, 4);
-        const currentCount = Math.round(easeProgress * countTo);
-
-        numberEl.textContent = currentCount + suffix;
-
-        if (progress < 1) {
-          requestAnimationFrame(updateCounter);
-        }
-      }
-
-      requestAnimationFrame(updateCounter);
-    }
-
-    // Add visible class to timeline items with stagger
-    const timelineItems = document.querySelectorAll('.timeline-item');
-    const timelineObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.classList.add('visible');
-          }, index * 150);
-        }
-      });
-    }, { threshold: 0.2 });
-
-    timelineItems.forEach(item => timelineObserver.observe(item));
-
-    // Animate section labels when their parent section comes into view
-    const sections = document.querySelectorAll('section');
-    const sectionObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const label = entry.target.querySelector('.section-label');
-          if (label) {
-            label.classList.add('visible');
-          }
-        }
-      });
-    }, { threshold: 0.2 });
-
-    sections.forEach(section => sectionObserver.observe(section));
+    document.querySelectorAll('.anim, .anim-l, .anim-r, .tl-item').forEach(el => obs.observe(el));
   </script>
-
 </body>
 </html>
