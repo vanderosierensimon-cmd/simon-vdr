@@ -1,0 +1,13 @@
+{
+  "rewrites": [
+    { "source": "/wheelofwork", "destination": "/wow.html" }
+  ],
+  "headers": [
+    {
+      "source": "/wheelofwork",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simon VDR x WheelOfWork : Audit et Stratégie Acquisition</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark:      #080D1A;
+      --dark-2:    #0F1629;
+      --dark-card: #141B2D;
+      --blue:      #1246F5;
+      --blue-h:    #0E3BD4;
+      --mint:      #00E5A0;
+      --white:     #FFFFFF;
+      --off:       #F5F4F0;
+      --g100:      #EEECE6;
+      --g200:      #E2DFD8;
+      --text:      #0F1629;
+      --muted:     #6B7280;
+      --r:         16px;
+      --r-sm:      8px;
+      --sh:        0 4px 24px rgba(0,0,0,.06);
+      --sh-lg:     0 12px 48px rgba(0,0,0,.12);
+      --ff-d:      'Space Grotesk', sans-serif;
+      --ff-b:      'Inter', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--ff-b); color: var(--text); background: var(--white); line-height: 1.6; overflow-x: hidden; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+    h1,h2,h3,h4 { font-family: var(--ff-d); }
+    a { text-decoration: none; color: inherit; }
+
+    .sl {
+      display: inline-block; font-size: 11px; font-weight: 600;
+      letter-spacing: .15em; text-transform: uppercase; color: var(--blue);
+      background: rgba(18,70,245,.08); padding: 6px 14px;
+      border-radius: 100px; margin-bottom: 16px;
+    }
+    .sl-dark { background: rgba(255,255,255,.07); color: rgba(255,255,255,.55); }
+    .st { font-family: var(--ff-d); font-size: clamp(1.8rem,3vw,2.6rem); font-weight: 700; line-height: 1.15; color: var(--text); }
+    .st strong { color: var(--blue); font-weight: 800; }
+    .st.light { color: #fff; }
+    .st.light strong { color: var(--blue); }
+
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 26px; border-radius: 100px; font-family: var(--ff-b); font-size: 14px; font-weight: 500; transition: all .2s; cursor: pointer; border: none; }
+    .btn-p { background: var(--blue); color: #fff; }
+    .btn-p:hover { background: var(--blue-h); transform: translateY(-1px); }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 18px 0; transition: all .3s; }
+    nav.scrolled { background: rgba(255,255,255,.92); backdrop-filter: blur(20px); box-shadow: 0 1px 0 rgba(0,0,0,.06); padding: 12px 0; }
+    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 40px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: var(--ff-d); font-weight: 700; font-size: 16px; color: var(--blue); }
+    .nav-back { font-size: 13px; font-weight: 500; color: var(--muted); transition: color .2s; }
+    .nav-back:hover { color: var(--blue); }
+
+    /* HERO */
+    .hero { background: var(--dark); padding: 140px 0 100px; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; z-index: 0; background-image: radial-gradient(circle, rgba(18,70,245,.18) 1px, transparent 1px); background-size: 32px 32px; mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, transparent 20%, black 100%); -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, transparent 20%, black 100%); }
+    .hero-inner { position: relative; z-index: 1; }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); color: rgba(255,255,255,.55); padding: 6px 16px; border-radius: 100px; font-size: 12px; font-weight: 500; margin-bottom: 28px; }
+    .hero-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--mint); animation: blink 2.5s infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.35} }
+    .hero h1 { font-size: clamp(2.4rem,5vw,4rem); font-weight: 800; line-height: 1.05; color: #fff; margin-bottom: 24px; }
+    .hero h1 em { color: var(--blue); font-style: normal; }
+    .hero h1 .muted { color: rgba(255,255,255,.35); }
+    .hero-sub { font-size: 17px; line-height: 1.75; color: rgba(255,255,255,.5); max-width: 600px; margin-bottom: 36px; }
+    .hero-sub strong { color: rgba(255,255,255,.8); font-weight: 500; }
+    .hero-disclaimer { display: flex; gap: 14px; align-items: flex-start; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); border-left: 2px solid rgba(255,255,255,.2); border-radius: var(--r-sm); padding: 16px 20px; max-width: 580px; }
+    .hero-disclaimer-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; color: rgba(255,255,255,.3); }
+    .hero-disclaimer p { font-size: 13px; line-height: 1.7; color: rgba(255,255,255,.4); }
+
+    /* SECTION INTRO */
+    .section-intro { font-size: 15px; line-height: 1.8; color: var(--muted); max-width: 640px; margin-bottom: 48px; }
+    .section-intro.light { color: rgba(255,255,255,.6); }
+
+    /* 01 MODELE */
+    .s-modele { padding: 100px 0; background: var(--white); }
+    .model-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
+    .model-card { background: var(--off); padding: 36px 32px; transition: background .2s; }
+    .model-card:hover { background: var(--g100); }
+    .model-card-num { font-size: 10px; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; color: var(--blue); background: rgba(18,70,245,.08); padding: 4px 10px; border-radius: 100px; display: inline-block; margin-bottom: 16px; }
+    .model-card h4 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 12px; }
+    .model-card p { font-size: 14px; line-height: 1.75; color: var(--muted); }
+    .model-card p strong { color: var(--blue); font-weight: 600; }
+
+    /* 02 DIAGNOSTIC */
+    .s-diag { padding: 100px 0; background: var(--dark); }
+    .diag-list { display: flex; flex-direction: column; gap: 3px; margin-top: 48px; }
+    .diag-item { background: var(--dark-card); padding: 28px 32px; display: flex; gap: 24px; align-items: flex-start; transition: background .2s; }
+    .diag-item:hover { background: #1A2340; }
+    .diag-num { font-family: var(--ff-d); font-size: 2.5rem; font-weight: 800; color: rgba(255,255,255,.05); line-height: 1; flex-shrink: 0; min-width: 48px; user-select: none; }
+    .diag-body { flex: 1; }
+    .diag-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 10px; flex-wrap: wrap; }
+    .diag-body h4 { font-size: 1rem; font-weight: 700; color: #fff; }
+    .badge { font-size: 9.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; padding: 4px 10px; border-radius: 100px; flex-shrink: 0; }
+    .badge-critique { color: #FF5A5A; background: rgba(255,90,90,.1); border: 1px solid rgba(255,90,90,.2); }
+    .badge-important { color: #F59E0B; background: rgba(245,158,11,.1); border: 1px solid rgba(245,158,11,.2); }
+    .diag-body p { font-size: 14px; line-height: 1.75; color: rgba(255,255,255,.6); }
+
+    /* 03 ROADMAP */
+    .s-roadmap { padding: 100px 0; background: var(--off); }
+    .timeline { position: relative; padding-left: 32px; }
+    .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: var(--g200); }
+    .tl-item { padding: 0 0 56px 28px; position: relative; }
+    .tl-item:last-child { padding-bottom: 0; }
+    .tl-dot { position: absolute; left: -20px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: #fff; border: 2px solid var(--g200); transition: all .25s; }
+    .tl-item:hover .tl-dot, .tl-item.active .tl-dot { border-color: var(--blue); background: var(--blue); }
+    .tl-phase { font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 6px; }
+    .tl-title { font-size: 1.1rem; font-weight: 700; color: var(--text); margin-bottom: 12px; }
+    .tl-desc { font-size: 14px; line-height: 1.75; color: var(--muted); margin-bottom: 16px; }
+    .tl-actions { list-style: none; display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
+    .tl-actions li { font-size: 13.5px; line-height: 1.65; color: var(--muted); padding-left: 16px; position: relative; }
+    .tl-actions li::before { content: ''; position: absolute; left: 0; top: 10px; width: 6px; height: 1px; background: var(--blue); }
+    .tl-note { background: #fff; border: 1px solid var(--g200); border-radius: var(--r-sm); padding: 14px 18px; font-size: 13px; line-height: 1.7; color: var(--muted); }
+    .tl-note strong { color: var(--blue); font-weight: 600; }
+
+    /* Sequences by score */
+    .seq-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 20px; }
+    .seq-card { border-radius: var(--r-sm); padding: 18px 16px; border: 1px solid var(--g200); background: #fff; }
+    .seq-card.high { border-color: rgba(18,70,245,.25); background: rgba(18,70,245,.03); }
+    .seq-card.mid  { border-color: var(--g200); background: #fff; }
+    .seq-card.low  { border-color: var(--g200); background: var(--off); }
+    .seq-label { font-size: 9.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 6px; }
+    .seq-label.high { color: var(--blue); }
+    .seq-label.mid  { color: var(--muted); }
+    .seq-label.low  { color: var(--muted); }
+    .seq-title { font-size: 12px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+    .seq-steps { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+    .seq-steps li { font-size: 12px; color: var(--muted); padding-left: 14px; position: relative; line-height: 1.5; }
+    .seq-steps li::before { content: ''; position: absolute; left: 0; top: 7px; width: 5px; height: 1px; background: var(--blue); }
+    .seq-icon { display: inline-block; font-size: 10px; font-weight: 600; border-radius: 3px; padding: 1px 5px; margin-right: 3px; }
+    .seq-icon.li { background: rgba(10,102,194,.1); color: #0a66c2; }
+    .seq-icon.em { background: rgba(18,70,245,.08); color: var(--blue); }
+
+    /* 04 TOFU/MOFU/BOFU */
+    .s-content { padding: 100px 0; background: var(--dark); }
+    .funnel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; margin-top: 48px; }
+    .funnel-card { background: var(--dark-card); padding: 32px 28px; transition: background .2s; }
+    .funnel-card:hover { background: #1A2340; }
+    .funnel-card::before { content: ''; display: block; height: 3px; border-radius: 2px; margin-bottom: 24px; }
+    .funnel-card:nth-child(1)::before { background: #7B9FFF; }
+    .funnel-card:nth-child(2)::before { background: var(--blue); }
+    .funnel-card:nth-child(3)::before { background: var(--mint); }
+    .funnel-stage { font-size: 10px; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; margin-bottom: 6px; }
+    .funnel-card:nth-child(1) .funnel-stage { color: #7B9FFF; }
+    .funnel-card:nth-child(2) .funnel-stage { color: var(--blue); }
+    .funnel-card:nth-child(3) .funnel-stage { color: var(--mint); }
+    .funnel-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .funnel-target { font-size: 12px; color: rgba(255,255,255,.4); margin-bottom: 16px; line-height: 1.6; }
+    .funnel-formats { list-style: none; display: flex; flex-direction: column; gap: 5px; margin-bottom: 16px; }
+    .funnel-formats li { font-size: 13px; color: rgba(255,255,255,.55); padding-left: 14px; position: relative; line-height: 1.5; }
+    .funnel-formats li::before { content: ''; position: absolute; left: 0; top: 8px; width: 5px; height: 1px; background: rgba(255,255,255,.2); }
+    .funnel-example { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07); border-radius: var(--r-sm); padding: 12px 14px; font-size: 12.5px; color: rgba(255,255,255,.4); line-height: 1.6; font-style: italic; }
+    .funnel-example strong { color: rgba(255,255,255,.65); font-style: normal; font-weight: 600; }
+
+    .prod-cadence { margin-top: 32px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07); border-radius: var(--r); padding: 28px; }
+    .prod-cadence-title { font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.3); margin-bottom: 16px; }
+    .prod-weeks { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .prod-week { border-left: 2px solid rgba(255,255,255,.1); padding-left: 12px; }
+    .prod-week-num { font-size: 10px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--blue); margin-bottom: 4px; }
+    .prod-week p { font-size: 12.5px; color: rgba(255,255,255,.45); line-height: 1.55; }
+
+    /* 05 SCENARIO HUBSPOT */
+    .s-automation { padding: 100px 0; background: var(--off); }
+    .chip { display: inline-block; background: rgba(18,70,245,.08); border: 1px solid rgba(18,70,245,.15); color: var(--blue); padding: 2px 7px; border-radius: 4px; margin: 2px 2px; font-size: 11px; font-weight: 500; }
+
+    /* Steps horizontaux */
+    .flow-steps-row { display: grid; grid-template-columns: 1fr 28px 1fr 28px 1fr 28px 1fr; align-items: start; margin: 40px 0 16px; }
+    .flow-arrow-h { display: flex; align-items: center; justify-content: center; padding-top: 36px; }
+    .flow-arrow-h::after { content: '→'; font-size: 16px; color: var(--g200); }
+    .fstep { background: #fff; border: 1px solid var(--g200); border-radius: var(--r-sm); padding: 16px 18px; height: 100%; }
+    .fstep.trigger { background: rgba(18,70,245,.04); border-color: rgba(18,70,245,.2); }
+    .fstep-label { font-size: 9px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--blue); margin-bottom: 6px; }
+    .fstep-num { font-size: 9px; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); margin-bottom: 5px; }
+    .fstep-title { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+    .fstep-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+    .fstep-branch { display: flex; gap: 6px; margin-top: 8px; }
+    .fbranch { font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 4px; }
+    .fbranch.yes { background: rgba(0,229,160,.1); color: #00A876; }
+    .fbranch.no { background: rgba(255,90,90,.08); color: #FF5A5A; }
+    .score-chips { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 8px; }
+    .score-chip { display: inline-flex; align-items: center; gap: 3px; background: var(--off); border: 1px solid var(--g200); border-radius: 4px; padding: 3px 7px; font-size: 11px; white-space: nowrap; }
+    .sc-pts { font-weight: 700; color: var(--blue); }
+
+    /* Routing 3 colonnes */
+    .route-row { margin-bottom: 16px; }
+    .route-row-label { font-size: 9px; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+    .route-tiers { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; }
+    .route-tier { border-radius: var(--r-sm); padding: 14px 16px; border: 1px solid var(--g200); border-top-width: 2px; }
+    .route-tier.a { border-top-color: var(--blue); background: rgba(18,70,245,.04); }
+    .route-tier.b { border-top-color: rgba(18,70,245,.3); background: var(--off); }
+    .route-tier.c { border-top-color: var(--g200); background: #fff; }
+    .route-tier-label { font-size: 9px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 6px; }
+    .route-tier.a .route-tier-label { color: var(--blue); }
+    .route-tier.b .route-tier-label { color: var(--muted); }
+    .route-tier.c .route-tier-label { color: #aaa; }
+    .route-tier ul { list-style: none; display: flex; flex-direction: column; gap: 3px; }
+    .route-tier ul li { font-size: 12px; color: var(--muted); padding-left: 12px; position: relative; }
+    .route-tier ul li::before { content: ''; position: absolute; left: 0; top: 7px; width: 5px; height: 1px; background: var(--muted); opacity: .4; }
+
+    /* Legend 3 colonnes */
+    .flow-legend-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; background: #fff; border: 1px solid var(--g200); border-radius: var(--r); padding: 28px 32px; }
+    .flow-legend-point { display: flex; gap: 12px; }
+    .flp-icon { width: 30px; height: 30px; border-radius: var(--r-sm); background: rgba(18,70,245,.08); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .flp-icon svg { width: 14px; height: 14px; color: var(--blue); }
+    .flp-text strong { display: block; font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+    .flp-text span { font-size: 12.5px; color: var(--muted); line-height: 1.55; }
+
+    /* 06 STACK */
+    .s-stack { padding: 100px 0; background: var(--off); }
+    .stack-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+    .stack-table thead tr { border-bottom: 1.5px solid var(--g200); }
+    .stack-table th { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); padding: 0 16px 14px 0; text-align: left; }
+    .stack-table th:first-child { padding-left: 0; }
+    .stack-table tbody tr { border-bottom: 1px solid var(--g200); transition: background .15s; }
+    .stack-table tbody tr:hover { background: rgba(18,70,245,.02); }
+    .stack-table td { padding: 14px 16px 14px 0; vertical-align: top; }
+    .stack-table td:first-child { padding-left: 0; }
+    .tool-name { font-weight: 600; color: var(--text); margin-bottom: 2px; }
+    .tool-usage { font-size: 12.5px; color: var(--muted); line-height: 1.5; }
+    .tool-cost { color: var(--text); font-weight: 500; }
+    .tool-alt { font-size: 12.5px; color: var(--muted); line-height: 1.5; }
+    .stack-totals { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; margin-top: 32px; }
+    .st-card { background: #fff; padding: 28px 24px; }
+    .st-card.accent { background: var(--dark); }
+    .st-card-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin-bottom: 10px; }
+    .st-card.accent .st-card-label { color: rgba(255,255,255,.3); }
+    .st-card-val { font-family: var(--ff-d); font-size: 2rem; font-weight: 800; color: var(--blue); line-height: 1; margin-bottom: 6px; }
+    .st-card.accent .st-card-val { color: #fff; }
+    .st-card-desc { font-size: 13px; color: var(--muted); }
+    .st-card.accent .st-card-desc { color: rgba(255,255,255,.3); }
+    .stack-note { margin-top: 24px; background: #fff; border: 1px solid var(--g200); border-radius: var(--r-sm); padding: 18px 22px; font-size: 13.5px; line-height: 1.75; color: var(--muted); }
+    .stack-note strong { color: var(--text); font-weight: 600; }
+
+    /* 07 KPI */
+    .s-kpi { padding: 100px 0; background: var(--dark); }
+    .kpi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; }
+    .kpi-card { background: var(--dark-card); padding: 32px 28px; transition: background .2s; display: flex; flex-direction: column; gap: 10px; }
+    .kpi-card:hover { background: #1A2340; }
+    .kpi-num { font-size: 10px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.2); }
+    .kpi-val { font-family: var(--ff-d); font-size: 2rem; font-weight: 800; color: var(--blue); line-height: 1; }
+    .kpi-lbl { font-size: 14px; font-weight: 700; color: #fff; }
+    .kpi-desc { font-size: 13px; line-height: 1.65; color: rgba(255,255,255,.45); font-style: italic; }
+
+    /* 09 PROOF */
+    .s-proof { padding: 100px 0; background: var(--white); }
+    .proof-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px; }
+    .proof-card { border: 1px solid var(--g200); border-radius: var(--r); padding: 32px 28px; transition: all .3s; }
+    .proof-card:hover { transform: translateY(-3px); box-shadow: var(--sh-lg); border-color: rgba(18,70,245,.2); }
+    .proof-context { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; color: var(--blue); background: rgba(18,70,245,.07); padding: 5px 12px; border-radius: 100px; display: inline-block; margin-bottom: 20px; }
+    .proof-metric { font-family: var(--ff-d); font-size: 3.5rem; font-weight: 800; color: var(--blue); line-height: 1; margin-bottom: 16px; }
+    .proof-metric.sm { font-size: 2.2rem; }
+    .proof-desc { font-size: 14px; line-height: 1.75; color: var(--muted); }
+
+    /* 10 CTA */
+    .s-cta { padding: 100px 0; background: var(--dark); }
+    .s-cta h2 { font-size: clamp(2rem,4vw,3rem); font-weight: 800; color: #fff; line-height: 1.15; margin-bottom: 24px; }
+    .s-cta p { font-size: 16px; line-height: 1.8; color: rgba(255,255,255,.5); max-width: 560px; margin-bottom: 40px; }
+    .c-links { display: flex; flex-direction: column; gap: 14px; }
+    .c-link { display: flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 500; color: rgba(255,255,255,.5); transition: color .2s; width: fit-content; }
+    .c-link:hover { color: var(--mint); }
+    .c-link svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+    /* FOOTER */
+    footer { background: #04080F; padding: 22px 0; border-top: 1px solid rgba(255,255,255,.05); }
+    .foot { max-width: 1100px; margin: 0 auto; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; }
+    .foot span, .foot a { font-size: 12px; color: rgba(255,255,255,.22); transition: color .2s; }
+    .foot a:hover { color: rgba(255,255,255,.6); }
+
+    /* ANIMATIONS */
+    .anim { opacity: 0; transform: translateY(20px); transition: opacity .65s ease, transform .65s ease; }
+    .anim.v { opacity: 1; transform: none; }
+    .s1 { transition-delay: .08s; } .s2 { transition-delay: .16s; }
+    .s3 { transition-delay: .24s; } .s4 { transition-delay: .32s; }
+
+    /* RESPONSIVE */
+    @media (max-width: 960px) {
+      .model-grid { grid-template-columns: 1fr; }
+      .funnel-grid { grid-template-columns: 1fr; }
+      .kpi-grid { grid-template-columns: 1fr 1fr; }
+      .stack-totals { grid-template-columns: 1fr; }
+      .flow-steps-row { grid-template-columns: 1fr; }
+      .flow-arrow-h { display: none; }
+      .route-tiers { grid-template-columns: 1fr; }
+      .flow-legend-row { grid-template-columns: 1fr; }
+      .seq-grid { grid-template-columns: 1fr; }
+      .prod-weeks { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .container { padding: 0 20px; }
+      .nav-inner { padding: 0 20px; }
+      .foot { flex-direction: column; gap: 8px; text-align: center; }
+      section, .s-modele, .s-diag, .s-roadmap, .s-content, .s-automation, .s-stack, .s-kpi, .s-proof, .s-cta { padding: 70px 0; }
+      .hero { padding: 110px 0 80px; }
+      .proof-grid { grid-template-columns: 1fr; gap: 16px; }
+      .kpi-grid { grid-template-columns: 1fr; }
+      .dash-row.cols-3, .dash-row.cols-2 { grid-template-columns: 1fr; }
+      .flow-branch { grid-template-columns: 1fr; }
+      .prod-weeks { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="nav">
+    <div class="nav-inner">
+      <span class="nav-logo">Simon Vande Rosieren</span>
+      <div style="display:flex;align-items:center;gap:16px;">
+        <a href="https://simon-vdr.com" class="nav-back">← simon-vdr.com</a>
+        <a href="mailto:vanderosieren.simon@gmail.com" class="btn btn-p" style="padding:9px 20px;font-size:13px;">Me contacter</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-eyebrow anim">
+          <span class="hero-dot"></span>
+          Audit · Stratégie · Plan d'action · Préparé exclusivement pour WheelOfWork
+        </div>
+        <h1 class="anim s1">
+          110 000 contacts HubSpot.<br>
+          <em>Zéro séquence active.</em><br>
+          <span class="muted">Voilà par où je commencerais.</span>
+        </h1>
+        <p class="hero-sub anim s2">
+          WheelOfWork a les ingrédients d'un <strong>moteur d'acquisition</strong>. Ce qui manque, c'est le système pour les activer. Ce document présente ma lecture de votre situation, et ce que je construirais pour en faire un <strong>avantage compétitif réel</strong>.
+        </p>
+        <div class="hero-disclaimer anim s3">
+          <span class="hero-disclaimer-icon">↳</span>
+          <p>Note : cette analyse est construite depuis l'extérieur, à partir d'éléments publics. Certaines hypothèses sont à affiner avec le contexte interne, c'est précisément l'objet d'un premier échange.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 LECTURE DU MODÈLE -->
+  <section class="s-modele">
+    <div class="container">
+      <div class="anim">
+        <span class="sl">01 · Ce que je comprends de votre business</span>
+        <h2 class="st" style="margin-bottom:16px;">Ma lecture du <strong>modèle WheelOfWork</strong></h2>
+        <p class="section-intro">Avant de proposer une roadmap, j'ai cherché à comprendre comment le business tourne réellement. Voici ma lecture, et ce qu'elle implique pour l'acquisition.</p>
+      </div>
+      <div class="model-grid anim s1" style="grid-template-columns:1fr 1fr;">
+        <div class="model-card">
+          <span class="model-card-num">A</span>
+          <h4>Le vrai client, ce n'est pas le freelance.</h4>
+          <p>WheelOfWork opère sur deux marchés simultanément : les managers de transition qui constituent votre vivier, et les entreprises qui mandatent. Mais un seul des deux génère du chiffre d'affaires. L'acquisition doit donc cibler en priorité les décideurs entreprises <strong>(DRH, DAF, DG, DSI de PME et ETI)</strong> et non les freelances, qui relèvent d'une logique de recrutement et de fidélisation différente.</p>
+        </div>
+        <div class="model-card">
+          <span class="model-card-num">B</span>
+          <h4>Un business sans récurrent structurel.</h4>
+          <p>Chaque mission est one-shot. La fidélisation existe (une entreprise satisfaite revient) mais elle n'est pas contractuelle ni automatique. Ce modèle signifie que si l'acquisition ralentit, le CA ralentit avec elle. <strong>Structurer un moteur d'acquisition actif n'est pas un luxe : c'est une condition de croissance durable.</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 DIAGNOSTIC -->
+  <section class="s-diag">
+    <div class="container">
+      <div class="anim">
+        <span class="sl sl-dark">02 · Etat des lieux</span>
+        <h2 class="st light" style="margin-bottom:16px;">Cinq observations <strong>factuelles</strong></h2>
+        <p class="section-intro light">Construites depuis l'extérieur. Elles dessinent ce qui manque, et donc ce qui est à construire.</p>
+      </div>
+      <div class="diag-list">
+        <div class="diag-item anim s1">
+          <div class="diag-num">01</div>
+          <div class="diag-body">
+            <div class="diag-header">
+              <h4>La base HubSpot : un actif dormant.</h4>
+              <span class="badge badge-critique">Critique</span>
+            </div>
+            <p>110 000 contacts sans segmentation active, c'est à la fois le problème et la solution. Avant de chercher de nouveaux leads, il faut savoir combien de décideurs entreprises sont déjà dans la base, dans quel état, et ce qu'on peut en faire immédiatement. C'est le premier chantier, et potentiellement la source des premiers mandats.</p>
+          </div>
+        </div>
+        <div class="diag-item anim s2">
+          <div class="diag-num">02</div>
+          <div class="diag-body">
+            <div class="diag-header">
+              <h4>Aucun dispositif outbound vers les entreprises.</h4>
+              <span class="badge badge-critique">Critique</span>
+            </div>
+            <p>Le business arrive. Mais "arriver" n'est pas scalable. Il n'existe pas de mécanique proactive pour aller chercher un DRH de PME qui vit un vide managérial et ne sait pas encore qu'il va avoir besoin de vous.</p>
+          </div>
+        </div>
+        <div class="diag-item anim s3">
+          <div class="diag-num">03</div>
+          <div class="diag-body">
+            <div class="diag-header">
+              <h4>Absent sur les requêtes à forte intention commerciale.</h4>
+              <span class="badge badge-critique">Critique</span>
+            </div>
+            <p>Les décideurs qui cherchent activement un cabinet de management de transition ne vous trouvent pas. WheelOfWork n'est pas positionné sur les requêtes intentionnistes clés (par ligne de service : Management de transition, Executive Search, Tech, Engineering, par secteur, par région). Un travail de fond sur le SEO et le GEO est nécessaire pour capter cet intent commercial avant la concurrence.</p>
+          </div>
+        </div>
+        <div class="diag-item anim s1">
+          <div class="diag-num">04</div>
+          <div class="diag-body">
+            <div class="diag-header">
+              <h4>LinkedIn parle aux freelances, pas aux acheteurs.</h4>
+              <span class="badge badge-important">Important</span>
+            </div>
+            <p>Le contenu publié s'adresse à la communauté de managers de transition, c'est cohérent pour le vivier. Mais un DRH qui visite la page LinkedIn de WheelOfWork ne trouve aucun contenu qui s'adresse à lui, à ses problèmes, à ses contextes de décision.</p>
+          </div>
+        </div>
+        <div class="diag-item anim s2">
+          <div class="diag-num">05</div>
+          <div class="diag-body">
+            <div class="diag-header">
+              <h4>Aucun contenu de conversion.</h4>
+              <span class="badge badge-important">Important</span>
+            </div>
+            <p>Pas de guide, pas de calculateur, pas de contenu qui capte un prospect en phase de réflexion. Un visiteur qui n'est pas prêt à appeler repart sans laisser de trace.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 ROADMAP -->
+  <section class="s-roadmap">
+    <div class="container">
+      <div class="anim">
+        <span class="sl">03 · Ce que je construirais</span>
+        <h2 class="st" style="margin-bottom:16px;">Roadmap <strong>90 jours</strong></h2>
+        <p class="section-intro">Quatre phases séquencées dans un ordre précis. Chaque phase conditionne la suivante. La logique : poser les fondations avant d'exécuter, lancer les chantiers longs dès le début, et générer des résultats visibles rapidement pour créer l'adhésion interne.</p>
+      </div>
+
+      <div class="timeline anim s1">
+
+        <div class="tl-item active">
+          <div class="tl-dot"></div>
+          <div class="tl-phase">Phase 01 · Semaines 1-2</div>
+          <h4 class="tl-title">Fondations</h4>
+          <p class="tl-desc">Avant toute action visible, deux semaines pour poser ce sans quoi tout le reste est approximatif.</p>
+          <ul class="tl-actions">
+            <li>Audit HubSpot complet : segmentation décideurs entreprises vs freelances, qualité des données, quick wins identifiés</li>
+            <li>Définition ICP avec les directeurs de mission (qui signe, pourquoi, quel contexte déclencheur)</li>
+            <li>Identification des quick wins : contacts dormants, opportunités perdues, anciens clients non réactivés</li>
+            <li>Mise en place dashboards et tracking UTM dès J1, pas à J90</li>
+            <li>Lancement warm-up domaines d'envoi email (20 jours incompressibles avant le premier outbound email)</li>
+            <li>Démarrage audit SEO/GEO technique en parallèle</li>
+          </ul>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-phase">Phase 02 · Semaines 2-4</div>
+          <h4 class="tl-title">Lead magnet et premières séquences</h4>
+          <p class="tl-desc">Le lead magnet passe avant l'outbound email à plein régime parce qu'il sera intégré dans chaque séquence dès le lancement. Format : calculateur du coût réel d'un poste non pourvu à la direction, ou guide comparatif management de transition vs recrutement CDI. Court, utile, directement lié au contexte d'achat des décideurs.</p>
+          <ul class="tl-actions">
+            <li>Création du lead magnet (calculateur coût d'un poste non pourvu ou guide MDT vs CDI)</li>
+            <li>Construction liste outbound prioritaire depuis HubSpot + Sales Navigator</li>
+            <li>Enrichissement automatisé (Dropcontact + FullEnrich)</li>
+            <li>Rédaction des séquences multicanal par contexte d'achat et par score (voir logique ci-dessous)</li>
+            <li>Premières pages SEO/GEO par ligne de service WheelOfWork (Management de transition, Executive Search, Tech, Engineering)</li>
+          </ul>
+
+          <div style="margin-top:20px;">
+            <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:12px;">Logique des séquences par score</div>
+            <div class="seq-grid">
+              <div class="seq-card high">
+                <div class="seq-label high">Score élevé</div>
+                <div class="seq-title">ICP parfait (DRH/DAF/DG Hauts-de-France, ETI)</div>
+                <ul class="seq-steps">
+                  <li><span class="seq-icon li">LI</span> Visite de profil J1</li>
+                  <li><span class="seq-icon li">LI</span> Connexion personnalisée J2</li>
+                  <li><span class="seq-icon li">LI</span> Message court J5</li>
+                  <li><span class="seq-icon em">EM</span> Email lead magnet J8</li>
+                  <li><span class="seq-icon li">LI</span> Relance J14</li>
+                </ul>
+              </div>
+              <div class="seq-card mid">
+                <div class="seq-label mid">Score moyen</div>
+                <div class="seq-title">Décideurs hors région ou taille moins qualifiée</div>
+                <ul class="seq-steps">
+                  <li><span class="seq-icon em">EM</span> Email lead magnet J1</li>
+                  <li><span class="seq-icon em">EM</span> Relance email J7</li>
+                  <li><span class="seq-icon li">LI</span> LinkedIn en complément si pas de réponse J10</li>
+                </ul>
+              </div>
+              <div class="seq-card low">
+                <div class="seq-label low">Score faible</div>
+                <div class="seq-title">Contacts non qualifiés ou données incomplètes</div>
+                <ul class="seq-steps">
+                  <li><span class="seq-icon em">EM</span> Email nurturing simple J1</li>
+                  <li>Pas d'outreach LinkedIn</li>
+                  <li>Liste "à requalifier" si pas d'engagement à J30</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-phase">Phase 03 · Semaines 4-8</div>
+          <h4 class="tl-title">Exécution et visibilité</h4>
+          <p class="tl-desc">Lancement des séquences outbound email (warm-up terminé). Lancement de l'outreach LinkedIn direct sur les ICP prioritaires identifiés en Phase 1. Premiers posts LinkedIn orientés décideurs entreprises.<br><br>Disclaimer contenu : la machine éditoriale complète (identification de sujets, production ebook, déclinaisons carrousel/posts) prend 6 à 8 semaines à atteindre sa vitesse de croisière. Les premiers contenus arrivent en semaine 4, la cadence régulière en semaine 6-8.</p>
+          <ul class="tl-actions">
+            <li>Lancement séquences outbound email (warm-up terminé à S4)</li>
+            <li>Lead magnet intégré dans 100% des séquences</li>
+            <li>Lancement campagne LinkedIn Ads Lead Gen Form à S4 (lead magnet disponible)</li>
+            <li>Premiers posts LinkedIn décideurs (cadence 2 fois par semaine à partir de S4)</li>
+            <li>Lancement Thought Leader Ads à S6-8 (premiers contenus éditoriaux disponibles)</li>
+            <li>Machine éditoriale opérationnelle à S6-8</li>
+            <li>Pages SEO/GEO en ligne avant J60</li>
+          </ul>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-phase">Phase 04 · Semaines 8-12</div>
+          <h4 class="tl-title">Optimisation et bilan</h4>
+          <p class="tl-desc">Analyse des retours outbound, ajustement ICP et messages. Machine éditoriale à plein régime. Progression SEO mesurable sur les requêtes intentionnistes cibles. Bilan J90 avec attribution complète par canal et roadmap 6 mois partagée avec la direction.</p>
+          <ul class="tl-actions">
+            <li>Analyse et itération sur les séquences (message, cible, timing, canal)</li>
+            <li>Machine éditoriale à plein régime (1 à 2 sujets par mois)</li>
+            <li>Progression SEO mesurable sur requêtes intentionnistes cibles</li>
+            <li>Bilan J90 : attribution par canal, pipeline généré, recommandations 6 mois</li>
+          </ul>
+          <div class="tl-note">
+            <strong>Note SEO/GEO :</strong> Ces deux chantiers démarrent en semaine 2 même si leurs effets sont à 3-6 mois. Chaque semaine de retard repousse d'autant les premiers résultats. Le GEO (optimisation pour les réponses d'IA comme ChatGPT ou Perplexity) est un levier que vos concurrents n'ont probablement pas encore adressé.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 STRATÉGIE CONTENU -->
+  <section class="s-content">
+    <div class="container">
+      <div class="anim">
+        <span class="sl sl-dark">04 · Stratégie contenu</span>
+        <h2 class="st light" style="margin-bottom:16px;">Un système de <strong>capture à chaque étape</strong></h2>
+        <p class="section-intro light">Le contenu n'est pas un canal de notoriété. C'est un système de capture et de qualification à chaque étape du parcours d'achat. La méthode : un core content par sujet (ebook), décliné en formats adaptés à chaque niveau de maturité du prospect. Rythme : 1 à 2 sujets par mois, opérationnel à partir de la semaine 6-8.</p>
+      </div>
+
+      <div class="funnel-grid">
+        <div class="funnel-card anim s1">
+          <div class="funnel-stage">TOFU · Notoriété</div>
+          <h4 class="funnel-title">Générer de la visibilité</h4>
+          <p class="funnel-target">Décideurs qui ne connaissent pas encore WheelOfWork ou qui n'ont pas encore de besoin actif.</p>
+          <ul class="funnel-formats">
+            <li>Posts LinkedIn éducatifs (extraits d'ebook, données de marché, prises de position)</li>
+            <li>Articles SEO/GEO sur les requêtes informationnelles</li>
+            <li>Carrousels de sensibilisation</li>
+            <li>Threads LinkedIn sur des sujets RH/Finance/Direction</li>
+          </ul>
+          <div class="funnel-example">
+            <strong>Exemple :</strong> "Les 5 contextes qui justifient un manager de transition plutôt qu'un recrutement CDI" : post LinkedIn (extrait ebook) + article SEO long format
+          </div>
+        </div>
+
+        <div class="funnel-card anim s2">
+          <div class="funnel-stage">MOFU · Considération</div>
+          <h4 class="funnel-title">Capturer et qualifier</h4>
+          <p class="funnel-target">Décideurs avec un besoin latent ou actif, qui comparent des solutions.</p>
+          <ul class="funnel-formats">
+            <li>Ebook pilier téléchargeable (core content) : guide complet sur un sujet à forte valeur</li>
+            <li>Calculateur interactif (lead magnet) : coût d'un poste non pourvu à la direction</li>
+            <li>Carrousels comparatifs LinkedIn (MDT vs CDI, coût réel d'une mission)</li>
+            <li>Etudes de cas anonymisées de missions réalisées</li>
+            <li>Séquence nurturing email pour les leads ayant téléchargé l'ebook</li>
+          </ul>
+          <div class="funnel-example">
+            <strong>Exemple :</strong> "Le guide du DRH : réussir son recrutement de manager de transition de A à Z" : post teaser + carrousel + article SEO + séquence nurturing 3 emails
+          </div>
+        </div>
+
+        <div class="funnel-card anim s3">
+          <div class="funnel-stage">BOFU · Décision</div>
+          <h4 class="funnel-title">Convertir en rendez-vous</h4>
+          <p class="funnel-target">Décideurs avec un besoin identifié et actif, en phase de sélection d'un cabinet.</p>
+          <ul class="funnel-formats">
+            <li>Pages d'atterrissage par ligne de service WheelOfWork (Management de transition, Executive Search, Tech, Engineering)</li>
+            <li>Séquences outbound personnalisées avec lead magnet intégré</li>
+            <li>Témoignages clients et cas concrets par secteur</li>
+            <li>Contenu "preuves" : délais de placement, taux de satisfaction, nombre de missions</li>
+          </ul>
+          <div class="funnel-example">
+            <strong>Exemple :</strong> "Manager de transition à Lille : comment WheelOfWork place le bon profil en 48h" : page SEO locale + étude de cas + CTA prise de contact directe
+          </div>
+        </div>
+      </div>
+
+      <div class="prod-cadence anim s2">
+        <div class="prod-cadence-title">Logique de production mensuelle</div>
+        <div class="prod-weeks">
+          <div class="prod-week">
+            <div class="prod-week-num">Semaine 1</div>
+            <p>Identification du sujet (brief avec directeurs de mission)</p>
+          </div>
+          <div class="prod-week">
+            <div class="prod-week-num">Semaine 2</div>
+            <p>Production de l'ebook pilier (interne ou freelance rédacteur spécialisé RH)</p>
+          </div>
+          <div class="prod-week">
+            <div class="prod-week-num">Semaine 3</div>
+            <p>Déclinaisons TOFU : posts LinkedIn, article SEO</p>
+          </div>
+          <div class="prod-week">
+            <div class="prod-week-num">Semaine 4</div>
+            <p>Déclinaisons MOFU/BOFU : séquence nurturing, page d'atterrissage si pertinent</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 SCÉNARIO HUBSPOT -->
+  <section class="s-automation">
+    <div class="container">
+      <div class="anim">
+        <span class="sl">05 · Automation · Exemple concret</span>
+        <h2 class="st" style="margin-bottom:16px;">Scénario de <strong>qualification automatique</strong></h2>
+        <p class="section-intro">La segmentation de 110 000 contacts ne se fait pas à la main. Voici un exemple du type de scénario que je construirais dans HubSpot pour qualifier et router automatiquement les contacts entreprises.</p>
+      </div>
+
+      <!-- Steps horizontaux -->
+      <div class="flow-steps-row anim s1">
+        <div class="fstep trigger">
+          <div class="fstep-label">Déclencheur</div>
+          <div class="fstep-title">Titre contact contenant</div>
+          <div style="margin-top:8px;"><span class="chip">DRH</span><span class="chip">DAF</span><span class="chip">DG</span><span class="chip">DSI</span><span class="chip">Directeur</span><span class="chip">Resp. RH</span></div>
+        </div>
+        <div class="flow-arrow-h"></div>
+        <div class="fstep">
+          <div class="fstep-num">Etape 01 · Email</div>
+          <div class="fstep-title">Validation Dropcontact</div>
+          <div class="fstep-branch">
+            <span class="fbranch yes">Email valide</span>
+            <span class="fbranch no">A requalifier</span>
+          </div>
+        </div>
+        <div class="flow-arrow-h"></div>
+        <div class="fstep">
+          <div class="fstep-num">Etape 02 · Société</div>
+          <div class="fstep-title">Enrichissement entreprise</div>
+          <div class="fstep-desc" style="margin-top:6px;">Nom + taille + secteur via API</div>
+        </div>
+        <div class="flow-arrow-h"></div>
+        <div class="fstep">
+          <div class="fstep-num">Etape 03 · Scoring</div>
+          <div class="fstep-title">Attribution de points</div>
+          <div class="score-chips">
+            <span class="score-chip">PME 10-250<span class="sc-pts">+10</span></span>
+            <span class="score-chip">ETI 250-5k<span class="sc-pts">+20</span></span>
+            <span class="score-chip">Grand groupe<span class="sc-pts">+15</span></span>
+            <span class="score-chip">Haut.-de-Fr.<span class="sc-pts">+10</span></span>
+            <span class="score-chip">Paris<span class="sc-pts">+8</span></span>
+            <span class="score-chip">Secteur prio.<span class="sc-pts">+5</span></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Routing 3 colonnes -->
+      <div class="route-row anim s2">
+        <div class="route-row-label">Etape 04 · Routing par score</div>
+        <div class="route-tiers">
+          <div class="route-tier a">
+            <div class="route-tier-label">Score supérieur ou égal à 25 pts (ICP parfait)</div>
+            <ul>
+              <li>Séquence LinkedIn prioritaire J+1</li>
+              <li>Notification directeur de mission concerné</li>
+              <li>Liste "Prospects prioritaires A"</li>
+            </ul>
+          </div>
+          <div class="route-tier b">
+            <div class="route-tier-label">Score 15 à 24 pts (ICP qualifié)</div>
+            <ul>
+              <li>Séquence email + LinkedIn J+2</li>
+              <li>Liste "Prospects qualifiés B"</li>
+            </ul>
+          </div>
+          <div class="route-tier c">
+            <div class="route-tier-label">Score inférieur à 15 pts</div>
+            <ul>
+              <li>Nurturing passif</li>
+              <li>Liste "Prospects secondaires C"</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Légende 3 colonnes -->
+      <div class="flow-legend-row anim s3">
+        <div class="flow-legend-point">
+          <div class="flp-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div class="flp-text">
+            <strong>Pas de travail manuel</strong>
+            <span>Les 110 000 contacts passent dans le workflow. Le premier triage se fait sans ouvrir HubSpot.</span>
+          </div>
+        </div>
+        <div class="flow-legend-point">
+          <div class="flp-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="flp-text">
+            <strong>Priorité LinkedIn dès J+1</strong>
+            <span>Les ICP parfaits ne passent pas par l'email d'abord. LinkedIn est activé sans attendre le warm-up.</span>
+          </div>
+        </div>
+        <div class="flow-legend-point">
+          <div class="flp-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 9l-5 5-4-4-3 3"/></svg>
+          </div>
+          <div class="flp-text">
+            <strong>Attribution traçable</strong>
+            <span>Chaque contact est rattaché à une source. Le bilan J90 attribue chaque RDV et chaque mandat à une action précise.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 STACK & BUDGET -->
+  <section class="s-stack">
+    <div class="container">
+      <div class="anim">
+        <span class="sl">06 · Stack &amp; Budget</span>
+        <h2 class="st" style="margin-bottom:16px;">Outils, coûts et <strong>alternatives</strong></h2>
+        <p class="section-intro">La roadmap s'appuie sur une stack précise. Voici le coût mensuel estimé des licences nécessaires, avec les alternatives identifiées pour chaque outil, et les postes où une ressource externe peut accélérer une ligne spécifique.</p>
+      </div>
+
+      <div class="anim s1" style="overflow-x:auto;">
+        <table class="stack-table">
+          <thead>
+            <tr>
+              <th style="width:18%">Outil</th>
+              <th style="width:30%">Usage</th>
+              <th style="width:16%">Coût / mois</th>
+              <th>Alternative</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><div class="tool-name">HubSpot Marketing Pro</div></td>
+              <td><div class="tool-usage">Workflows, scoring, segmentation, dashboards</div></td>
+              <td><div class="tool-cost">800 à 1 200€ *</div></td>
+              <td><div class="tool-alt">Attio (36-86€/user) : plus léger, moins cher, manque le scoring natif</div></td>
+            </tr>
+            <tr>
+              <td><div class="tool-name">Sales Navigator Advanced</div></td>
+              <td><div class="tool-usage">Prospection ICP décideurs entreprises</div></td>
+              <td><div class="tool-cost">100€/user</div></td>
+              <td><div class="tool-alt">Pharow : spécialiste marché français</div></td>
+            </tr>
+            <tr>
+              <td><div class="tool-name">Lemlist</div></td>
+              <td><div class="tool-usage">Séquences outbound multicanal email + LinkedIn</div></td>
+              <td><div class="tool-cost">100 à 150€</div></td>
+              <td><div class="tool-alt">Instantly (30-97€) : meilleur sur cold email pur, plus faible sur LinkedIn</div></td>
+            </tr>
+            <tr>
+              <td><div class="tool-name">LinkedIn Ads</div><div class="tool-usage" style="margin-top:2px;">Campagne MOFU Lead Gen Form</div></td>
+              <td><div class="tool-usage">Formulaire natif LinkedIn ciblant DRH, DAF, DG. Capture directe dans le fil sans friction, pour distribuer le lead magnet. <strong style="color:var(--text);font-weight:600;">Lancement à partir de S4</strong>, une fois le lead magnet disponible.</div></td>
+              <td><div class="tool-cost">500€/mois</div></td>
+              <td><div class="tool-alt">Meta Ads Lead Ads : moins précis sur l'ICP B2B, ciblage par poste beaucoup moins fiable</div></td>
+            </tr>
+            <tr>
+              <td><div class="tool-name">LinkedIn Ads</div><div class="tool-usage" style="margin-top:2px;">Thought Leader Ads</div></td>
+              <td><div class="tool-usage">Sponsorisation de 1 à 2 posts par mois publiés depuis le profil personnel. Amplifie la visibilité des contenus TOFU/MOFU auprès des décideurs ciblés. <strong style="color:var(--text);font-weight:600;">Lancement à partir de S6-8</strong>, une fois la machine éditoriale opérationnelle.</div></td>
+              <td><div class="tool-cost">300€/mois</div></td>
+              <td><div class="tool-alt">Boost de post organique : portée plus limitée, ciblage moins fin</div></td>
+            </tr>
+            <tr>
+              <td><div class="tool-name">Dropcontact</div></td>
+              <td><div class="tool-usage">Enrichissement email B2B France, RGPD</div></td>
+              <td><div class="tool-cost">100 à 200€</div></td>
+              <td><div class="tool-alt">FullEnrich peut couvrir les deux en waterfall</div></td>
+            </tr>
+            <tr>
+              <td><div class="tool-name">FullEnrich</div></td>
+              <td><div class="tool-usage">Enrichissement waterfall multi-providers</div></td>
+              <td><div class="tool-cost">50 à 100€</div></td>
+              <td><div class="tool-alt">Voir Dropcontact ci-dessus</div></td>
+            </tr>
+            <tr>
+              <td><div class="tool-name">Make Pro</div></td>
+              <td><div class="tool-usage">Automatisations inter-outils</div></td>
+              <td><div class="tool-cost">50 à 100€</div></td>
+              <td><div class="tool-alt">n8n (20-50€ ou self-hosted gratuit) : plus technique, sans limite d'exécutions</div></td>
+            </tr>
+            <tr>
+              <td><div class="tool-name">Claude Pro / API</div></td>
+              <td><div class="tool-usage">Personnalisation contenu, IA</div></td>
+              <td><div class="tool-cost">20 à 100€</div></td>
+              <td><div class="tool-alt">ChatGPT Team (30€/user)</div></td>
+            </tr>
+            <tr>
+              <td><div class="tool-name">Surfer SEO</div></td>
+              <td><div class="tool-usage">Optimisation contenu SEO/GEO</div></td>
+              <td><div class="tool-cost">80 à 150€</div></td>
+              <td><div class="tool-alt">Semrush (120-200€) : plus complet sur analyse concurrentielle</div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="stack-totals anim s2">
+        <div class="st-card accent">
+          <div class="st-card-label">Stack principale</div>
+          <div class="st-card-val">2 100 à 2 900€</div>
+          <div class="st-card-desc">par mois · LinkedIn Ads inclus</div>
+        </div>
+        <div class="st-card">
+          <div class="st-card-label">Stack alternative</div>
+          <div class="st-card-val">1 200 à 1 700€</div>
+          <div class="st-card-desc">Attio + Instantly + n8n · LinkedIn Ads inclus</div>
+        </div>
+      </div>
+
+      <div class="stack-note anim s3">
+        <strong>* Coût HubSpot à affiner</strong> selon le volume de contacts marketing actifs après segmentation initiale, c'est l'un des premiers bénéfices mesurables de la phase 1. Selon la roadmap retenue par la direction et les ambitions de production de contenu, des renforts ponctuels pourraient être nécessaires (rédacteur spécialisé RH/recrutement, coordinateur de contenu). Ces ressources sont activables au cas par cas et restent des coûts délimitables.
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 KPI -->
+  <section class="s-kpi">
+    <div class="container">
+      <div class="anim">
+        <span class="sl sl-dark">07 · Ce par quoi on mesure le succès</span>
+        <h2 class="st light" style="margin-bottom:16px;">Six <strong>KPI à 90 jours</strong></h2>
+        <p class="section-intro light">Pas une liste exhaustive, les six qui comptent vraiment.</p>
+      </div>
+      <div class="kpi-grid" style="margin-top:48px;">
+        <div class="kpi-card anim s1">
+          <div class="kpi-num">KPI 01</div>
+          <div class="kpi-val">3 à 5</div>
+          <div class="kpi-lbl">Mandats générés via acquisition</div>
+          <div class="kpi-desc">C'est le KPI ultime, tout le reste y mène.</div>
+        </div>
+        <div class="kpi-card anim s2">
+          <div class="kpi-num">KPI 02</div>
+          <div class="kpi-val">15 à 25</div>
+          <div class="kpi-lbl">Premiers rendez-vous qualifiés</div>
+          <div class="kpi-desc">C'est le prédicteur des mandats à venir. Si les RDV sont là, les mandats suivent.</div>
+        </div>
+        <div class="kpi-card anim s3">
+          <div class="kpi-num">KPI 03</div>
+          <div class="kpi-val">moins de 3 000€</div>
+          <div class="kpi-lbl">CPA : Coût par mandat généré</div>
+          <div class="kpi-desc">Budget stack mensuel divisé par le nombre de mandats attribués à l'acquisition.</div>
+        </div>
+        <div class="kpi-card anim s1">
+          <div class="kpi-num">KPI 04</div>
+          <div class="kpi-val">100%</div>
+          <div class="kpi-lbl">Base HubSpot auditée</div>
+          <div class="kpi-desc">Sans ça, on navigue à l'aveugle. Ratio décideurs entreprises documenté.</div>
+        </div>
+        <div class="kpi-card anim s2">
+          <div class="kpi-num">KPI 05</div>
+          <div class="kpi-val">50 à 100</div>
+          <div class="kpi-lbl">Interactions lead magnet (J30)</div>
+          <div class="kpi-desc">Un lead qui télécharge est en phase de réflexion active, c'est un signal fort. Opérationnel en S4.</div>
+        </div>
+        <div class="kpi-card anim s3">
+          <div class="kpi-num">KPI 06</div>
+          <div class="kpi-val" style="font-size:1.6rem;">60k à 150k€</div>
+          <div class="kpi-lbl">Valeur pipeline attribuée</div>
+          <div class="kpi-desc">C'est le chiffre que la direction regardera pour évaluer le ROI du recrutement.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCLUSION -->
+  <section class="s-cta">
+    <div class="container">
+      <div class="anim">
+      </div>
+      <h2 class="anim s1">Ce document est une démonstration,<br>pas une promesse.</h2>
+      <p class="anim s2">La vraie conversation commence quand on peut confronter ces hypothèses à votre réalité interne : vos données HubSpot, vos cycles de vente, vos cibles prioritaires.</p>
+      <div class="c-links anim s3">
+        <a href="https://simon-vdr.com" class="c-link" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          simon-vdr.com
+        </a>
+        <a href="mailto:vanderosieren.simon@gmail.com" class="c-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          vanderosieren.simon@gmail.com
+        </a>
+        <a href="https://linkedin.com/in/simon-vanderosieren" class="c-link" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          linkedin.com/in/simon-vanderosieren
+        </a>
+        <a href="tel:+33612431027" class="c-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.88 9.88 19.79 19.79 0 01.82 1.27 2 2 0 012.82 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l.98-.98a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          06 12 43 10 27
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot">
+      <span>© 2026 Simon Vande Rosieren · Préparé pour WheelOfWork</span>
+      <a href="https://simon-vdr.com">simon-vdr.com</a>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    }, { passive: true });
+
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('v'); observer.unobserve(e.target); }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.anim').forEach(el => observer.observe(el));
+
+  </script>
+
+</body>
+</html>
