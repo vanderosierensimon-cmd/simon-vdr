@@ -12,7 +12,7 @@
     gtag('js', new Date());
     gtag('config', 'G-FTEL8S4RK4');
   </script>
-  <meta name="description" content="Portfolio de Simon Vande Rosieren — Revenue Operations, Growth Marketing & ABM en B2B SaaS.">
+  <meta name="description" content="Portfolio de Simon Vande Rosieren, Revenue Operations, Growth Marketing &amp; ABM en B2B SaaS.">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -281,6 +281,96 @@
     .projet-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--blue); }
     .projet-link svg { width: 13px; height: 13px; transition: transform .2s; }
     .projet-card:hover .projet-link svg { transform: translateX(3px); }
+    .proj-tech { display: flex; flex-wrap: wrap; gap: 5px; margin: 0 0 14px; }
+    .proj-tech-tag {
+      font-size: 10.5px; font-weight: 500; color: var(--muted);
+      background: var(--off); border: 1px solid var(--g200);
+      padding: 3px 9px; border-radius: 100px;
+    }
+    .ia-projets .proj-tech-tag { background: #fff; }
+
+    /* ══════════════════════════════════════
+       PROJETS IA 2026
+    ══════════════════════════════════════ */
+    .ia-projets { padding: 100px 0; background: var(--off); }
+    .ia-projets .projets-sub { max-width: 620px; }
+    .ia-grid { grid-template-columns: 1fr 1fr; }
+    .ia-badge { background: rgba(139,92,246,.1); color: #8B5CF6; }
+    .ia-preview {
+      height: 220px; display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .ia-preview::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,.18) 0%, transparent 60%);
+    }
+    .ia-preview-1 { background: linear-gradient(135deg, #1246F5 0%, #00E5A0 100%); }
+    .ia-preview-2 { background: linear-gradient(135deg, #0F766E 0%, #0EA5E9 100%); }
+    .ia-preview-3 { background: linear-gradient(135deg, #7C3AED 0%, #C026D3 100%); }
+    .ia-preview-4 { background: linear-gradient(135deg, #1E3A5F 0%, #0F766E 100%); }
+    .app-logo-preview {
+      height: 165px; display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .app-logo-preview.mdc-bg { background: linear-gradient(135deg, #1E3A5F 0%, #0F766E 100%); }
+    .app-logo-preview.brigos-bg { background: #EFEBE3; }
+    .app-logo-img { max-height: 68px; max-width: 200px; object-fit: contain; position: relative; z-index: 1; }
+    .app-screens-strip {
+      display: flex; gap: 7px; overflow-x: auto;
+      margin: 16px 0 14px; padding-bottom: 4px;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none; -ms-overflow-style: none;
+      position: relative;
+    }
+    .app-screens-strip::-webkit-scrollbar { display: none; }
+    .app-screen-thumb {
+      width: 80px; height: 145px; border-radius: 10px;
+      object-fit: cover; object-position: top;
+      flex-shrink: 0; scroll-snap-align: start;
+      border: 1px solid var(--g200); transition: transform .2s;
+    }
+    .app-screen-thumb:hover { transform: scale(1.04); cursor: zoom-in; }
+    .lightbox {
+      display: none; position: fixed; inset: 0; z-index: 500;
+      background: rgba(0,0,0,.88); backdrop-filter: blur(6px);
+      align-items: center; justify-content: center; cursor: zoom-out;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox-img {
+      max-height: 92vh; max-width: min(420px, 92vw);
+      border-radius: 20px; object-fit: contain;
+      box-shadow: 0 32px 80px rgba(0,0,0,.6);
+      pointer-events: none;
+    }
+    .lightbox-close {
+      position: absolute; top: 20px; right: 24px;
+      width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(255,255,255,.12); border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; color: #fff;
+      font-size: 18px; transition: background .2s;
+    }
+    .lightbox-close:hover { background: rgba(255,255,255,.22); }
+    .ia-prev-icon {
+      width: 72px; height: 72px; border-radius: 22px;
+      background: rgba(255,255,255,.18); backdrop-filter: blur(8px);
+      display: flex; align-items: center; justify-content: center;
+      position: relative; z-index: 1; transition: transform .3s;
+    }
+    .projet-card:hover .ia-prev-icon { transform: scale(1.08); }
+    .ia-prev-icon svg { width: 32px; height: 32px; color: #fff; }
+    .ia-tag {
+      position: absolute; bottom: 14px; right: 14px; z-index: 2;
+      font-size: 10px; font-weight: 600; letter-spacing: .06em;
+      background: rgba(255,255,255,.18); backdrop-filter: blur(6px);
+      color: #fff; padding: 4px 10px; border-radius: 100px; border: 1px solid rgba(255,255,255,.25);
+    }
+    .ia-no-link { pointer-events: none; cursor: default; }
+    .ia-no-link:hover { transform: none; box-shadow: none; border-color: var(--g200); }
+    .wip-badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 11px; font-weight: 500; color: var(--muted);
+    }
+    .wip-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--g400); }
 
     /* ══════════════════════════════════════
        SCÉNARIOS MAKE (dark)
@@ -401,6 +491,7 @@
       .stack-grid { grid-template-columns: 1fr 1fr; }
       .scenarios-grid { grid-template-columns: 1fr; }
       .projets-grid { grid-template-columns: 1fr; }
+      .ia-grid { grid-template-columns: 1fr; }
       .contact-grid { grid-template-columns: 1fr; gap: 48px; }
     }
     /* ── HAMBURGER ── */
@@ -466,6 +557,7 @@
         <li><a href="#about">Profil</a></li>
         <li><a href="#expertise">Expertise</a></li>
         <li><a href="#stack">Stack</a></li>
+        <li><a href="#ia-projets">Projets</a></li>
         <li><a href="#xp">Parcours</a></li>
       </ul>
       <a href="#contact" class="btn btn-p nav-cta" style="padding:10px 22px;font-size:13px;">Me contacter</a>
@@ -480,6 +572,7 @@
     <a href="#about" class="nav-m-link">Profil</a>
     <a href="#expertise" class="nav-m-link">Expertise</a>
     <a href="#stack" class="nav-m-link">Stack</a>
+    <a href="#ia-projets" class="nav-m-link">Projets</a>
     <a href="#xp" class="nav-m-link">Parcours</a>
     <div class="nav-mobile-sep"></div>
     <a href="#contact" class="btn btn-p">Me contacter</a>
@@ -682,6 +775,10 @@
             <span class="projet-badge">Simulateur</span>
             <h3>Black Friday Booster</h3>
             <p>Simulateur cr&eacute;&eacute; pour User.com : aide les &eacute;quipes marketing &agrave; projeter le ROI de leurs campagnes Black Friday et &agrave; g&eacute;n&eacute;rer des recommandations automation personnalis&eacute;es.</p>
+            <div class="proj-tech">
+              <span class="proj-tech-tag">ChatGPT</span>
+              <span class="proj-tech-tag">Lovable</span>
+            </div>
             <span class="projet-link">
               D&eacute;couvrir
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -696,12 +793,124 @@
             <span class="projet-badge">Planificateur</span>
             <h3>Smart Plan</h3>
             <p>Planificateur de strat&eacute;gie emailing con&ccedil;u pour Sarbacane : &agrave; partir du domaine et des objectifs, g&eacute;n&egrave;re automatiquement un calendrier marketing annuel.</p>
+            <div class="proj-tech">
+              <span class="proj-tech-tag">ChatGPT</span>
+              <span class="proj-tech-tag">Lovable</span>
+            </div>
             <span class="projet-link">
               D&eacute;couvrir
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </span>
           </div>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJETS IA 2026 -->
+  <section class="ia-projets" id="ia-projets">
+    <div class="container">
+      <div class="projets-hd anim">
+        <span class="sl">Projets 2026</span>
+        <h2 class="st" style="margin-top:4px;">Apps &amp; <strong>Produits IA</strong></h2>
+      </div>
+      <p class="projets-sub anim">Trois projets conçus et développés en 2026 en utilisant l'IA comme partenaire de développement, du brief au produit livré.</p>
+      <div class="projets-grid ia-grid">
+
+        <!-- simon-vdr.com -->
+        <a href="https://simon-vdr.com" target="_blank" class="projet-card anim s1">
+          <div class="projet-preview">
+            <img src="simon-vdr-preview.png" alt="simon-vdr.com">
+          </div>
+          <div class="projet-content">
+            <h3>simon-vdr.com</h3>
+            <p>Ce site portfolio : conçu et développé intégralement avec Claude Code. Design, code HTML/CSS/JS et itérations, du brief à la mise en ligne.</p>
+            <div class="proj-tech">
+              <span class="proj-tech-tag">Claude Code</span>
+              <span class="proj-tech-tag">HTML · CSS · JS</span>
+              <span class="proj-tech-tag">Vercel</span>
+            </div>
+            <span class="projet-link">
+              Voir le site
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- La Maison du Canal — Site web -->
+        <a href="https://lamaisonducanal.be" target="_blank" class="projet-card anim s2">
+          <div class="projet-preview">
+            <img src="mdc-website-preview.png" alt="La Maison du Canal - Site web">
+          </div>
+          <div class="projet-content">
+            <h3>La Maison du Canal · Site web</h3>
+            <p>Site vitrine du restaurant à Leers-Nord (Belgique), avec un menu digital mobile first synchronisé avec le back office de l'app mobile pour la gestion des stocks et des suggestions du jour en temps réel.</p>
+            <div class="proj-tech">
+              <span class="proj-tech-tag">Claude · Claude Code</span>
+              <span class="proj-tech-tag">Next.js · React · TypeScript</span>
+              <span class="proj-tech-tag">Tailwind CSS</span>
+              <span class="proj-tech-tag">Framer Motion</span>
+              <span class="proj-tech-tag">HTML · CSS · JS</span>
+              <span class="proj-tech-tag">Vercel</span>
+            </div>
+            <span class="projet-link">
+              Voir le site
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- La Maison du Canal — App mobile -->
+        <a href="https://apps.apple.com/app/id6760931573" target="_blank" class="projet-card anim s3">
+          <div class="app-logo-preview mdc-bg">
+            <img class="app-logo-img" src="mdc-logo-blanc.png" alt="La Maison du Canal">
+          </div>
+          <div class="projet-content">
+            <h3>La Maison du Canal · App Mobile</h3>
+            <p>App iOS &amp; Android pour la gestion des équipes : effectifs, plannings par shifts avec alertes de conformité légale, pointage des heures, gestion des notifications, gestion des droits et autorisations selon le profil, messagerie interne et gestion de la carte synchronisée avec le site web.</p>
+            <div class="app-screens-strip">
+              <img class="app-screen-thumb" src="mdc-app-home.png" alt="Accueil">
+              <img class="app-screen-thumb" src="mdc-app-planning.png" alt="Planning">
+              <img class="app-screen-thumb" src="mdc-app-pointage.jpeg" alt="Pointage">
+              <img class="app-screen-thumb" src="mdc-app-suggestions.png" alt="Suggestions">
+            </div>
+            <div class="proj-tech">
+              <span class="proj-tech-tag">Claude · Claude Code</span>
+              <span class="proj-tech-tag">React Native · Expo · TypeScript</span>
+              <span class="proj-tech-tag">Supabase</span>
+              <span class="proj-tech-tag">EAS</span>
+            </div>
+            <span class="projet-link">
+              Voir sur l'App Store
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- BrigOS -->
+        <div class="projet-card anim s4">
+          <div class="app-logo-preview brigos-bg">
+            <img class="app-logo-img" src="brigos-wordmark.svg" alt="BrigOS">
+          </div>
+          <div class="projet-content">
+            <h3>BrigOS · App Mobile</h3>
+            <p>Système d'exploitation horeca combinant coordination d'équipe et présence digitale dans une seule app mobile. 4 agents IA autonomes (BOS Shift, Réputation, Social, Visibilité) pilotent le planning, les avis clients, les réseaux sociaux et le SEO local. Le gérant valide, BrigOS exécute.</p>
+            <div class="app-screens-strip">
+              <img class="app-screen-thumb" src="brigos-welcome.png" alt="Accueil">
+              <img class="app-screen-thumb" src="brigos-home.png" alt="Dashboard">
+              <img class="app-screen-thumb" src="brigos-agents.png" alt="Agents IA">
+              <img class="app-screen-thumb" src="brigos-config.png" alt="BOS Shift">
+            </div>
+            <div class="proj-tech">
+              <span class="proj-tech-tag">Claude Code</span>
+              <span class="proj-tech-tag">React Native · Expo · TypeScript</span>
+              <span class="proj-tech-tag">Claude API · OpenAI</span>
+              <span class="proj-tech-tag">Supabase</span>
+            </div>
+            <span class="wip-badge">En cours</span>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -913,6 +1122,12 @@
     </div>
   </section>
 
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Fermer">&#x2715;</button>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="">
+  </div>
+
   <!-- FOOTER -->
   <footer>
     <div class="container">
@@ -922,6 +1137,7 @@
           <a href="#about">Profil</a>
           <a href="#expertise">Expertise</a>
           <a href="#stack">Stack</a>
+          <a href="#ia-projets">Projets</a>
           <a href="#xp">Parcours</a>
           <a href="mailto:vanderosieren.simon@gmail.com">Email</a>
           <a href="https://linkedin.com/in/simon-vanderosieren" target="_blank">LinkedIn</a>
@@ -958,6 +1174,31 @@
     }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
 
     document.querySelectorAll('.anim, .anim-l, .anim-r, .tl-item').forEach(el => obs.observe(el));
+
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    document.querySelectorAll('.app-screen-thumb').forEach(img => {
+      img.addEventListener('click', e => {
+        e.preventDefault();
+        e.stopPropagation();
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    lightbox.addEventListener('click', closeLightbox);
+    lightboxClose.addEventListener('click', e => { e.stopPropagation(); closeLightbox(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
   </script>
 </body>
 </html>

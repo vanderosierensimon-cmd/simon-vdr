@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 68" fill="none">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,800&amp;display=swap');
+    </style>
+  </defs>
+
+  <!-- B — 800, dominant -->
+  <text x="4" y="52"
+    font-family="'Bricolage Grotesque', sans-serif"
+    font-size="54" font-weight="800"
+    fill="#1A1714" letter-spacing="-1">B</text>
+
+  <!-- rig — 300, de-emphasised connector -->
+  <text x="44" y="52"
+    font-family="'Bricolage Grotesque', sans-serif"
+    font-size="27" font-weight="300"
+    fill="#1A1714" opacity="0.55">rig</text>
+
+  <!-- OS — 800, accent brique -->
+  <text x="89" y="52"
+    font-family="'Bricolage Grotesque', sans-serif"
+    font-size="54" font-weight="800"
+    fill="#B54A2D" letter-spacing="-1">OS</text>
+</svg>
