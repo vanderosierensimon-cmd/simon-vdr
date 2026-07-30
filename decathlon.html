@@ -175,23 +175,11 @@
     .deliverables li::before{content:'';flex:0 0 auto;width:5px;height:5px;border-radius:50%;background:var(--blue);margin-top:8px;}
     .insight{margin-top:24px;padding:18px 22px;border-left:2px solid var(--blue);background:rgba(18,70,245,.05);border-radius:0 var(--r-sm) var(--r-sm) 0;font-size:14.5px;color:var(--text);font-weight:500;line-height:1.55;}
 
-    /* ── DIAGRAMME SARBACANE SUITE ── */
-    .suite-hub{background:var(--dark);color:#fff;font-family:var(--ff-d);font-weight:700;font-size:14px;text-align:center;padding:14px 18px;border-radius:10px;margin-top:6px;}
-    .suite-line{width:1px;height:22px;background:var(--g200);margin:0 auto;}
-    .suite-products{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
-    .suite-product{background:var(--off);border:1px solid var(--g200);border-radius:8px;padding:10px 8px;text-align:center;font-size:12px;font-weight:600;color:var(--text);font-family:var(--ff-d);}
-    .suite-caption{margin-top:18px;text-align:center;font-size:11.5px;color:var(--muted);font-weight:500;letter-spacing:.02em;}
-
     /* ══════════════════════════════════════
        DIFFUSION DIAGRAM (dark)
     ══════════════════════════════════════ */
     .fier{background:var(--dark);}
     .fier .sl{background:rgba(255,255,255,.06);color:rgba(255,255,255,.5);}
-    .fier-kpis{display:flex;gap:12px;margin:28px 0 8px;flex-wrap:wrap;}
-    .kpi-dark{background:var(--dark-card);border:1px solid rgba(255,255,255,.08);border-radius:var(--r-sm);padding:10px 16px;}
-    .kpi-dark .kpi-v{display:block;font-family:var(--ff-d);font-size:1.15rem;font-weight:700;color:var(--mint);line-height:1;}
-    .kpi-dark .kpi-l{font-size:11px;color:rgba(255,255,255,.4);}
-
     .diffusion{display:grid;grid-template-columns:.85fr auto 1.15fr auto .85fr;column-gap:14px;align-items:start;margin:40px 0 52px;}
     @media(max-width:860px){.diffusion{grid-template-columns:1fr;row-gap:16px;}}
     .df-col{display:flex;flex-direction:column;gap:10px;}
@@ -348,8 +336,8 @@
     <div class="container">
       <div class="case-num anim">Étude de cas 01 · Produit</div>
       <h3 class="st anim">Lancer une nouvelle catégorie de produit</h3>
-      <div class="case-grid">
-        <div class="anim-l">
+      <div class="case-grid" style="grid-template-columns:1fr;">
+        <div class="anim-l" style="max-width:720px;">
           <p>Sarbacane Chat est né d'un partenariat entre Positive Group et une startup incubée à Euratechnologies. L'objectif était d'introduire auprès de notre base clients une nouvelle catégorie de produit : le marketing conversationnel.</p>
           <p>À cette époque, bien avant l'arrivée massive des LLM, le sujet restait très technique et le marché encore peu mature. Le premier défi n'était donc pas commercial. Il était pédagogique.</p>
           <p>J'ai piloté le Go-to-Market de cette nouvelle solution en assurant la coordination entre les équipes Produit, Marketing, Sales et Customer Success. Pendant cette période, le produit a été piloté comme une véritable Business Unit interne, avant son intégration complète aux équipes existantes.</p>
@@ -367,17 +355,6 @@
           <div class="insight">Cette expérience m'a appris qu'un lancement réussi dépend autant de l'alignement interne que de la qualité du produit.</div>
           <p>Cette première expérience m'a permis de travailler au plus près du Produit, du Marketing et des équipes commerciales. Elle m'a ensuite ouvert la voie vers des enjeux plus larges de structuration de l'offre.</p>
         </div>
-        <a href="https://smart-plan.sarbacane.com" target="_blank" rel="noopener" class="case-card anim-r">
-          <div class="case-proof-img"><img src="lead-magnet-smart-plan.jpg" alt="Smart Plan, Sarbacane" loading="lazy"></div>
-          <div class="case-proof-body">
-            <span class="case-proof-tag">Prolongement · Sales Enablement</span>
-            <h4>Smart Plan</h4>
-            <p>Dans la continuité directe de cette philosophie produit, j'ai depuis conçu ce planificateur pour Sarbacane : à partir du domaine et des objectifs, il génère automatiquement un calendrier marketing annuel. Encore en ligne aujourd'hui.</p>
-            <span class="case-proof-link">Voir l'outil en production
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </span>
-          </div>
-        </a>
       </div>
     </div>
   </section>
@@ -404,22 +381,17 @@
           </div>
           <div class="insight">Cette expérience m'a fait passer d'une logique de lancement produit à une logique de plateforme, où l'enjeu principal n'était plus seulement l'adoption d'une solution mais la compréhension d'un écosystème complet.</div>
         </div>
-        <div class="case-card anim-r">
+        <a href="https://smart-plan.sarbacane.com" target="_blank" rel="noopener" class="case-card anim-r">
+          <div class="case-proof-img"><img src="lead-magnet-smart-plan.jpg" alt="Smart Plan, Sarbacane" loading="lazy"></div>
           <div class="case-proof-body">
-            <span class="case-proof-tag">Illustration · Architecture de l'offre</span>
-            <div class="suite-hub">Sarbacane Suite</div>
-            <div class="suite-line"></div>
-            <div class="suite-products">
-              <div class="suite-product">Sarbacane</div>
-              <div class="suite-product">Sarbacane Chat</div>
-              <div class="suite-product">Sarbacane Engage</div>
-              <div class="suite-product">Sarbacane Forms</div>
-              <div class="suite-product">Sarbacane Pages</div>
-              <div class="suite-product">Sarbacane Sendkit</div>
-            </div>
-            <div class="suite-caption">Une plateforme · Un positionnement · Une expérience</div>
+            <span class="case-proof-tag">Lead magnet · Sarbacane</span>
+            <h4>Smart Plan</h4>
+            <p>Un lead magnet que j'ai conçu pour Sarbacane, l'un des produits de la Suite : à partir du domaine et des objectifs de l'entreprise, il génère automatiquement un calendrier marketing annuel. Encore en ligne aujourd'hui.</p>
+            <span class="case-proof-link">Voir le lead magnet en production
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
@@ -467,12 +439,6 @@
       <span class="sl anim">Ce dont je suis le plus fier</span>
       <h3 class="st light anim">Transformer des lancements en <strong>système de croissance</strong></h3>
       <p class="lead light narrow anim">Le résultat dont je suis le plus fier n'est pas d'avoir participé à ces trois expériences prises séparément. C'est d'avoir construit des méthodes réutilisables, progressivement adoptées par d'autres Business Units du groupe.</p>
-      <p class="lead light narrow anim">Aujourd'hui, ces méthodes tournent à l'échelle de trois marchés SaaS simultanés :</p>
-
-      <div class="fier-kpis anim">
-        <div class="kpi-dark"><span class="kpi-v">+2 300</span><span class="kpi-l">Comptes créés / mois</span></div>
-        <div class="kpi-dark"><span class="kpi-v">10</span><span class="kpi-l">Sales à alimenter en continu</span></div>
-      </div>
 
       <div class="diffusion anim">
         <div class="df-col">
@@ -568,7 +534,7 @@
     <div class="container">
       <span class="sl anim">Standard de réussite</span>
       <h3 class="st anim">Ce que je cherche à produire</h3>
-      <p class="lead narrow anim">Je ne considère pas qu'un lancement se mesure au nombre de campagnes réalisées. Je considère qu'il est réussi lorsque :</p>
+      <p class="lead narrow anim">Je ne considère pas qu'un lancement se mesure au nombre de campagnes réalisées. Je considère qu'il est réussi lorsque&nbsp;:</p>
 
       <div class="checklist anim">
         <div class="ck-item"><span class="ck-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><p>Les équipes comprennent le produit</p></div>
@@ -608,7 +574,7 @@
     <div class="container narrow">
       <span class="sl anim">Pourquoi Decathlon</span>
       <h3 class="st anim">Les défis d'un nouveau lancement</h3>
-      <p class="lead anim">Je ne connais pas encore votre organisation, vos équipes ni vos priorités, et je ne souhaite pas prétendre le contraire. En revanche, je reconnais les défis auxquels sont confrontés tous les nouveaux produits :</p>
+      <p class="lead anim">Je ne connais pas encore votre organisation, vos équipes ni vos priorités, et je ne souhaite pas prétendre le contraire. En revanche, je reconnais les défis auxquels sont confrontés tous les nouveaux produits&nbsp;:</p>
 
       <ul class="challenges anim">
         <li><span class="n">01</span> Construire un positionnement clair</li>
