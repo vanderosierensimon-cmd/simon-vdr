@@ -1,5 +1,8 @@
 {
   "redirects": [
     { "source": "/wheelofwork", "destination": "/", "permanent": false }
+  ],
+  "rewrites": [
+    { "source": "/decathlon", "destination": "/decathlon.html" }
   ]
 }
