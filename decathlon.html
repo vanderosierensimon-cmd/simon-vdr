@@ -72,6 +72,8 @@
     .btn-p:hover{background:var(--blue-h);transform:translateY(-1px);}
     .btn-s{background:transparent;color:var(--text);border:1.5px solid var(--g200);}
     .btn-s:hover{border-color:var(--blue);color:var(--blue);}
+    .btn-s-dark{background:transparent;color:rgba(255,255,255,.75);border:1.5px solid rgba(255,255,255,.18);}
+    .btn-s-dark:hover{border-color:var(--mint);color:var(--mint);}
 
     /* ── ANIMATIONS (identiques simon-vdr.com) ── */
     .anim,.anim-l,.anim-r{opacity:0;transition:opacity .65s ease,transform .65s ease;}
@@ -606,7 +608,10 @@
             LinkedIn
           </a>
         </div>
-        <a href="mailto:vanderosieren.simon@gmail.com?subject=%C3%89change%20%E2%80%93%20Product%20Marketing%20Manager%20GTM%20%26%20Growth" class="btn btn-p">Échanger avec moi</a>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="mailto:vanderosieren.simon@gmail.com?subject=%C3%89change%20%E2%80%93%20Product%20Marketing%20Manager%20GTM%20%26%20Growth" class="btn btn-p">Échanger avec moi</a>
+          <a href="CV_Simon_VandeRosieren_Decathlon.pdf" class="btn btn-s-dark" download>Télécharger mon CV</a>
+        </div>
       </div>
       <div class="contact-photo-card anim-r">
         <img src="DSC06925-2.jpeg" alt="Simon Vande Rosieren" class="contact-photo" loading="lazy">
