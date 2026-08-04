@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simon Vande Rosieren · Product Marketing Manager, GTM &amp; Growth | Candidature Decathlon</title>
+  <title>Simon Vande Rosieren · Product Marketing Manager | Candidature Decathlon</title>
   <meta name="robots" content="noindex, nofollow">
-  <meta name="description" content="Candidature de Simon Vande Rosieren au poste de Product Marketing Manager, GTM &amp; Growth (New Business) chez Decathlon.">
+  <meta name="description" content="Candidature de Simon Vande Rosieren au poste de Product Marketing Manager chez Decathlon.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Simon Vande Rosieren · Product Marketing Manager, GTM &amp; Growth">
-  <meta property="og:description" content="Comment mon parcours en Growth &amp; Revenue Operations fait écho aux enjeux New Business de Decathlon.">
+  <meta property="og:title" content="Simon Vande Rosieren · Product Marketing Manager">
+  <meta property="og:description" content="Comment mon parcours en Product Marketing, Go-to-Market et Revenue Operations fait écho aux enjeux d'innovation de Decathlon.">
   <meta property="og:url" content="https://simon-vdr.com/decathlon">
   <meta property="og:image" content="https://simon-vdr.com/DSC06925-2.jpeg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Simon Vande Rosieren · Product Marketing Manager, GTM &amp; Growth">
-  <meta name="twitter:description" content="Candidature Decathlon · Growth &amp; Revenue Operations.">
+  <meta name="twitter:title" content="Simon Vande Rosieren · Product Marketing Manager">
+  <meta name="twitter:description" content="Candidature Decathlon · Product Marketing, GTM &amp; Revenue Operations.">
   <meta name="twitter:image" content="https://simon-vdr.com/DSC06925-2.jpeg">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -156,6 +156,9 @@
        CASE STUDIES
     ══════════════════════════════════════ */
     .case-num{font-family:var(--ff-d);font-size:12.5px;font-weight:700;color:var(--blue);letter-spacing:.09em;margin-bottom:12px;}
+    .case-objective{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;background:rgba(18,70,245,.05);border:1px solid rgba(18,70,245,.15);border-radius:var(--r-sm);padding:14px 18px;margin:22px 0 8px;}
+    .case-objective-label{flex:0 0 auto;font-family:var(--ff-d);font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--blue);}
+    .case-objective p{margin:0;font-size:14.5px;color:var(--text);font-weight:500;line-height:1.5;}
     .case-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:start;margin-top:32px;}
     @media(max-width:900px){.case-grid{grid-template-columns:1fr;gap:32px;}}
     .case-card{border-radius:var(--r);overflow:hidden;border:1px solid var(--g200);background:#fff;transition:all .3s;}
@@ -176,6 +179,7 @@
     .deliverables li{font-size:14px;color:var(--text);display:flex;gap:10px;line-height:1.45;}
     .deliverables li::before{content:'';flex:0 0 auto;width:5px;height:5px;border-radius:50%;background:var(--blue);margin-top:8px;}
     .insight{margin-top:24px;padding:18px 22px;border-left:2px solid var(--blue);background:rgba(18,70,245,.05);border-radius:0 var(--r-sm) var(--r-sm) 0;font-size:14.5px;color:var(--text);font-weight:500;line-height:1.55;}
+    .insight-label{display:block;font-family:var(--ff-d);font-size:10.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--blue);margin-bottom:6px;}
 
     /* ══════════════════════════════════════
        DIFFUSION DIAGRAM (dark)
@@ -217,11 +221,26 @@
     .ck-item p{font-size:14px;color:var(--text);font-weight:500;line-height:1.45;}
 
     /* ══════════════════════════════════════
-       CHALLENGE LIST
+       SPORT & ENGAGEMENT PERSONNEL
     ══════════════════════════════════════ */
-    .challenges{list-style:none;display:flex;flex-direction:column;gap:14px;margin:28px 0;}
-    .challenges li{display:flex;gap:14px;align-items:baseline;font-size:16px;color:var(--text);}
-    .challenges li span.n{font-family:var(--ff-d);font-weight:700;font-size:13px;color:var(--blue);flex:0 0 22px;}
+    .sport-top{display:grid;grid-template-columns:1.1fr .9fr;gap:52px;align-items:center;margin-top:36px;}
+    @media(max-width:900px){.sport-top{grid-template-columns:1fr;gap:32px;}}
+    .sport-photo{border-radius:var(--r);overflow:hidden;border:1px solid var(--g200);box-shadow:var(--sh);background:#fff;}
+    .sport-photo img{width:100%;height:340px;object-fit:cover;object-position:center 35%;display:block;}
+    .sport-photo-cap{padding:13px 18px;font-size:12.5px;color:var(--muted);font-weight:500;border-top:1px solid var(--g200);}
+
+    .sport-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:44px 0 40px;}
+    @media(max-width:900px){.sport-cards{grid-template-columns:1fr 1fr;}}
+    @media(max-width:520px){.sport-cards{grid-template-columns:1fr;}}
+    .sport-card{background:var(--off);border:1px solid var(--g200);border-radius:var(--r-sm);padding:22px 20px;transition:all .25s;}
+    .sport-card:hover{border-color:rgba(18,70,245,.25);box-shadow:var(--sh);transform:translateY(-2px);}
+    .sport-card-icon{font-size:21px;margin-bottom:12px;display:block;}
+    .sport-card h4{font-size:.92rem;font-weight:700;color:var(--text);margin-bottom:8px;}
+    .sport-card p{font-size:13px;color:var(--muted);line-height:1.5;margin:0;}
+    .sport-card p+p{margin-top:3px;}
+    .sport-card p strong{color:var(--text);}
+
+    .sport-quote{max-width:620px;margin:4px auto 0;text-align:center;font-family:var(--ff-d);font-size:1.05rem;font-weight:500;font-style:italic;color:var(--text);line-height:1.55;}
 
     /* ══════════════════════════════════════
        CONTACT (identique simon-vdr.com)
@@ -275,13 +294,14 @@
     <div class="hero-content">
       <div class="hero-badge anim">
         <span class="hero-badge-dot"></span>
-        Product Marketing Manager · GTM &amp; Growth, New Business
+        Product Marketing Manager · GTM &amp; Growth
       </div>
-      <h1 class="anim">De l'innovation<br>au revenu.</h1>
-      <h2 class="anim">Pourquoi mon parcours en Growth &amp; Revenue Operations fait écho aux enjeux New Business de Decathlon.</h2>
-      <p class="anim">Au cours des huit dernières années, j'ai accompagné le lancement de nouveaux produits SaaS, la structuration d'une plateforme multi-produits et le déploiement de stratégies Go-to-Market sur le marché français. Mon objectif est toujours le même : transformer une innovation en produit adopté, puis en moteur de croissance.</p>
-      <p class="anim">Mon rôle ne consistait pas uniquement à créer des campagnes marketing. Il consistait à faire le lien entre le Produit, le Marketing, les équipes commerciales et les opérations afin que chaque lancement devienne un véritable moteur de croissance.</p>
-      <p class="anim"><strong>C'est cette approche</strong>, à la croisée du Product Marketing, du Go-to-Market, du Growth et du Revenue Operations, que je souhaite aujourd'hui mettre au service des équipes New Business de Decathlon.</p>
+      <h1 class="anim">De l'innovation<br>à l'adoption.</h1>
+      <h2 class="anim">Pourquoi mon parcours en Product Marketing, Go-to-Market et Revenue Operations s'inscrit naturellement dans les enjeux d'innovation de Decathlon.</h2>
+      <p class="anim">Depuis plus de huit ans, j'accompagne le lancement de nouveaux produits, la structuration de plateformes SaaS et le déploiement de stratégies Go-to-Market.</p>
+      <p class="anim">Mon objectif reste toujours le même : transformer une innovation en une offre comprise, adoptée et créatrice de valeur pour ses utilisateurs.</p>
+      <p class="anim">Mon rôle consistait à faire le lien entre le Produit, le Marketing, les équipes commerciales et les opérations afin que chaque innovation trouve son marché et soit durablement adoptée.</p>
+      <p class="anim"><strong>C'est cette approche</strong>, à la croisée du Product Marketing, du Go-to-Market et du Revenue Operations, que je souhaite aujourd'hui mettre au service des équipes qui imaginent, lancent et développent les produits et services de Decathlon.</p>
       <a href="#etudes" class="hero-cta anim">
         Voir les études de cas
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
@@ -297,7 +317,7 @@
     <div class="container narrow">
       <span class="sl anim">Motivation</span>
       <h3 class="st anim">Ce qui m'attire dans ce poste</h3>
-      <p class="lead anim">Ce qui m'attire n'est pas uniquement le Product Marketing. C'est l'opportunité d'accompagner le lancement et la croissance de nouvelles activités en travaillant à l'interface du Produit, du Marketing et du Business.</p>
+      <p class="lead anim">Ce qui m'attire n'est pas uniquement le Product Marketing. C'est l'opportunité d'accompagner le lancement et l'adoption de nouvelles activités en travaillant à l'interface du Produit, du Marketing et du Business.</p>
       <p class="lead anim">Construire un Go-to-Market efficace ne consiste pas simplement à lancer un produit. Il s'agit de comprendre un marché, de définir le bon positionnement, d'accompagner les équipes, de créer les bons supports et de mettre en place les mécanismes qui permettront une adoption durable. Ce sont précisément les problématiques que j'ai rencontrées à plusieurs reprises au cours de mon parcours.</p>
       <p class="lead anim">J'apprécie particulièrement cette approche parce qu'elle combine <strong>vision stratégique</strong> et <strong>exécution opérationnelle</strong> : deux dimensions qui ont toujours guidé ma façon de travailler.</p>
     </div>
@@ -328,7 +348,7 @@
         </div>
       </div>
 
-      <p class="lead light narrow anim">C'est cette vision transversale qui caractérise mon parcours. Je ne cherche pas uniquement à produire des assets marketing : je cherche à construire les conditions permettant aux équipes de travailler ensemble, d'accélérer l'adoption d'un produit et de générer un impact mesurable sur le chiffre d'affaires.</p>
+      <p class="lead light narrow anim">C'est cette vision transversale qui caractérise mon parcours. Je ne cherche pas uniquement à produire des assets marketing : je cherche à construire les conditions permettant aux équipes de travailler ensemble, de favoriser une adoption durable et de générer un impact mesurable sur le business.</p>
     </div>
   </section>
 
@@ -338,6 +358,10 @@
     <div class="container">
       <div class="case-num anim">Étude de cas 01 · Produit</div>
       <h3 class="st anim">Lancer une nouvelle catégorie de produit</h3>
+      <div class="case-objective anim" style="max-width:720px;">
+        <span class="case-objective-label">Objectif</span>
+        <p>Évangéliser un marché peu mature et lancer une nouvelle Business Unit.</p>
+      </div>
       <div class="case-grid" style="grid-template-columns:1fr;">
         <div class="anim-l" style="max-width:720px;">
           <p>Sarbacane Chat est né d'un partenariat entre Positive Group et une startup incubée à Euratechnologies. L'objectif était d'introduire auprès de notre base clients une nouvelle catégorie de produit : le marketing conversationnel.</p>
@@ -354,7 +378,7 @@
               <li>Présentation des résultats à la Direction</li>
             </ul>
           </div>
-          <div class="insight">Cette expérience m'a appris qu'un lancement réussi dépend autant de l'alignement interne que de la qualité du produit.</div>
+          <div class="insight"><span class="insight-label">Ce que j'en retiens</span>Ce projet m'a appris qu'un lancement réussi dépend autant de la qualité du produit que de la capacité des équipes et des utilisateurs à l'adopter.</div>
           <p>Cette première expérience m'a permis de travailler au plus près du Produit, du Marketing et des équipes commerciales. Elle m'a ensuite ouvert la voie vers des enjeux plus larges de structuration de l'offre.</p>
         </div>
       </div>
@@ -365,6 +389,10 @@
     <div class="container">
       <div class="case-num anim">Étude de cas 02 · Plateforme</div>
       <h3 class="st anim">Faire évoluer plusieurs produits vers une plateforme</h3>
+      <div class="case-objective anim">
+        <span class="case-objective-label">Objectif</span>
+        <p>Transformer six produits SaaS en une plateforme unique.</p>
+      </div>
       <div class="case-grid">
         <div class="anim-l">
           <p>Après avoir accompagné le lancement de Sarbacane Chat, j'ai rejoint les équipes Marketing Groupe afin de contribuer au lancement de Sarbacane Suite.</p>
@@ -381,7 +409,7 @@
               <li>Coordination avec les équipes Marketing Groupe sur plusieurs marchés européens</li>
             </ul>
           </div>
-          <div class="insight">Cette expérience m'a fait passer d'une logique de lancement produit à une logique de plateforme, où l'enjeu principal n'était plus seulement l'adoption d'une solution mais la compréhension d'un écosystème complet.</div>
+          <div class="insight"><span class="insight-label">Ce que j'en retiens</span>Cette expérience m'a fait évoluer d'une logique de lancement produit vers une logique de plateforme, où l'enjeu principal est de construire une offre cohérente, comprise et facilement adoptée.</div>
         </div>
         <a href="https://smart-plan.sarbacane.com" target="_blank" rel="noopener" class="case-card anim-r">
           <div class="case-proof-img"><img src="lead-magnet-smart-plan.jpg" alt="Smart Plan, Sarbacane" loading="lazy"></div>
@@ -402,11 +430,15 @@
     <div class="container">
       <div class="case-num anim">Étude de cas 03 · Go-to-Market</div>
       <h3 class="st anim">Construire un Go-to-Market sur un nouveau marché</h3>
+      <div class="case-objective anim">
+        <span class="case-objective-label">Objectif</span>
+        <p>Construire le Go-to-Market français d'une solution Enterprise.</p>
+      </div>
       <div class="case-grid">
         <div class="anim-l">
           <p>Après avoir travaillé sur le lancement d'un produit puis sur la structuration d'une plateforme, j'ai accompagné le lancement de User.com sur le marché français avec un objectif clair : accélérer son adoption auprès des entreprises et construire un dispositif Go-to-Market reproductible.</p>
           <p>Suite au rachat de User.com par Positive Group, la Direction souhaitait développer cette plateforme de Marketing Automation, CRM et personnalisation on-site sur le marché français.</p>
-          <p>Le contexte était cette fois totalement différent : un marché plus mature, des cibles principalement Grands Comptes, et l'objectif de construire un moteur d'acquisition capable d'alimenter durablement les équipes commerciales.</p>
+          <p>Le contexte était cette fois totalement différent : un marché plus mature, des cibles principalement Grands Comptes, et l'objectif de construire un moteur d'acquisition et d'adoption capable d'alimenter durablement les équipes commerciales.</p>
           <p>En collaboration avec les équipes Produit et Sales, j'ai participé à la définition puis à l'exécution de la stratégie Go-to-Market. J'étais également le référent Produit auprès des équipes Marketing, Sales et Customer Success, afin d'assurer une cohérence entre le discours, les usages et les besoins du marché français.</p>
           <div class="deliverables">
             <div class="deliverables-h">Ce que j'ai développé</div>
@@ -419,6 +451,7 @@
               <li>Supports de Sales Enablement</li>
             </ul>
           </div>
+          <div class="insight"><span class="insight-label">Ce que j'en retiens</span>J'y ai consolidé une approche où Product Marketing, Sales Enablement et Revenue Operations fonctionnent comme un système unique au service de l'adoption du produit.</div>
         </div>
         <a href="https://black-friday-simulator.user.com" target="_blank" rel="noopener" class="case-card anim-r">
           <div class="case-proof-img"><img src="lead-magnet-black-friday.jpg" alt="Black Friday Booster, User.com" loading="lazy"></div>
@@ -439,7 +472,7 @@
   <section class="fier">
     <div class="container">
       <span class="sl anim">Ce dont je suis le plus fier</span>
-      <h3 class="st light anim">Transformer des lancements en <strong>système de croissance</strong></h3>
+      <h3 class="st light anim">Transformer des lancements en <strong>système d'adoption</strong></h3>
       <p class="lead light narrow anim">Le résultat dont je suis le plus fier n'est pas d'avoir participé à ces trois expériences prises séparément. C'est d'avoir construit des méthodes réutilisables, progressivement adoptées par d'autres Business Units du groupe.</p>
 
       <div class="diffusion anim">
@@ -544,10 +577,12 @@
         <div class="ck-item"><span class="ck-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><p>Les clients en perçoivent rapidement la valeur</p></div>
         <div class="ck-item"><span class="ck-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><p>Les processus facilitent son développement</p></div>
         <div class="ck-item"><span class="ck-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><p>Les données permettent d'améliorer continuellement les actions</p></div>
-        <div class="ck-item"><span class="ck-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><p>Les actions marketing ont un impact mesurable sur le chiffre d'affaires</p></div>
+        <div class="ck-item"><span class="ck-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><p>Les actions marketing ont un impact mesurable sur l'adoption et le business</p></div>
       </div>
 
-      <p class="anim" style="max-width:640px;margin-top:32px">C'est cette combinaison entre Product Marketing, Growth et Revenue Operations qui constitue aujourd'hui mon principal savoir-faire.</p>
+      <p class="anim" style="max-width:640px;margin-top:32px">Je ne cherche pas simplement à lancer de nouveaux produits.</p>
+      <p style="max-width:640px">J'aime construire les conditions qui permettent à une innovation d'être comprise, adoptée et créatrice de valeur.</p>
+      <p style="max-width:640px">C'est cette approche que j'aimerais aujourd'hui mettre au service des équipes Decathlon.</p>
     </div>
   </section>
 
@@ -571,23 +606,65 @@
     </div>
   </section>
 
+  <!-- SPORT & ENGAGEMENT PERSONNEL -->
+  <section>
+    <div class="container">
+      <span class="sl anim">Au-delà du poste</span>
+      <h3 class="st anim">Le sport fait partie de mon <strong>quotidien</strong></h3>
+
+      <div class="sport-top">
+        <div class="anim-l">
+          <p class="lead">Le sport m'accompagne depuis toujours.</p>
+          <p class="lead">J'ai pratiqué le <strong>football pendant quatorze ans</strong>, de l'âge de 4 à 18 ans. Aujourd'hui encore, il reste mon sport de cœur&nbsp;: cette saison, je suis abonné au LOSC et je partage cette passion avec mon fils en assistant régulièrement aux matchs.</p>
+          <p class="lead">Au quotidien, je pratique deux séances de HIIT par semaine ainsi qu'une sortie running hebdomadaire, avec un objectif simple&nbsp;: rester en mouvement, progresser et relever de nouveaux défis. J'apprécie également les sports de raquette, une pratique plus occasionnelle mais toujours présente.</p>
+          <p class="lead">Au-delà de ma pratique personnelle, je suis passionné par le sport dans son ensemble. J'aime suivre les grandes compétitions internationales, découvrir de nouvelles disciplines et comprendre les communautés qui gravitent autour de chaque pratique. Cette curiosité me donne une culture sportive variée qui nourrit naturellement ma manière d'aborder le Product Marketing&nbsp;: comprendre les pratiquants, leurs usages et ce qui les fait vivre une discipline avec engagement.</p>
+        </div>
+        <div class="sport-photo anim-r">
+          <img src="sport-losc-simon-fils.jpg" alt="Simon Vande Rosieren et son fils, supporters du LOSC, au stade Pierre-Mauroy" loading="lazy">
+          <div class="sport-photo-cap">Stade Pierre-Mauroy · LOSC, avec mon fils</div>
+        </div>
+      </div>
+
+      <div class="sport-cards anim">
+        <div class="sport-card">
+          <span class="sport-card-icon">⚽</span>
+          <h4>Football</h4>
+          <p><strong>14 années de pratique</strong></p>
+          <p>Abonné LOSC avec mon fils</p>
+        </div>
+        <div class="sport-card">
+          <span class="sport-card-icon">🏃</span>
+          <h4>Running &amp; HIIT</h4>
+          <p><strong>2 séances de HIIT</strong></p>
+          <p>1 sortie running chaque semaine</p>
+        </div>
+        <div class="sport-card">
+          <span class="sport-card-icon">🎾</span>
+          <h4>Sports de raquette</h4>
+          <p><strong>Pratique occasionnelle</strong></p>
+          <p>En complément du running et du HIIT</p>
+        </div>
+        <div class="sport-card">
+          <span class="sport-card-icon">🌍</span>
+          <h4>Culture sportive</h4>
+          <p><strong>Suivi régulier</strong></p>
+          <p>Des grandes compétitions, curiosité pour toutes les disciplines</p>
+        </div>
+      </div>
+
+      <blockquote class="sport-quote anim">« Le sport n'est pas uniquement une pratique. C'est une manière de comprendre les utilisateurs, leurs motivations et les communautés qui se créent autour d'une passion. »</blockquote>
+    </div>
+  </section>
+
   <!-- POURQUOI DECATHLON -->
   <section style="background:var(--off)">
     <div class="container narrow">
-      <span class="sl anim">Pourquoi Decathlon</span>
-      <h3 class="st anim">Les défis d'un nouveau lancement</h3>
-      <p class="lead anim">Je ne connais pas encore votre organisation, vos équipes ni vos priorités, et je ne souhaite pas prétendre le contraire. En revanche, je reconnais les défis auxquels sont confrontés tous les nouveaux produits&nbsp;:</p>
-
-      <ul class="challenges anim">
-        <li><span class="n">01</span> Construire un positionnement clair</li>
-        <li><span class="n">02</span> Aligner les équipes Produit, Marketing et Business</li>
-        <li><span class="n">03</span> Transformer des fonctionnalités en bénéfices concrets</li>
-        <li><span class="n">04</span> Accélérer l'adoption, en interne comme auprès des clients</li>
-        <li><span class="n">05</span> Mesurer ce qui fonctionne réellement</li>
-        <li><span class="n">06</span> Faire évoluer les dispositifs à partir des données</li>
-      </ul>
-
-      <p class="lead anim">Ce sont des sujets que j'ai eu à résoudre, sous une forme différente, à chaque nouveau lancement. Aujourd'hui, j'ai envie de mettre cette expérience au service des équipes New Business de Decathlon.</p>
+      <span class="sl anim">Pourquoi je pense pouvoir contribuer</span>
+      <h3 class="st anim">Ce qui m'attire chez <strong>Decathlon</strong></h3>
+      <p class="lead anim">Ce qui m'attire chez Decathlon, c'est la possibilité de contribuer à des produits et services qui accompagnent durablement les pratiquants.</p>
+      <p class="lead anim">Au-delà des technologies ou des fonctionnalités, je suis convaincu que le succès d'un produit repose sur sa compréhension, son adoption et la valeur qu'il apporte à ses utilisateurs.</p>
+      <p class="lead anim">Mon parcours m'a appris à lancer des produits, structurer des plateformes et construire des stratégies Go-to-Market.</p>
+      <p class="lead anim">Aujourd'hui, j'ai envie de mettre cette expérience au service d'une entreprise qui conçoit des produits utiles, portés par une forte culture utilisateur et une passion commune&nbsp;: le sport.</p>
     </div>
   </section>
 
@@ -597,7 +674,7 @@
       <div class="contact-info anim-l">
         <span class="sl sl-dark">Échanger</span>
         <h2 class="st light" style="margin-top:4px;">Échanger avec <strong>moi&nbsp;?</strong></h2>
-        <p>Je serais ravi d'échanger sur les enjeux New Business de Decathlon et sur la façon dont mon parcours peut y contribuer.</p>
+        <p>Je serais ravi d'échanger sur les enjeux Product Marketing de Decathlon et sur la façon dont mon parcours peut y contribuer.</p>
         <div class="c-links">
           <a href="mailto:vanderosieren.simon@gmail.com?subject=%C3%89change%20%E2%80%93%20Product%20Marketing%20Manager%20GTM%20%26%20Growth" class="c-link">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
