@@ -3,6 +3,7 @@
     { "source": "/wheelofwork", "destination": "/", "permanent": false }
   ],
   "rewrites": [
-    { "source": "/decathlon", "destination": "/decathlon.html" }
+    { "source": "/decathlon", "destination": "/decathlon.html" },
+    { "source": "/credit-mutuel", "destination": "/credit-mutuel.html" }
   ]
 }
