@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simon Vande Rosieren · Chef de projet MOA – Outils du Conseiller | Candidature Crédit Mutuel</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Candidature de Simon Vande Rosieren au poste de Chef de projet MOA – Équipe Outils du Conseiller à la Caisse Fédérale de Crédit Mutuel : pourquoi son parcours Revenue Operations / CRM / Growth est directement transférable.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Simon Vande Rosieren · Chef de projet MOA – Outils du Conseiller">
+  <meta property="og:description" content="Comment mon parcours en Revenue Operations, CRM et Growth fait écho aux enjeux de l'équipe Outils du Conseiller.">
+  <meta property="og:url" content="https://simon-vdr.com/credit-mutuel">
+  <meta property="og:image" content="https://simon-vdr.com/DSC06925-2.jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Simon Vande Rosieren · Chef de projet MOA – Outils du Conseiller">
+  <meta name="twitter:description" content="Candidature Crédit Mutuel · Revenue Operations, CRM &amp; Growth.">
+  <meta name="twitter:image" content="https://simon-vdr.com/DSC06925-2.jpeg">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark:       #080D1A;
+      --dark-2:     #0F1629;
+      --dark-card:  #141B2D;
+      --blue:       #1246F5;
+      --blue-h:     #0E3BD4;
+      --mint:       #00E5A0;
+      --white:      #FFFFFF;
+      --off:        #F5F4F0;
+      --g100:       #EEECE6;
+      --g200:       #E2DFD8;
+      --g400:       #9CA3AF;
+      --text:       #0F1629;
+      --muted:      #6B7280;
+      --r:          16px;
+      --r-sm:       8px;
+      --sh:         0 4px 24px rgba(0,0,0,.06);
+      --sh-lg:      0 12px 48px rgba(0,0,0,.12);
+      --ff-d:       'Space Grotesk', sans-serif;
+      --ff-b:       'Inter', sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:var(--ff-b);color:var(--text);background:var(--white);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+    a{color:inherit;text-decoration:none;}
+    h1,h2,h3,h4{font-family:var(--ff-d);}
+    .container{max-width:1200px;margin:0 auto;padding:0 40px;}
+    .narrow{max-width:700px;}
+    .center{margin-left:auto;margin-right:auto;text-align:center;}
+    section{padding:100px 0;}
+    p{font-size:16px;color:var(--muted);line-height:1.75;}
+    p+p{margin-top:16px;}
+    strong{color:var(--text);font-weight:600;}
+
+    /* ── SECTION LABEL / TITLE (identiques simon-vdr.com) ── */
+    .sl{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--blue);background:rgba(18,70,245,.08);padding:6px 14px;border-radius:100px;margin-bottom:16px;}
+    .sl-dark{background:rgba(255,255,255,.06);color:rgba(255,255,255,.45);}
+    .st{font-family:var(--ff-d);font-size:clamp(2rem,3.5vw,2.8rem);font-weight:700;line-height:1.15;color:var(--text);margin-bottom:22px;}
+    .st strong{color:var(--blue);font-weight:800;}
+    .st.light{color:#fff;}
+    .st.light strong{color:var(--mint);}
+    .lead{font-size:18px;color:var(--muted);line-height:1.75;}
+    .lead+.lead{margin-top:16px;}
+    .lead.light{color:rgba(255,255,255,.55);}
+
+    /* ── BUTTONS ── */
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:100px;font-family:var(--ff-b);font-size:14px;font-weight:500;transition:all .2s;cursor:pointer;border:none;white-space:nowrap;}
+    .btn svg{width:15px;height:15px;flex-shrink:0;}
+    .btn-p{background:var(--blue);color:#fff;}
+    .btn-p:hover{background:var(--blue-h);transform:translateY(-1px);}
+    .btn-s{background:transparent;color:var(--text);border:1.5px solid var(--g200);}
+    .btn-s:hover{border-color:var(--blue);color:var(--blue);}
+    .btn-s-dark{background:transparent;color:rgba(255,255,255,.75);border:1.5px solid rgba(255,255,255,.18);}
+    .btn-s-dark:hover{border-color:var(--mint);color:var(--mint);}
+
+    /* ── ANIMATIONS (identiques simon-vdr.com) ── */
+    .anim,.anim-l,.anim-r{opacity:0;transition:opacity .65s ease,transform .65s ease;}
+    .anim{transform:translateY(20px);}
+    .anim-l{transform:translateX(-28px);}
+    .anim-r{transform:translateX(28px);}
+    .anim.v,.anim-l.v,.anim-r.v{opacity:1;transform:none;}
+    .s1{transition-delay:.1s;} .s2{transition-delay:.2s;} .s3{transition-delay:.3s;} .s4{transition-delay:.4s;}
+
+    /* ── FOCUS (accessibilité clavier) ── */
+    a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:4px;}
+    .conviction a:focus-visible,.fier a:focus-visible,.contact a:focus-visible,footer a:focus-visible{outline-color:var(--mint);}
+
+    /* ══════════════════════════════════════
+       NAV
+    ══════════════════════════════════════ */
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 0;transition:all .3s;}
+    nav.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(20px);box-shadow:0 1px 0 rgba(0,0,0,.06);padding:12px 0;}
+    .nav-inner{max-width:1200px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+    .nav-id{display:flex;flex-direction:column;line-height:1.25;}
+    .nav-name{font-family:var(--ff-d);font-weight:700;font-size:15px;color:var(--blue);}
+    .nav-sub{font-size:11px;color:var(--muted);}
+    .nav-links{display:flex;align-items:center;gap:20px;}
+    .nav-links a.ghost{font-size:13.5px;font-weight:500;color:var(--muted);transition:color .2s;}
+    .nav-links a.ghost:hover{color:var(--blue);}
+
+    /* ══════════════════════════════════════
+       HERO
+    ══════════════════════════════════════ */
+    .hero{position:relative;background:var(--off);overflow:hidden;display:grid;grid-template-columns:55% 45%;align-items:stretch;}
+    .hero-content{padding:180px 60px 100px 40px;position:relative;z-index:1;display:flex;flex-direction:column;justify-content:center;}
+    .hero-visual{position:relative;overflow:hidden;}
+    .hero-visual img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
+    .hero-visual::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(to right,var(--off) 0%,rgba(245,244,240,0) 25%);}
+    @media(max-width:1024px){
+      .hero{grid-template-columns:1fr;}
+      .hero-visual{display:none;}
+      .hero-content{padding:150px 40px 72px;}
+    }
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(18,70,245,.08);border:1px solid rgba(18,70,245,.2);color:var(--blue);padding:6px 16px;border-radius:100px;font-size:12px;font-weight:500;width:fit-content;margin-bottom:26px;}
+    .hero-badge-dot{width:7px;height:7px;border-radius:50%;background:var(--mint);animation:blink 2s infinite;}
+    @keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.75)}}
+    .hero h1{font-family:var(--ff-d);font-size:clamp(2.6rem,5vw,4.2rem);font-weight:800;line-height:1.08;color:var(--text);margin-bottom:26px;max-width:780px;}
+    .hero p{max-width:600px;}
+    .hero-sig{margin-top:30px;}
+    .hero-sig-name{font-family:var(--ff-d);font-weight:700;font-size:15.5px;color:var(--text);}
+    .hero-sig-role{font-size:13px;color:var(--muted);margin-top:2px;}
+    .hero-ctas{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap;}
+
+    /* ══════════════════════════════════════
+       PIPELINE DIAGRAM (dark)
+    ══════════════════════════════════════ */
+    .conviction{background:var(--dark);}
+    .conviction .sl{background:rgba(255,255,255,.06);color:rgba(255,255,255,.5);}
+    .pipeline-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:44px 0 40px;position:relative;}
+    .pipeline-scroll.has-scroll{mask-image:linear-gradient(to right,black calc(100% - 32px),transparent 100%);-webkit-mask-image:linear-gradient(to right,black calc(100% - 32px),transparent 100%);}
+    @media(max-width:860px){.pipeline-scroll.has-scroll{mask-image:none;-webkit-mask-image:none;}}
+    .pipeline{display:flex;align-items:stretch;gap:0;flex-wrap:nowrap;min-width:860px;}
+    .pl-step{flex:1 1 0;min-width:116px;background:var(--dark-card);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:20px 16px;text-align:center;}
+    .pl-step.last{background:rgba(0,229,160,.1);border-color:rgba(0,229,160,.35);}
+    .pl-t{font-family:var(--ff-d);font-weight:700;font-size:15px;color:#fff;margin-bottom:7px;}
+    .pl-step.last .pl-t{color:var(--mint);}
+    .pl-d{font-size:12.5px;color:rgba(255,255,255,.62);line-height:1.45;}
+    .pl-arrow{flex:0 0 auto;width:26px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.2);font-size:15px;}
+    @media(max-width:860px){
+      .pipeline-scroll{overflow-x:visible;}
+      .pipeline{flex-direction:column;flex-wrap:nowrap;min-width:0;}
+      .pl-arrow{width:auto;align-self:center;padding:3px 0;transform:rotate(90deg);}
+    }
+
+    /* ── FRISE DE PARCOURS (réutilise les cartes du pipeline) ── */
+    .frise-wrap{margin:36px 0 8px;}
+    .frise{display:flex;gap:0;flex-wrap:nowrap;}
+    @media(max-width:700px){
+      .frise{flex-direction:column;}
+      .frise .pl-arrow{width:auto;align-self:center;padding:3px 0;transform:rotate(90deg);}
+    }
+
+    /* ══════════════════════════════════════
+       CARTES GÉNÉRIQUES (why / IA) — réutilise le pattern .sport-card
+    ══════════════════════════════════════ */
+    .cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:36px;}
+    @media(max-width:900px){.cards-3{grid-template-columns:1fr 1fr;}}
+    @media(max-width:600px){.cards-3{grid-template-columns:1fr;}}
+    .info-card{background:var(--off);border:1px solid var(--g200);border-radius:var(--r-sm);padding:26px 24px;transition:all .25s;}
+    .info-card:hover{border-color:rgba(18,70,245,.25);box-shadow:var(--sh);transform:translateY(-2px);}
+    .info-card-icon{font-size:22px;margin-bottom:14px;display:block;}
+    .info-card h4{font-size:1.12rem;font-weight:700;color:var(--text);margin-bottom:10px;}
+    .info-card p{font-size:15px;color:var(--muted);line-height:1.65;margin:0;}
+    .proof-line{display:inline-block;margin-top:18px;padding:7px 14px;background:rgba(18,70,245,.08);border-radius:100px;font-family:var(--ff-d);font-size:12px;font-weight:700;letter-spacing:.02em;color:var(--blue);}
+
+    /* ══════════════════════════════════════
+       PARALLÈLE "Des commerciaux hier. Des conseillers demain."
+       (réutilise .real-card / .real-body / .rl)
+    ══════════════════════════════════════ */
+    .parallel-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:22px;align-items:stretch;margin:32px 0 28px;}
+    .parallel-arrow{display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:22px;font-weight:700;}
+    @media(max-width:860px){
+      .parallel-grid{grid-template-columns:1fr;}
+      .parallel-arrow{transform:rotate(90deg);margin:2px auto;}
+    }
+    .parallel-grid h4{font-size:1.3rem;margin-bottom:20px;}
+    .parallel-grid .real-body{padding:26px 26px 28px;}
+    .parallel-grid .rl-label{font-size:11.5px;}
+    .parallel-grid .rl p{font-size:16px;line-height:1.6;}
+    .parallel-grid .real-card.past{border-left:3px solid var(--g200);}
+    .parallel-grid .real-card.future{border-left:3px solid var(--blue);}
+    .mecha-arrow{color:var(--blue);font-weight:700;}
+
+    /* ══════════════════════════════════════
+       COMPARAISON RevOps → Outils du Conseiller
+    ══════════════════════════════════════ */
+    .compare{margin:40px 0 8px;border-radius:var(--r);overflow:hidden;border:1px solid var(--g200);}
+    .compare-head{display:grid;grid-template-columns:1fr 40px 1fr;background:var(--dark);}
+    .compare-head span{padding:15px 20px;font-family:var(--ff-d);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);}
+    .compare-head span:first-child{color:rgba(255,255,255,.7);}
+    .compare-head span:last-child{grid-column:3;color:var(--mint);text-align:right;}
+    .compare-row{display:grid;grid-template-columns:1fr 40px 1fr;align-items:center;padding:19px 20px;border-top:1px solid var(--g200);background:#fff;}
+    .compare-row:nth-child(even){background:var(--off);}
+    .cmp-a{font-size:16px;color:var(--muted);line-height:1.4;}
+    .cmp-b{font-size:16px;color:var(--text);font-weight:600;text-align:right;line-height:1.4;}
+    .cmp-arrow{text-align:center;color:var(--blue);font-weight:700;font-size:15px;}
+    @media(max-width:700px){
+      .compare-head{display:none;}
+      .compare-row{grid-template-columns:1fr;row-gap:8px;text-align:left;padding:20px 20px;}
+      .cmp-a{font-size:15.5px;}
+      .cmp-b{text-align:left;font-size:16.5px;}
+      .cmp-arrow{text-align:left;transform:rotate(90deg);width:16px;margin:2px 0;}
+    }
+    .compare-note{margin-top:28px;padding:20px 24px;border-left:2px solid var(--blue);background:rgba(18,70,245,.05);border-radius:0 var(--r-sm) var(--r-sm) 0;font-size:15px;color:var(--text);line-height:1.65;}
+    .compare-note p{color:var(--text);font-size:15px;}
+    .compare-note p+p{margin-top:10px;}
+    .compare-note h4{font-size:1.02rem;font-weight:700;color:var(--text);margin-bottom:8px;}
+    .compare-note+.compare-note{margin-top:16px;border-left-color:rgba(18,70,245,.4);}
+
+    /* ══════════════════════════════════════
+       RÉALISATIONS
+    ══════════════════════════════════════ */
+    .real-grid{display:grid;grid-template-columns:1.15fr 1fr 1fr;gap:26px;margin-top:36px;}
+    @media(max-width:960px){.real-grid{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto;}}
+    .real-card{border-radius:var(--r);overflow:hidden;border:1px solid var(--g200);background:#fff;transition:all .3s;}
+    .real-card:hover{box-shadow:var(--sh-lg);border-color:rgba(18,70,245,.2);}
+    .real-card.featured{border-color:rgba(18,70,245,.35);box-shadow:var(--sh);}
+    .real-img{height:160px;overflow:hidden;background:var(--off);}
+    .real-img img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .4s;}
+    .real-card:hover .real-img img{transform:scale(1.04);}
+    .real-body{padding:22px 22px 24px;}
+    .real-tag{display:inline-block;font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);background:rgba(18,70,245,.08);padding:4px 10px;border-radius:100px;margin-bottom:10px;}
+    .real-body h4{font-size:1.05rem;font-weight:700;margin-bottom:14px;color:var(--text);}
+    .rl+.rl{margin-top:12px;}
+    .rl-label{display:block;font-family:var(--ff-d);font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);margin-bottom:3px;}
+    .rl p{font-size:14px;color:var(--muted);line-height:1.55;margin:0;}
+    .real-status{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:var(--muted);background:var(--off);padding:5px 12px;border-radius:100px;margin-top:14px;}
+
+    /* ══════════════════════════════════════
+       CONTACT / CONCLUSION (identique simon-vdr.com)
+    ══════════════════════════════════════ */
+    .contact{padding:100px 0;background:var(--dark);}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+    @media(max-width:860px){.contact-grid{grid-template-columns:1fr;gap:40px;}}
+    .contact-info p{font-size:15px;line-height:1.75;color:rgba(255,255,255,.4);margin:16px 0 32px;}
+    .c-links{display:flex;flex-direction:column;gap:12px;margin-bottom:36px;}
+    .c-link{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:500;color:rgba(255,255,255,.55);transition:color .2s;}
+    .c-link:hover{color:var(--mint);}
+    .c-link svg{width:15px;height:15px;flex-shrink:0;}
+    .contact-photo-card{display:flex;align-items:center;gap:16px;background:var(--dark-card);border:1px solid rgba(255,255,255,.06);border-radius:var(--r);padding:22px;}
+    .contact-photo{width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:top center;flex-shrink:0;}
+    .contact-photo-name{font-family:var(--ff-d);font-weight:700;font-size:15px;color:#fff;}
+    .contact-photo-role{font-size:12.5px;color:rgba(255,255,255,.4);margin-top:2px;}
+
+    /* ══════════════════════════════════════
+       FOOTER (identique simon-vdr.com)
+    ══════════════════════════════════════ */
+    footer{background:#04080F;padding:22px 0;border-top:1px solid rgba(255,255,255,.05);}
+    .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+    .foot span{font-size:12px;color:rgba(255,255,255,.22);}
+    .foot-links{display:flex;gap:22px;flex-wrap:wrap;}
+    .foot-links a{font-size:12px;color:rgba(255,255,255,.22);transition:color .2s;}
+    .foot-links a:hover{color:rgba(255,255,255,.6);}
+
+    @media(max-width:600px){
+      section{padding:72px 0;}
+      .container{padding:0 24px;}
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="nav">
+    <div class="nav-inner">
+      <div class="nav-id">
+        <span class="nav-name">Simon Vande Rosieren</span>
+        <span class="nav-sub">Candidature Crédit Mutuel</span>
+      </div>
+      <div class="nav-links">
+        <a href="mailto:vanderosieren.simon@gmail.com?subject=%C3%89change%20%E2%80%93%20Chef%20de%20projet%20MOA%20%2F%20Outils%20du%20Conseiller" class="btn btn-p">Échanger avec moi</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-content">
+      <div class="hero-badge anim">
+        <span class="hero-badge-dot"></span>
+        Candidature · Chef de projet MOA – Outils du Conseiller
+      </div>
+      <h1 class="anim">Des outils pensés pour les conseillers.<br>Des parcours pensés pour leur efficacité.</h1>
+      <p class="anim">J'ai construit mon parcours à l'intersection du Marketing, des Sales, du Produit et des systèmes qui permettent à ces équipes de travailler efficacement.</p>
+      <p class="anim">CRM, automatisation, parcours utilisateurs, data, coordination métier/tech : autant de sujets qui font directement écho au poste de Chef de projet MOA – Outils du Conseiller.</p>
+      <div class="hero-sig anim">
+        <div class="hero-sig-name">Simon Vande Rosieren</div>
+        <div class="hero-sig-role">Candidat au poste – Lille</div>
+      </div>
+      <div class="hero-ctas anim">
+        <a href="#pourquoi" class="btn btn-p">
+          Découvrir mon parcours
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+        </a>
+        <a href="CV_Simon_VandeRosieren.pdf" target="_blank" rel="noopener" class="btn btn-s">Voir mon CV</a>
+      </div>
+    </div>
+    <div class="hero-visual anim-r">
+      <img src="DSC06925-2.jpeg" alt="Simon Vande Rosieren">
+    </div>
+  </header>
+
+  <!-- COMPRÉHENSION DE LA MISSION -->
+  <section class="conviction">
+    <div class="container">
+      <span class="sl anim">La mission</span>
+      <h3 class="st light anim">Un enjeu qui dépasse la simple <strong>gestion d'outils</strong></h3>
+      <p class="lead light narrow anim">Ce que je comprends du poste : faire le lien entre les besoins des conseillers, les enjeux de la relation client et les équipes qui conçoivent et font évoluer les outils du périmètre Intranet.</p>
+      <p class="lead light narrow anim">L'objectif n'est donc pas uniquement de livrer de nouvelles fonctionnalités. Il s'agit de comprendre les usages et les irritants terrain, de les traduire en évolutions pertinentes, d'accompagner leur adoption et d'en mesurer l'impact sur l'expérience des conseillers et leur efficacité commerciale.</p>
+
+      <div class="pipeline-scroll anim">
+        <div class="pipeline">
+          <div class="pl-step"><div class="pl-t">Écouter</div><div class="pl-d">Comprendre les besoins et irritants terrain</div></div>
+          <div class="pl-arrow">→</div>
+          <div class="pl-step"><div class="pl-t">Cadrer</div><div class="pl-d">Prioriser et traduire les besoins en projets exploitables</div></div>
+          <div class="pl-arrow">→</div>
+          <div class="pl-step"><div class="pl-t">Construire</div><div class="pl-d">Coordonner métiers, produit et équipes techniques</div></div>
+          <div class="pl-arrow">→</div>
+          <div class="pl-step"><div class="pl-t">Déployer</div><div class="pl-d">Accompagner l'utilisation et l'adoption</div></div>
+          <div class="pl-arrow">→</div>
+          <div class="pl-step"><div class="pl-t">Mesurer</div><div class="pl-d">Usage, satisfaction et performance commerciale</div></div>
+          <div class="pl-arrow">→</div>
+          <div class="pl-step last"><div class="pl-t">Améliorer</div><div class="pl-d">Faire évoluer les parcours en continu</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POURQUOI MON PARCOURS EST PERTINENT -->
+  <div id="pourquoi"></div>
+  <section>
+    <div class="container">
+      <span class="sl anim">Pertinence</span>
+      <h3 class="st anim">Pourquoi mon parcours est <strong>pertinent</strong></h3>
+
+      <div class="cards-3 anim">
+        <div class="info-card">
+          <h4>Je connais les problématiques commerciales</h4>
+          <p>Mon parcours a commencé côté Sales avant d'évoluer vers le Customer, le Marketing, le Growth puis le Revenue Operations.</p>
+          <p style="margin-top:10px">Cette expérience me permet d'aborder un outil non seulement sous l'angle fonctionnel, mais aussi à travers son utilisation réelle par les équipes et son impact sur la relation client et l'efficacité commerciale.</p>
+          <div class="proof-line">Sales → Customer → Marketing → RevOps</div>
+        </div>
+        <div class="info-card">
+          <h4>J'ai déjà déployé des outils pour les équipes commerciales</h4>
+          <p>Chez Positive, j'ai notamment travaillé sur la mise en place et la structuration d'un CRM destiné aux équipes commerciales : compréhension des besoins, structuration des process et des données, automatisation des workflows et mise à disposition d'un environnement exploitable par les équipes.</p>
+          <p style="margin-top:10px">Au-delà de la technologie, l'enjeu était le même : fournir aux utilisateurs un outil adapté à leur quotidien pour mieux structurer la relation client et gagner en efficacité.</p>
+          <div class="proof-line">CRM · workflows · process · automatisation · adoption</div>
+        </div>
+        <div class="info-card">
+          <h4>Je pilote des projets depuis plusieurs années</h4>
+          <p>Chef de projet pendant plusieurs années chez Sarbacane, j'ai piloté des sujets impliquant Marketing, Sales, Produit et équipes techniques avant d'évoluer vers un rôle Senior Revenue Operations / Growth.</p>
+          <p style="margin-top:10px">J'ai ainsi l'habitude de cadrer un besoin, coordonner différents interlocuteurs, prioriser les actions et accompagner leur mise en œuvre dans des environnements transverses.</p>
+          <div class="proof-line">Marketing · Sales · Produit · Tech</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREUVE CENTRALE : LE CAS CRM -->
+  <section>
+    <div class="container">
+      <span class="sl anim">Preuve concrète</span>
+      <h3 class="st anim">Des commerciaux hier. Des conseillers <strong>demain</strong>.</h3>
+      <p class="lead narrow anim">Le contexte change. La logique utilisateur reste proche.</p>
+      <p class="lead narrow anim"><strong>Chez Positive, j'ai participé à la mise en place et à la structuration d'un CRM destiné aux équipes commerciales.</strong></p>
+
+      <div class="parallel-grid anim">
+        <div class="real-card past">
+          <div class="real-body">
+            <span class="real-tag">Hier</span>
+            <h4>Chez Positive</h4>
+            <div class="rl"><span class="rl-label">Utilisateurs</span><p><strong>Équipes commerciales</strong></p></div>
+            <div class="rl"><span class="rl-label">Mécanique</span><p>Comprendre les besoins <span class="mecha-arrow">→</span> Structurer les process <span class="mecha-arrow">→</span> Configurer / structurer l'outil <span class="mecha-arrow">→</span> Automatiser <span class="mecha-arrow">→</span> Accompagner les usages</p></div>
+            <div class="rl"><span class="rl-label">Finalité</span><p>Faciliter le travail des équipes et améliorer l'efficacité commerciale.</p></div>
+          </div>
+        </div>
+        <div class="parallel-arrow">→</div>
+        <div class="real-card future">
+          <div class="real-body">
+            <span class="real-tag">Demain</span>
+            <h4>Sur le périmètre Outils du Conseiller</h4>
+            <div class="rl"><span class="rl-label">Utilisateurs</span><p><strong>Conseillers</strong></p></div>
+            <div class="rl"><span class="rl-label">Mécanique</span><p>Comprendre les besoins conseillers <span class="mecha-arrow">→</span> Cadrer les évolutions <span class="mecha-arrow">→</span> Coordonner leur réalisation <span class="mecha-arrow">→</span> Déployer <span class="mecha-arrow">→</span> Mesurer l'adoption</p></div>
+            <div class="rl"><span class="rl-label">Finalité</span><p>Améliorer l'expérience conseiller et l'efficacité commerciale.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="compare-note anim">
+        <p>Je ne prétends pas connaître les outils internes du Crédit Mutuel avant de les avoir découverts. Ce parallèle illustre en revanche une mécanique que je connais déjà : partir du besoin utilisateur pour construire et faire évoluer un système réellement exploitable par les équipes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRANSFÉRABILITÉ -->
+  <section style="background:var(--off)">
+    <div class="container">
+      <span class="sl anim">Transférabilité</span>
+      <h3 class="st anim">Des environnements différents. Une mécanique très <strong>proche</strong>.</h3>
+
+      <div class="compare anim">
+        <div class="compare-head">
+          <span>Mon expérience</span>
+          <span></span>
+          <span>Outils du Conseiller</span>
+        </div>
+        <div class="compare-row">
+          <span class="cmp-a">Comprendre les besoins Sales / utilisateurs</span>
+          <span class="cmp-arrow">→</span>
+          <span class="cmp-b">Comprendre les besoins des conseillers</span>
+        </div>
+        <div class="compare-row">
+          <span class="cmp-a">Structurer des process</span>
+          <span class="cmp-arrow">→</span>
+          <span class="cmp-b">Formaliser et prioriser les besoins</span>
+        </div>
+        <div class="compare-row">
+          <span class="cmp-a">Concevoir et faire évoluer des workflows CRM</span>
+          <span class="cmp-arrow">→</span>
+          <span class="cmp-b">Faire évoluer les parcours et outils</span>
+        </div>
+        <div class="compare-row">
+          <span class="cmp-a">Coordonner Marketing / Sales / Produit / Tech</span>
+          <span class="cmp-arrow">→</span>
+          <span class="cmp-b">Coordonner métiers et équipes IT</span>
+        </div>
+        <div class="compare-row">
+          <span class="cmp-a">Déployer des solutions et automatisations</span>
+          <span class="cmp-arrow">→</span>
+          <span class="cmp-b">Accompagner le déploiement des évolutions</span>
+        </div>
+        <div class="compare-row">
+          <span class="cmp-a">Mesurer usage et performance</span>
+          <span class="cmp-arrow">→</span>
+          <span class="cmp-b">Mesurer satisfaction et efficacité</span>
+        </div>
+        <div class="compare-row">
+          <span class="cmp-a">Amélioration continue</span>
+          <span class="cmp-arrow">→</span>
+          <span class="cmp-b">Faire évoluer les outils dans le temps</span>
+        </div>
+      </div>
+
+      <div class="compare-note anim">
+        <p><strong>Je ne viens pas de la MOA bancaire traditionnelle.</strong></p>
+        <p>J'apporte en revanche une expérience concrète de la transformation de besoins métiers en systèmes, parcours et automatisations utilisés quotidiennement par des équipes commerciales et marketing.</p>
+      </div>
+
+      <div class="compare-note anim">
+        <h4>Une autre expérience du terrain commercial</h4>
+        <p>Je n'ai pas construit mon parcours dans le secteur bancaire. Je connais en revanche directement les enjeux des équipes commerciales et de la relation client.</p>
+        <p>Mon expérience Sales, Customer puis CRM/RevOps me permet d'aborder les outils à partir de leur usage : quelles informations sont réellement utiles, quelles étapes créent de la friction, quelles tâches peuvent être simplifiées et comment mesurer l'impact d'une évolution sur l'activité.</p>
+        <p>La connaissance du contexte bancaire s'acquiert. Cette culture du besoin utilisateur, de la relation client et de l'efficacité commerciale constitue le socle que j'apporte dès le départ.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- IA GÉNÉRATIVE -->
+  <section>
+    <div class="container narrow">
+      <span class="sl anim">IA générative</span>
+      <h3 class="st anim">L'IA comme outil de travail, pas comme sujet <strong>théorique</strong></h3>
+      <p class="lead anim">J'utilise quotidiennement l'IA générative pour analyser, structurer, prototyper et automatiser. J'ai également développé plusieurs projets digitaux intégrant concrètement ces technologies.</p>
+      <p class="lead anim">Dans le contexte des outils du conseiller, son intérêt me semble surtout résider dans sa capacité à faciliter l'accès à l'information et réduire certaines tâches à faible valeur, tout en laissant la décision au conseiller.</p>
+    </div>
+    <div class="container">
+      <div class="rl-label anim" style="margin-bottom:14px;">Exemples de possibilités</div>
+      <div class="cards-3 anim">
+        <div class="info-card">
+          <span class="info-card-icon">🔎</span>
+          <h4>Accès à l'information</h4>
+          <p>Interroger plus simplement une base documentaire ou des procédures internes.</p>
+        </div>
+        <div class="info-card">
+          <span class="info-card-icon">🗂️</span>
+          <h4>Préparation</h4>
+          <p>Synthétiser les informations utiles avant une interaction client.</p>
+        </div>
+        <div class="info-card">
+          <span class="info-card-icon">✍️</span>
+          <h4>Assistance</h4>
+          <p>Aider à structurer une réponse, une synthèse ou une prochaine action sans remplacer le jugement du conseiller.</p>
+        </div>
+      </div>
+      <p class="anim" style="max-width:700px;margin-top:28px;font-size:13.5px;">Ces exemples illustrent des possibilités d'usage observées dans d'autres contextes métier, pas des recommandations fondées sur une connaissance du système d'information du Crédit Mutuel.</p>
+    </div>
+  </section>
+
+  <!-- RÉALISATIONS -->
+  <section style="background:var(--off)">
+    <div class="container">
+      <span class="sl anim">Réalisations</span>
+      <h3 class="st anim">Quelques exemples de ma manière de <strong>travailler</strong></h3>
+
+      <div class="real-grid anim">
+        <div class="real-card featured">
+          <div class="real-img"><img src="reply-io-lead-routing.png" alt="Routage intelligent des leads" loading="lazy"></div>
+          <div class="real-body">
+            <span class="real-tag">CRM &amp; automatisation</span>
+            <h4>Routage intelligent des leads</h4>
+            <div class="rl"><span class="rl-label">Problème</span><p>Des réponses commerciales dispersées entre plusieurs outils, avec un risque de perte ou de retard de traitement.</p></div>
+            <div class="rl"><span class="rl-label">Approche</span><p>Conception d'un routing automatique : les réponses positives sont qualifiées puis poussées directement dans le CRM pour un traitement immédiat par les sales.</p></div>
+            <div class="rl"><span class="rl-label">Résultat</span><p>Routing en temps réel, en production, sans perte de lead entre les outils.</p></div>
+          </div>
+        </div>
+        <div class="real-card">
+          <div class="real-img"><img src="brigos-home.png" alt="BrigOS, application de gestion horeca" loading="lazy"></div>
+          <div class="real-body">
+            <span class="real-tag">IA &amp; prototypage</span>
+            <h4>BrigOS</h4>
+            <div class="rl"><span class="rl-label">Problème</span><p>Dans les petites structures, la coordination d'équipe et la présence digitale (avis, réseaux sociaux, visibilité locale) reposent souvent sur des outils dispersés et du temps manuel.</p></div>
+            <div class="rl"><span class="rl-label">Approche</span><p>Conception d'une application mobile où des agents IA préparent plannings, réponses aux avis et contenus, le gérant validant avant exécution.</p></div>
+            <div class="rl"><span class="rl-label">Résultat</span><p>Projet personnel en cours de déploiement.</p></div>
+            <span class="real-status">En cours</span>
+          </div>
+        </div>
+        <div class="real-card">
+          <div class="real-img"><img src="lead-magnet-smart-plan.jpg" alt="Smart Plan, Sarbacane" loading="lazy"></div>
+          <div class="real-body">
+            <span class="real-tag">Produit &amp; utilisateur</span>
+            <h4>Smart Plan</h4>
+            <div class="rl"><span class="rl-label">Problème</span><p>Des utilisateurs qui peinent à démarrer une stratégie marketing faute de méthode ou de point de départ clair.</p></div>
+            <div class="rl"><span class="rl-label">Approche</span><p>Conception d'un outil qui génère automatiquement un calendrier marketing annuel à partir du domaine et des objectifs de l'entreprise.</p></div>
+            <div class="rl"><span class="rl-label">Résultat</span><p>Outil encore en ligne et utilisé aujourd'hui.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARCOURS -->
+  <section class="conviction">
+    <div class="container">
+      <span class="sl anim">Parcours</span>
+      <h3 class="st light anim">Du besoin terrain à la conception des <strong>systèmes</strong></h3>
+      <p class="lead light narrow anim">Un même fil conducteur depuis plusieurs années : comprendre les besoins, piloter des projets et construire des solutions utiles aux équipes.</p>
+
+      <div class="frise-wrap anim">
+        <div class="frise">
+          <div class="pl-step"><div class="pl-t">Sales</div></div>
+          <div class="pl-arrow">→</div>
+          <div class="pl-step"><div class="pl-t">Customer</div></div>
+          <div class="pl-arrow">→</div>
+          <div class="pl-step"><div class="pl-t">Marketing</div></div>
+          <div class="pl-arrow">→</div>
+          <div class="pl-step"><div class="pl-t">Product / GTM</div></div>
+          <div class="pl-arrow">→</div>
+          <div class="pl-step"><div class="pl-t">Growth</div></div>
+          <div class="pl-arrow">→</div>
+          <div class="pl-step last"><div class="pl-t">Revenue Operations</div></div>
+        </div>
+      </div>
+      <p class="lead light narrow anim" style="margin-top:24px;">Un parcours qui m'a progressivement amené du besoin utilisateur à la conception des systèmes qui permettent aux équipes de mieux travailler. Plusieurs années de gestion de projet en constituent le fil conducteur.</p>
+    </div>
+  </section>
+
+  <!-- CONCLUSION -->
+  <section class="contact">
+    <div class="container contact-grid">
+      <div class="contact-info anim-l">
+        <span class="sl sl-dark">Pourquoi le Crédit Mutuel</span>
+        <h2 class="st light" style="margin-top:4px;">Pourquoi le <strong>Crédit Mutuel&nbsp;?</strong></h2>
+        <p>Je souhaite aujourd'hui mettre mon expérience des outils, des parcours et des systèmes commerciaux au service de projets à plus grande échelle, avec un impact concret sur le quotidien de leurs utilisateurs.</p>
+        <p>Ce poste m'intéresse précisément parce qu'il réunit les dimensions qui ont progressivement structuré mon parcours : comprendre les besoins terrain, concevoir des solutions utiles, coordonner différents métiers et mesurer leur impact sur l'efficacité commerciale.</p>
+        <p>La place donnée à l'innovation et à l'IA générative renforce également mon intérêt pour cette mission.</p>
+        <p style="color:rgba(255,255,255,.88);font-weight:600;font-size:16px;">C'est précisément cette combinaison entre terrain, gestion de projet, relation client, technologie et performance commerciale qui me donne envie de rejoindre l'équipe Outils du Conseiller.</p>
+        <div class="c-links">
+          <a href="https://linkedin.com/in/simon-vanderosieren" target="_blank" rel="noopener" class="c-link">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a href="mailto:vanderosieren.simon@gmail.com?subject=%C3%89change%20%E2%80%93%20Chef%20de%20projet%20MOA%20%2F%20Outils%20du%20Conseiller" class="c-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            vanderosieren.simon@gmail.com
+          </a>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="https://linkedin.com/in/simon-vanderosieren" target="_blank" rel="noopener" class="btn btn-p">Voir mon LinkedIn</a>
+          <a href="CV_Simon_VandeRosieren.pdf" class="btn btn-s-dark" download>Télécharger mon CV</a>
+        </div>
+      </div>
+      <div class="contact-photo-card anim-r">
+        <img src="DSC06925-2.jpeg" alt="Simon Vande Rosieren" class="contact-photo" loading="lazy">
+        <div>
+          <div class="contact-photo-name">Simon Vande Rosieren</div>
+          <div class="contact-photo-role">Revenue Operations &amp; Growth<br>Candidat – Chef de projet MOA / Outils du Conseiller</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="foot">
+        <span>&copy; 2026 Simon Vande Rosieren &middot; Page réalisée à l'attention de la Caisse Fédérale de Crédit Mutuel</span>
+        <div class="foot-links">
+          <a href="index.html">Portfolio complet</a>
+          <a href="mailto:vanderosieren.simon@gmail.com">Email</a>
+          <a href="https://linkedin.com/in/simon-vanderosieren" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 20));
+
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.anim, .anim-l, .anim-r').forEach(el => obs.observe(el));
+
+    // Indique visuellement que le diagramme pipeline peut être parcouru horizontalement
+    const pipelineScroll = document.querySelector('.pipeline-scroll');
+    function checkPipelineOverflow() {
+      if (!pipelineScroll) return;
+      pipelineScroll.classList.toggle('has-scroll', pipelineScroll.scrollWidth > pipelineScroll.clientWidth + 4);
+    }
+    checkPipelineOverflow();
+    window.addEventListener('resize', checkPipelineOverflow);
+  </script>
+</body>
+</html>
