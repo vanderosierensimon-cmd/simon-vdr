@@ -4,6 +4,7 @@
   ],
   "rewrites": [
     { "source": "/decathlon", "destination": "/decathlon.html" },
-    { "source": "/credit-mutuel", "destination": "/credit-mutuel.html" }
+    { "source": "/credit-mutuel", "destination": "/credit-mutuel.html" },
+    { "source": "/portakabin", "destination": "/portakabin.html" }
   ]
 }
