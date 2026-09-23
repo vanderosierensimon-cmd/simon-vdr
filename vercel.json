@@ -1,11 +1,11 @@
 {
   "redirects": [
-    { "source": "/wheelofwork", "destination": "/", "permanent": false }
+    { "source": "/wheelofwork", "destination": "/", "permanent": false },
+    { "source": "/decathlon", "destination": "/", "permanent": false },
+    { "source": "/credit-mutuel", "destination": "/", "permanent": false },
+    { "source": "/portakabin", "destination": "/", "permanent": false }
   ],
   "rewrites": [
-    { "source": "/decathlon", "destination": "/decathlon.html" },
-    { "source": "/credit-mutuel", "destination": "/credit-mutuel.html" },
-    { "source": "/portakabin", "destination": "/portakabin.html" },
     { "source": "/batka", "destination": "/batka.html" }
   ]
 }
