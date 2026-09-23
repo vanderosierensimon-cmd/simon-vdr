@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simon Vande Rosieren × Batka</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Candidature de Simon Vande Rosieren — Growth Marketing & Revenue Manager.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Simon Vande Rosieren × Batka">
+  <meta property="og:description" content="Growth Marketing : de l'audience au revenu. Des systèmes, campagnes et process déjà éprouvés chez Positive, adaptables aux enjeux des entités de Batka.">
+  <meta property="og:url" content="https://simon-vdr.com/batka">
+  <meta property="og:image" content="https://simon-vdr.com/DSC06925-2.jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Simon Vande Rosieren × Batka">
+  <meta name="twitter:description" content="Candidature de Simon Vande Rosieren — Growth Marketing & Revenue Manager.">
+  <meta name="twitter:image" content="https://simon-vdr.com/DSC06925-2.jpeg">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark:       #080D1A;
+      --dark-2:     #0F1629;
+      --dark-card:  #141B2D;
+      --blue:       #1246F5;
+      --blue-h:     #0E3BD4;
+      --mint:       #00E5A0;
+      --white:      #FFFFFF;
+      --off:        #F5F4F0;
+      --g100:       #EEECE6;
+      --g200:       #E2DFD8;
+      --g400:       #9CA3AF;
+      --text:       #0F1629;
+      --muted:      #6B7280;
+      --r:          16px;
+      --r-sm:       8px;
+      --sh:         0 4px 24px rgba(0,0,0,.06);
+      --sh-lg:      0 12px 48px rgba(0,0,0,.12);
+      --ff-d:       'Space Grotesk', sans-serif;
+      --ff-b:       'Inter', sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:var(--ff-b);color:var(--text);background:var(--white);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+    a{color:inherit;text-decoration:none;}
+    h1,h2,h3,h4{font-family:var(--ff-d);}
+    .container{max-width:1200px;margin:0 auto;padding:0 40px;}
+    .narrow{max-width:700px;}
+    .center{margin-left:auto;margin-right:auto;text-align:center;}
+    section{padding:100px 0;}
+    p{font-size:16px;color:var(--muted);line-height:1.75;}
+    p+p{margin-top:16px;}
+    strong{color:var(--text);font-weight:600;}
+
+    /* ── SECTION LABEL / TITLE (identiques simon-vdr.com) ── */
+    .sl{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--blue);background:rgba(18,70,245,.08);padding:6px 14px;border-radius:100px;margin-bottom:16px;}
+    .sl-dark{background:rgba(255,255,255,.06);color:rgba(255,255,255,.5);}
+    .st{font-family:var(--ff-d);font-size:clamp(2rem,3.5vw,2.8rem);font-weight:700;line-height:1.15;color:var(--text);margin-bottom:22px;}
+    .st strong{color:var(--blue);font-weight:800;}
+    .st.light{color:#fff;}
+    .st.light strong{color:var(--mint);}
+    .lead{font-size:18px;color:var(--muted);line-height:1.75;}
+    .lead+.lead{margin-top:16px;}
+    .lead.light{color:rgba(255,255,255,.55);}
+
+    /* ── BUTTONS ── */
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:100px;font-family:var(--ff-b);font-size:14px;font-weight:500;transition:all .2s;cursor:pointer;border:none;white-space:nowrap;}
+    .btn svg{width:15px;height:15px;flex-shrink:0;}
+    .btn-p{background:var(--blue);color:#fff;}
+    .btn-p:hover{background:var(--blue-h);transform:translateY(-1px);}
+    .btn-s{background:transparent;color:var(--text);border:1.5px solid var(--g200);}
+    .btn-s:hover{border-color:var(--blue);color:var(--blue);}
+    .btn-s-dark{background:transparent;color:rgba(255,255,255,.75);border:1.5px solid rgba(255,255,255,.18);}
+    .btn-s-dark:hover{border-color:var(--mint);color:var(--mint);}
+
+    /* ── ANIMATIONS (identiques simon-vdr.com) ── */
+    .anim,.anim-l,.anim-r{opacity:0;transition:opacity .65s ease,transform .65s ease;}
+    .anim{transform:translateY(20px);}
+    .anim-l{transform:translateX(-28px);}
+    .anim-r{transform:translateX(28px);}
+    .anim.v,.anim-l.v,.anim-r.v{opacity:1;transform:none;}
+    .s1{transition-delay:.1s;} .s2{transition-delay:.2s;} .s3{transition-delay:.3s;} .s4{transition-delay:.4s;}
+
+    /* ── FOCUS (accessibilité clavier) ── */
+    a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:4px;}
+    .conviction a:focus-visible,.contact a:focus-visible,footer a:focus-visible{outline-color:var(--mint);}
+
+    /* ══════════════════════════════════════
+       NAV
+    ══════════════════════════════════════ */
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 0;transition:all .3s;}
+    nav.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(20px);box-shadow:0 1px 0 rgba(0,0,0,.06);padding:12px 0;}
+    .nav-inner{max-width:1200px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+    .nav-id{display:flex;flex-direction:column;line-height:1.25;}
+    .nav-name{font-family:var(--ff-d);font-weight:700;font-size:15px;color:var(--blue);}
+    .nav-sub{font-size:11px;color:var(--muted);}
+    .nav-links{display:flex;align-items:center;gap:20px;}
+    .nav-anchors{display:flex;align-items:center;gap:18px;}
+    .nav-anchors a{font-size:13px;font-weight:500;color:var(--muted);transition:color .2s;white-space:nowrap;}
+    .nav-anchors a:hover{color:var(--blue);}
+    @media(max-width:960px){.nav-anchors{display:none;}}
+
+    /* ══════════════════════════════════════
+       HERO
+    ══════════════════════════════════════ */
+    .hero{position:relative;background:var(--off);overflow:hidden;display:grid;grid-template-columns:55% 45%;align-items:stretch;}
+    .hero-content{padding:180px 60px 100px 40px;position:relative;z-index:1;display:flex;flex-direction:column;justify-content:center;}
+    .hero-visual{position:relative;overflow:hidden;}
+    .hero-visual img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
+    .hero-visual::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(to right,var(--off) 0%,rgba(245,244,240,0) 25%);}
+    @media(max-width:1024px){
+      .hero{grid-template-columns:1fr;}
+      .hero-visual{display:none;}
+      .hero-content{padding:150px 40px 72px;}
+    }
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(18,70,245,.08);border:1px solid rgba(18,70,245,.2);color:var(--blue);padding:6px 16px;border-radius:100px;font-size:12px;font-weight:500;width:fit-content;margin-bottom:26px;}
+    .hero-badge-dot{width:7px;height:7px;border-radius:50%;background:var(--mint);animation:blink 2s infinite;}
+    @keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.75)}}
+    .hero h1{font-family:var(--ff-d);font-size:clamp(2.4rem,4.4vw,3.6rem);font-weight:800;line-height:1.14;color:var(--text);margin-bottom:24px;max-width:640px;}
+    .hero p{max-width:560px;}
+    .hero-sig{margin-top:28px;}
+    .hero-sig-name{font-family:var(--ff-d);font-weight:700;font-size:15.5px;color:var(--text);}
+    .hero-sig-role{font-size:13px;color:var(--muted);margin-top:2px;}
+    .hero-ctas{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;}
+
+    .hero-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:38px;max-width:560px;}
+    @media(max-width:600px){.hero-kpis{grid-template-columns:1fr 1fr;}}
+    .hero-kpi{background:#fff;border:1px solid var(--g200);border-radius:var(--r-sm);padding:16px 14px;text-align:center;}
+    .hero-kpi-v{font-family:var(--ff-d);font-size:1.45rem;font-weight:800;color:var(--blue);line-height:1;}
+    .hero-kpi-l{font-size:11px;color:var(--muted);margin-top:7px;line-height:1.35;}
+
+    /* ══════════════════════════════════════
+       BANDES SOMBRES / PULL-QUOTE
+    ══════════════════════════════════════ */
+    .conviction{background:var(--dark);}
+    .pull-quote{font-family:var(--ff-d);font-size:clamp(1.25rem,2.3vw,1.6rem);font-weight:600;line-height:1.45;max-width:740px;margin:26px auto 0;text-align:center;color:var(--text);}
+    .pull-quote strong{color:var(--blue);}
+    .pull-quote.light{color:#fff;}
+    .pull-quote.light strong{color:var(--mint);}
+
+    /* ══════════════════════════════════════
+       PIPELINE (parcours transversal)
+    ══════════════════════════════════════ */
+    .pipeline-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:36px 0 8px;position:relative;}
+    .pipeline-scroll.has-scroll{mask-image:linear-gradient(to right,black calc(100% - 32px),transparent 100%);-webkit-mask-image:linear-gradient(to right,black calc(100% - 32px),transparent 100%);}
+    @media(max-width:860px){.pipeline-scroll.has-scroll{mask-image:none;-webkit-mask-image:none;}}
+    .pipeline{display:flex;align-items:stretch;gap:0;flex-wrap:nowrap;min-width:680px;}
+    .pl-step{flex:1 1 0;min-width:112px;background:var(--off);border:1px solid var(--g200);border-radius:12px;padding:18px 14px;text-align:center;}
+    .pl-step.last{background:rgba(18,70,245,.07);border-color:rgba(18,70,245,.25);}
+    .pl-t{font-family:var(--ff-d);font-weight:700;font-size:13.5px;color:var(--text);}
+    .pl-step.last .pl-t{color:var(--blue);}
+    .pl-arrow{flex:0 0 auto;width:22px;display:flex;align-items:center;justify-content:center;color:var(--g400);font-size:14px;}
+    @media(max-width:700px){
+      .pipeline-scroll{overflow-x:visible;}
+      .pipeline{flex-direction:column;flex-wrap:nowrap;min-width:0;}
+      .pl-arrow{width:auto;align-self:center;padding:3px 0;transform:rotate(90deg);}
+    }
+
+    /* ══════════════════════════════════════
+       FUNNEL VISUEL — TOFU / MOFU / BOFU / REVENUE
+    ══════════════════════════════════════ */
+    .funnel-wrap{max-width:620px;margin:44px auto 0;}
+    .funnel-stage{background:var(--dark-card);border:1px solid rgba(255,255,255,.08);border-radius:var(--r);padding:26px 28px;text-align:center;margin:0 auto;}
+    .funnel-stage.s-tofu{width:100%;}
+    .funnel-stage.s-mofu{width:86%;}
+    .funnel-stage.s-bofu{width:72%;}
+    .funnel-stage.s-rev{width:58%;background:rgba(0,229,160,.1);border-color:rgba(0,229,160,.35);}
+    @media(max-width:600px){.funnel-stage{width:100% !important;}}
+    .funnel-label{font-family:var(--ff-d);font-size:11px;font-weight:700;letter-spacing:.12em;color:rgba(255,255,255,.4);margin-bottom:6px;}
+    .funnel-stage.s-rev .funnel-label{color:var(--mint);}
+    .funnel-title{font-family:var(--ff-d);font-size:1.02rem;font-weight:700;color:#fff;margin-bottom:14px;}
+    .funnel-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:7px;}
+    .funnel-arrow{text-align:center;color:rgba(255,255,255,.25);font-size:17px;padding:8px 0;}
+
+    /* ══════════════════════════════════════
+       FLOW (schémas de process)
+    ══════════════════════════════════════ */
+    .flow-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:28px 0 8px;}
+    .flow{display:flex;align-items:center;flex-wrap:nowrap;gap:0;min-width:760px;}
+    .flow-step{flex:1 1 0;min-width:100px;background:var(--off);border:1px solid var(--g200);border-radius:10px;padding:15px 12px;text-align:center;font-family:var(--ff-d);font-weight:600;font-size:12.5px;color:var(--text);}
+    .flow-arrow{flex:0 0 auto;width:20px;text-align:center;color:var(--g400);font-size:13px;}
+    @media(max-width:760px){
+      .flow-scroll{overflow-x:visible;}
+      .flow{flex-direction:column;min-width:0;}
+      .flow-arrow{width:auto;transform:rotate(90deg);padding:2px 0;}
+    }
+    .flow.flow-sm{min-width:0;flex-wrap:wrap;}
+    .flow.flow-sm .flow-step{flex:1 1 130px;}
+    @media(max-width:520px){.flow.flow-sm{flex-direction:column;}.flow.flow-sm .flow-arrow{width:auto;transform:rotate(90deg);padding:2px 0;}}
+
+    /* ══════════════════════════════════════
+       TAGS / DELIVERABLES / INSIGHTS (génériques)
+    ══════════════════════════════════════ */
+    .tag-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;}
+    .tag{font-size:12.5px;font-weight:500;color:var(--text);background:var(--off);border:1px solid var(--g200);padding:6px 13px;border-radius:100px;}
+    .deliverables{padding:0;}
+    .deliverables ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+    .deliverables li{font-size:14.5px;color:var(--text);display:flex;gap:10px;line-height:1.45;}
+    .deliverables li::before{content:'';flex:0 0 auto;width:5px;height:5px;border-radius:50%;background:var(--blue);margin-top:8px;}
+    .insight{margin-top:24px;padding:16px 20px;border-left:2px solid var(--blue);background:rgba(18,70,245,.05);border-radius:0 var(--r-sm) var(--r-sm) 0;font-size:14.5px;color:var(--text);line-height:1.55;}
+    .insight-label{display:block;font-family:var(--ff-d);font-size:10.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--blue);margin-bottom:6px;}
+    .compare-note{margin-top:28px;padding:20px 24px;border-left:2px solid var(--blue);background:rgba(18,70,245,.05);border-radius:0 var(--r-sm) var(--r-sm) 0;font-size:15px;color:var(--text);line-height:1.65;}
+    .compare-note h4{font-size:1.02rem;font-weight:700;color:var(--text);margin-bottom:8px;}
+    .compare-note p{color:var(--text);font-size:15px;}
+    .compare-note p+p{margin-top:10px;}
+    .case-cols{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:22px;}
+    @media(max-width:900px){.case-cols{grid-template-columns:1fr;gap:10px;}}
+    .case-block-h{font-family:var(--ff-d);font-size:12.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--text);margin-bottom:10px;}
+    .case-block-h.blue{color:var(--blue);}
+
+    /* ══════════════════════════════════════
+       CARTES — CE QUE J'AI DÉJÀ CONSTRUIT
+    ══════════════════════════════════════ */
+    .build-card{background:#fff;border:1px solid var(--g200);border-radius:var(--r);padding:34px 32px;margin-top:20px;transition:all .25s;}
+    .build-card:hover{border-color:rgba(18,70,245,.22);box-shadow:var(--sh);}
+    .build-eyebrow{font-family:var(--ff-d);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:10px;}
+    .build-card h4{font-size:1.28rem;font-weight:700;color:var(--text);margin-bottom:18px;line-height:1.3;}
+    .build-kpis{display:flex;flex-wrap:wrap;gap:30px;margin-bottom:6px;}
+    .build-kpi-v{font-family:var(--ff-d);font-size:1.2rem;font-weight:800;color:var(--blue);line-height:1;}
+    .build-kpi-l{font-size:12px;color:var(--muted);margin-top:4px;}
+    @media(max-width:600px){.build-card{padding:26px 22px;}}
+
+    /* ══════════════════════════════════════
+       ÉVÉNEMENTIEL
+    ══════════════════════════════════════ */
+    .evt-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:36px;}
+    @media(max-width:860px){.evt-grid{grid-template-columns:1fr;}}
+    .evt-card{background:var(--off);border:1px solid var(--g200);border-radius:var(--r);padding:30px 28px;}
+    .evt-card h4{font-size:1.08rem;font-weight:700;color:var(--text);margin-bottom:4px;}
+    .evt-sub{font-size:11.5px;color:var(--blue);font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:16px;}
+
+    /* ══════════════════════════════════════
+       90 PREMIERS JOURS
+    ══════════════════════════════════════ */
+    .days-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px;}
+    @media(max-width:860px){.days-grid{grid-template-columns:1fr;}}
+    .days-card{background:var(--off);border:1px solid var(--g200);border-radius:var(--r);padding:26px 24px;display:flex;flex-direction:column;}
+    .days-range{font-family:var(--ff-d);font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--blue);margin-bottom:6px;}
+    .days-card h4{font-size:1.08rem;font-weight:700;color:var(--text);margin-bottom:14px;}
+    .days-card ul{list-style:none;display:flex;flex-direction:column;gap:9px;}
+    .days-card li{font-size:13.5px;color:var(--muted);display:flex;gap:9px;line-height:1.5;}
+    .days-card li::before{content:'';flex:0 0 auto;width:5px;height:5px;border-radius:50%;background:var(--blue);margin-top:8px;}
+    .days-deliv{margin-top:18px;padding-top:16px;border-top:1px solid var(--g200);font-size:12.5px;color:var(--text);line-height:1.5;}
+    .days-deliv strong{display:block;color:var(--blue);font-family:var(--ff-d);font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+
+    /* ══════════════════════════════════════
+       RECOMMANDATION
+    ══════════════════════════════════════ */
+    .reco-wrap{max-width:740px;margin:40px auto 0;}
+    .reco-card{background:var(--dark-card);border:1px solid rgba(255,255,255,.08);border-radius:var(--r);padding:40px 36px;}
+    @media(max-width:600px){.reco-card{padding:30px 24px;}}
+    .reco-head{display:flex;align-items:center;gap:14px;margin-bottom:22px;}
+    .reco-avatar{width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:center top;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);flex-shrink:0;}
+    .reco-quote-mark{font-family:var(--ff-d);font-size:2.6rem;color:var(--mint);line-height:1;margin-bottom:10px;opacity:.65;}
+    .reco-text{font-size:1.1rem;font-style:italic;color:#fff;line-height:1.65;}
+    .reco-lang-note{font-size:11.5px;color:rgba(255,255,255,.35);margin-top:18px;}
+    .reco-name{font-family:var(--ff-d);font-weight:700;font-size:14.5px;color:#fff;}
+    .reco-role{font-size:12.5px;color:rgba(255,255,255,.5);margin-top:2px;}
+
+    /* ══════════════════════════════════════
+       CONTACT / CONCLUSION (identique simon-vdr.com)
+    ══════════════════════════════════════ */
+    .contact{padding:100px 0;background:var(--dark);}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+    @media(max-width:860px){.contact-grid{grid-template-columns:1fr;gap:40px;}}
+    .contact-info p{font-size:15px;line-height:1.75;color:rgba(255,255,255,.4);margin:16px 0 32px;}
+    .c-links{display:flex;flex-direction:column;gap:12px;margin-bottom:36px;}
+    .c-link{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:500;color:rgba(255,255,255,.55);transition:color .2s;}
+    .c-link:hover{color:var(--mint);}
+    .c-link svg{width:15px;height:15px;flex-shrink:0;}
+    .contact-photo-card{display:flex;align-items:center;gap:16px;background:var(--dark-card);border:1px solid rgba(255,255,255,.06);border-radius:var(--r);padding:22px;}
+    .contact-photo-card > div{min-width:0;}
+    .contact-photo{width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:top center;flex-shrink:0;}
+    .contact-photo-name{font-family:var(--ff-d);font-weight:700;font-size:15px;color:#fff;}
+    .contact-photo-role{font-size:12.5px;color:rgba(255,255,255,.4);margin-top:2px;}
+
+    /* ══════════════════════════════════════
+       FOOTER (identique simon-vdr.com)
+    ══════════════════════════════════════ */
+    footer{background:#04080F;padding:22px 0;border-top:1px solid rgba(255,255,255,.05);}
+    .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+    .foot span{font-size:12px;color:rgba(255,255,255,.22);}
+    .foot-links{display:flex;gap:22px;flex-wrap:wrap;}
+    .foot-links a{font-size:12px;color:rgba(255,255,255,.22);transition:color .2s;}
+    .foot-links a:hover{color:rgba(255,255,255,.6);}
+
+    @media(max-width:600px){
+      section{padding:72px 0;}
+      .container{padding:0 24px;}
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="nav">
+    <div class="nav-inner">
+      <div class="nav-id">
+        <span class="nav-name">Simon Vande Rosieren</span>
+        <span class="nav-sub">Candidature Batka</span>
+      </div>
+      <div class="nav-anchors">
+        <a href="#approche">Approche</a>
+        <a href="#realisations">Réalisations</a>
+        <a href="#evenementiel">Événementiel</a>
+        <a href="#90jours">90 jours</a>
+        <a href="#recommandation">Recommandation</a>
+      </div>
+      <div class="nav-links">
+        <a href="CV_Simon_VandeRosieren_Batka.pdf" target="_blank" rel="noopener" class="btn btn-p">Voir mon CV</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-content">
+      <div class="hero-badge anim">
+        <span class="hero-badge-dot"></span>
+        Candidature • Batka
+      </div>
+      <h1 class="anim">Growth Marketing : de l'audience au revenu</h1>
+      <p class="anim">Des systèmes, campagnes et process déjà éprouvés chez Positive, que je peux adapter aux enjeux des différentes entités de Batka.</p>
+      <div class="hero-sig anim">
+        <div class="hero-sig-name">Simon Vande Rosieren</div>
+        <div class="hero-sig-role">Growth Marketing &amp; Revenue Manager</div>
+      </div>
+      <div class="hero-ctas anim">
+        <a href="#realisations" class="btn btn-p">
+          Voir mes réalisations
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+        </a>
+        <a href="CV_Simon_VandeRosieren_Batka.pdf" target="_blank" rel="noopener" class="btn btn-s">Consulter mon CV</a>
+      </div>
+
+      <div class="hero-kpis anim">
+        <div class="hero-kpi"><div class="hero-kpi-v">60+</div><div class="hero-kpi-l">campagnes multicanales pilotées en 2025</div><div style="font-size:9.5px;color:var(--g400);margin-top:4px;line-height:1.3;">jusqu'à 15+ menées simultanément</div></div>
+        <div class="hero-kpi"><div class="hero-kpi-v">50+</div><div class="hero-kpi-l">automatisations Make conçues et gérées</div></div>
+        <div class="hero-kpi"><div class="hero-kpi-v">30 RDV/jour</div><div class="hero-kpi-l">pic atteint via 9 agendas Calendly</div></div>
+        <div class="hero-kpi"><div class="hero-kpi-v">8 ans</div><div class="hero-kpi-l">en environnement SaaS B2B</div></div>
+      </div>
+    </div>
+    <div class="hero-visual anim-r">
+      <img src="DSC06925-2.jpeg" alt="Simon Vande Rosieren">
+    </div>
+  </header>
+
+  <!-- CONVICTION / IDÉE DIRECTRICE -->
+  <section class="conviction">
+    <div class="container center">
+      <span class="sl sl-dark anim">Ma conviction</span>
+      <p class="pull-quote light anim">Je ne prétends pas connaître les réponses avant d'avoir compris Batka. En revanche, j'arrive avec <strong>8 ans d'expérience B2B</strong> et des méthodes, systèmes et campagnes déjà éprouvés que je peux rapidement adapter à vos enjeux.</p>
+    </div>
+  </section>
+
+  <!-- POURQUOI BATKA -->
+  <section>
+    <div class="container">
+      <span class="sl anim">Motivations</span>
+      <h3 class="st anim">Pourquoi Batka ?</h3>
+      <p class="lead narrow anim">Après 8 années passées chez Positive, j'ai envie de rejoindre un environnement dans lequel je retrouve ce qui m'a fait aimer mes années Sarbacane : de l'autonomie, des projets variés, une vraie proximité avec les équipes et les dirigeants, et une culture d'entreprise forte.</p>
+      <p class="lead narrow anim">Mon parcours m'a amené du Sales au Customer Success, puis au Marketing et au Growth. Cette transversalité me permet aujourd'hui de comprendre l'ensemble du parcours qui transforme une audience en opportunité commerciale.</p>
+      <p class="lead narrow anim">Je ne pars pas d'une feuille blanche : j'ai déjà conçu, testé et amélioré des campagnes, parcours de conversion, automatisations et process que je peux adapter rapidement aux enjeux de Batka et de ses différentes entités.</p>
+
+      <div class="pipeline-scroll anim">
+        <div class="pipeline">
+          <div class="pl-step"><div class="pl-t">Sales</div></div>
+          <div class="pl-arrow">→</div>
+          <div class="pl-step"><div class="pl-t">Customer Success</div></div>
+          <div class="pl-arrow">→</div>
+          <div class="pl-step"><div class="pl-t">Marketing</div></div>
+          <div class="pl-arrow">→</div>
+          <div class="pl-step last"><div class="pl-t">Growth</div></div>
+        </div>
+      </div>
+      <p class="anim" style="margin-top:14px;font-size:13px;">Une trajectoire transversale, du terrain commercial au pilotage Marketing &amp; Growth.</p>
+    </div>
+  </section>
+
+  <!-- MULTI-ENTITÉS -->
+  <section style="background:var(--off)">
+    <div class="container">
+      <span class="sl anim">Contexte multi-entités</span>
+      <h3 class="st anim">Un cadre commun, des enjeux <strong>différents</strong></h3>
+      <p class="lead narrow anim">Piloter plusieurs entités ne signifie pas appliquer partout les mêmes actions. Mon rôle serait de comprendre les objectifs, les cibles et les priorités propres à chacune, tout en identifiant ce qui peut être mutualisé : méthodes, outils, data, automatisations, contenus ou pilotage.</p>
+      <p class="lead narrow anim">C'est une configuration que j'ai déjà connue chez Positive en travaillant sur plusieurs solutions SaaS, avec des offres, audiences, équipes Marketing et Sales et enjeux différents.</p>
+
+      <div class="anim" style="max-width:600px;margin:36px auto 0;display:flex;flex-direction:column;align-items:center;">
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;width:100%;">
+          <div class="flow-step" style="background:#fff;">Entité 1</div>
+          <div class="flow-step" style="background:#fff;">Entité 2</div>
+          <div class="flow-step" style="background:#fff;">Entité 3</div>
+        </div>
+        <div class="flow-arrow" style="width:auto;transform:rotate(90deg);padding:6px 0;color:var(--g400);">→</div>
+        <div class="flow-step" style="background:#fff;width:100%;">Objectifs &amp; audiences propres</div>
+        <div class="flow-arrow" style="width:auto;transform:rotate(90deg);padding:6px 0;color:var(--g400);">→</div>
+        <div class="flow-step" style="background:rgba(18,70,245,.07);border-color:rgba(18,70,245,.25);color:var(--blue);width:100%;">Socle Marketing mutualisable</div>
+        <div class="flow-arrow" style="width:auto;transform:rotate(90deg);padding:6px 0;color:var(--g400);">→</div>
+        <div class="flow-step" style="background:rgba(0,229,160,.12);border-color:rgba(0,229,160,.35);width:100%;">Data · Process · Outils · Apprentissages</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FUNNEL VISUEL -->
+  <div id="approche"></div>
+  <section class="conviction">
+    <div class="container">
+      <span class="sl sl-dark anim">Ma vision du funnel</span>
+      <h3 class="st light anim">Un système Marketing, pas une succession <strong>d'actions</strong></h3>
+      <p class="lead light narrow anim">J'utilise notamment le framework TOFU / MOFU / BOFU (Top, Middle et Bottom of Funnel) pour structurer le parcours Marketing autour du niveau de maturité du prospect. Un prospect qui découvre une entreprise n'a ni les mêmes besoins ni le même niveau d'intention qu'un prospect déjà engagé ou prêt à échanger avec un commercial.</p>
+      <p class="lead light narrow anim">Le framework permet d'adapter les contenus, les campagnes, les parcours de conversion, le scoring et les interventions Sales à chaque étape du funnel.</p>
+      <p class="lead light narrow anim">Il ne s'agit pas pour moi d'un modèle théorique : chez Positive, cette logique influençait directement les contenus produits, la segmentation, le scoring, les campagnes, les parcours web et in-app, les automatisations et le moment auquel les équipes commerciales intervenaient.</p>
+
+      <div class="funnel-wrap anim">
+        <div class="funnel-stage s-tofu">
+          <div class="funnel-label">TOFU · Attirer</div>
+          <div class="funnel-title">Faire découvrir</div>
+          <div class="funnel-tags">
+            <span class="tag" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:rgba(255,255,255,.8);">Content</span>
+            <span class="tag" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:rgba(255,255,255,.8);">SEO</span>
+            <span class="tag" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:rgba(255,255,255,.8);">LinkedIn</span>
+            <span class="tag" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:rgba(255,255,255,.8);">Acquisition</span>
+            <span class="tag" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:rgba(255,255,255,.8);">Events</span>
+          </div>
+        </div>
+        <div class="funnel-arrow">↓</div>
+        <div class="funnel-stage s-mofu">
+          <div class="funnel-label">MOFU · Engager &amp; qualifier</div>
+          <div class="funnel-title">Nourrir l'intérêt</div>
+          <div class="funnel-tags">
+            <span class="tag" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:rgba(255,255,255,.8);">Ebooks</span>
+            <span class="tag" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:rgba(255,255,255,.8);">Webinars</span>
+            <span class="tag" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:rgba(255,255,255,.8);">Retargeting</span>
+            <span class="tag" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:rgba(255,255,255,.8);">Nurturing</span>
+            <span class="tag" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:rgba(255,255,255,.8);">Scoring</span>
+          </div>
+        </div>
+        <div class="funnel-arrow">↓</div>
+        <div class="funnel-stage s-bofu">
+          <div class="funnel-label">BOFU · Convertir</div>
+          <div class="funnel-title">Passer à l'action</div>
+          <div class="funnel-tags">
+            <span class="tag" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:rgba(255,255,255,.8);">Parcours on-site</span>
+            <span class="tag" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:rgba(255,255,255,.8);">Calendly</span>
+            <span class="tag" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:rgba(255,255,255,.8);">Automation</span>
+            <span class="tag" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:rgba(255,255,255,.8);">Sales Enablement</span>
+          </div>
+        </div>
+        <div class="funnel-arrow">↓</div>
+        <div class="funnel-stage s-rev">
+          <div class="funnel-label">Revenue</div>
+          <div class="funnel-title">SQL · Pipeline · Clients · CA</div>
+        </div>
+      </div>
+
+      <p class="pull-quote light anim">Chaque action doit avoir une place dans le parcours et une contribution mesurable aux objectifs business.</p>
+    </div>
+  </section>
+
+  <!-- CE QUE J'AI DÉJÀ CONSTRUIT -->
+  <div id="realisations"></div>
+  <section>
+    <div class="container">
+      <span class="sl anim">Réalisations</span>
+      <h3 class="st anim">De la stratégie à <strong>l'exécution</strong></h3>
+      <p class="lead narrow anim">Quelques dispositifs conçus et pilotés chez Positive.</p>
+
+      <!-- CARTE 1 — ACQUISITION B2B -->
+      <div class="build-card anim">
+        <div class="build-eyebrow">Acquisition B2B</div>
+        <h4>Industrialiser l'acquisition sans perdre la pertinence</h4>
+        <div class="build-kpis">
+          <div><div class="build-kpi-v">60+</div><div class="build-kpi-l">campagnes multicanales pilotées en 2025</div></div>
+          <div><div class="build-kpi-v">Jusqu'à 15+</div><div class="build-kpi-l">menées simultanément</div></div>
+          <div><div class="build-kpi-v">Jusqu'à 900</div><div class="build-kpi-l">contacts/jour orchestrés via les campagnes outbound</div></div>
+        </div>
+        <div class="flow-scroll">
+          <div class="flow">
+            <div class="flow-step">Segmentation</div><div class="flow-arrow">→</div>
+            <div class="flow-step">Ciblage</div><div class="flow-arrow">→</div>
+            <div class="flow-step">Campagnes multicanales</div><div class="flow-arrow">→</div>
+            <div class="flow-step">Scoring</div><div class="flow-arrow">→</div>
+            <div class="flow-step">Transmission Sales</div><div class="flow-arrow">→</div>
+            <div class="flow-step">Analyse</div><div class="flow-arrow">→</div>
+            <div class="flow-step">Optimisation</div>
+          </div>
+        </div>
+        <p style="margin-top:22px;">Un exemple concret : un programme de réactivation (win-back) construit à partir d'une base importante de clients churnés.</p>
+        <div class="case-cols">
+          <div>
+            <div class="case-block-h">Ce qui n'a pas fonctionné du premier coup</div>
+            <p style="margin:0;">Le ciblage initial était trop large : l'analyse des premiers résultats a mis en évidence un taux de conversion trop faible pour être exploitable à l'échelle.</p>
+          </div>
+          <div>
+            <div class="case-block-h blue">Ce qui a permis de corriger le tir</div>
+            <p style="margin:0;">Resegmentation à partir de signaux plus précis (ancienneté du churn, dernière connexion, historique, valeur du compte), scoring, orchestration email / LinkedIn / Sales selon le score, A/B tests et centralisation du suivi des résultats.</p>
+          </div>
+        </div>
+        <div class="insight"><span class="insight-label">Ce que ce projet démontre</span>La capacité à mesurer un dispositif, reconnaître quand un ciblage ne fonctionne pas, et le corriger rapidement plutôt que de le laisser tourner par défaut.</div>
+      </div>
+
+      <!-- CARTE 2 — CONTENT & DEMAND GENERATION -->
+      <div class="build-card anim">
+        <div class="build-eyebrow">Content &amp; Demand Generation</div>
+        <h4>Transformer une expertise sectorielle en dispositif d'acquisition</h4>
+        <div class="build-kpis">
+          <div><div class="build-kpi-v">1 / semaine</div><div class="build-kpi-l">secteur activé via une campagne dédiée</div></div>
+          <div><div class="build-kpi-v">4+</div><div class="build-kpi-l">formats : ebook · article · social · landing</div></div>
+          <div><div style="font-family:var(--ff-d);font-size:1rem;font-weight:700;color:var(--blue);line-height:1;">IA + automatisation</div><div class="build-kpi-l">pour industrialiser la production</div></div>
+        </div>
+        <div class="flow-scroll">
+          <div class="flow">
+            <div class="flow-step">Cible / problématique</div><div class="flow-arrow">→</div>
+            <div class="flow-step">Angle &amp; expertise</div><div class="flow-arrow">→</div>
+            <div class="flow-step" style="background:rgba(18,70,245,.07);border-color:rgba(18,70,245,.25);color:var(--blue);">Content Factory IA</div><div class="flow-arrow">→</div>
+            <div class="flow-step">Ebook · Article · Social · Landing</div><div class="flow-arrow">→</div>
+            <div class="flow-step">Diffusion</div><div class="flow-arrow">→</div>
+            <div class="flow-step">Lead</div><div class="flow-arrow">→</div>
+            <div class="flow-step">Nurturing / Sales</div><div class="flow-arrow">→</div>
+            <div class="flow-step">Mesure &amp; optimisation</div>
+          </div>
+        </div>
+        <p style="margin-top:10px;font-size:12.5px;color:var(--muted);">Content Factory co-construite avec le Content Manager pour accélérer la déclinaison des formats tout en conservant validation et enrichissement humains.</p>
+        <p style="margin-top:22px;">Chaque semaine, nous sélectionnions un secteur ou une problématique à adresser. Mon rôle était de transformer cette orientation en dispositif d'acquisition complet : angle, contenus, landing page, diffusion, génération de leads puis nurturing ou transmission aux Sales.</p>
+        <p>Je travaillais avec le Content Manager et les ressources nécessaires à la production. J'intervenais sur le choix des cibles et sujets, la conception du dispositif, la coordination, certains assets, la mise en ligne, la distribution et le suivi de la conversion.</p>
+        <div class="insight"><span class="insight-label">Ce que ce dispositif démontre</span>Ma capacité à partir d'une cible business, mobiliser les bonnes ressources et industrialiser la production pour transformer le Content en véritable levier d'acquisition et de maturation.</div>
+      </div>
+
+      <!-- CARTE 3 — CONVERSION & AUTOMATION -->
+      <div class="build-card anim">
+        <div class="build-eyebrow">Conversion &amp; Automation</div>
+        <h4>Transformer l'intention en rendez-vous commercial</h4>
+        <div class="build-kpis">
+          <div><div class="build-kpi-v">9</div><div class="build-kpi-l">agendas Calendly</div></div>
+          <div><div class="build-kpi-v">~30*</div><div class="build-kpi-l">RDV qualifiés / jour au pic</div></div>
+          <div><div class="build-kpi-v">50+</div><div class="build-kpi-l">automatisations Make</div></div>
+        </div>
+        <div class="flow-scroll">
+          <div class="flow">
+            <div class="flow-step">Visiteur / utilisateur</div><div class="flow-arrow">→</div>
+            <div class="flow-step">Comportement / signal</div><div class="flow-arrow">→</div>
+            <div class="flow-step">Message contextualisé</div><div class="flow-arrow">→</div>
+            <div class="flow-step">Calendly</div><div class="flow-arrow">→</div>
+            <div class="flow-step">Attribution du commercial</div><div class="flow-arrow">→</div>
+            <div class="flow-step">CRM</div><div class="flow-arrow">→</div>
+            <div class="flow-step">Workflow</div><div class="flow-arrow">→</div>
+            <div class="flow-step">Suivi</div>
+          </div>
+        </div>
+        <p style="margin-top:22px;">J'ai conçu des parcours web et in-app permettant de transformer certains signaux d'intention en rendez-vous commerciaux, puis automatisé le routing et les workflows nécessaires pour fluidifier le passage Marketing → Sales.</p>
+        <div class="insight"><span class="insight-label">Ce que ça implique</span>La conversion ne se limite pas à un bouton de prise de rendez-vous : elle dépend de la détection du bon signal, du bon message et de l'attribution au bon commercial.</div>
+      </div>
+
+      <!-- CARTE 4 — MARKETING × SALES -->
+      <div class="build-card anim">
+        <div class="build-eyebrow">Marketing × Sales</div>
+        <h4>Créer une vraie boucle de feedback Marketing / Sales</h4>
+        <p style="margin-top:0;">Création du premier COPIL Marketing / Sales dédié à ces actions.</p>
+        <div class="flow-scroll">
+          <div class="flow">
+            <div class="flow-step">Campagne</div><div class="flow-arrow">→</div>
+            <div class="flow-step">Données</div><div class="flow-arrow">→</div>
+            <div class="flow-step">Dashboard</div><div class="flow-arrow">→</div>
+            <div class="flow-step">COPIL</div><div class="flow-arrow">→</div>
+            <div class="flow-step">Feedback Sales</div><div class="flow-arrow">→</div>
+            <div class="flow-step">Optimisation</div><div class="flow-arrow">→</div>
+            <div class="flow-step">Nouvelle itération</div>
+          </div>
+        </div>
+        <p style="margin-top:22px;">Les dashboards n'avaient pas vocation à produire du reporting pour le reporting. Ils servaient à confronter les résultats Marketing au retour terrain des commerciaux, identifier les points de friction et ajuster les campagnes, ciblages et parcours.</p>
+        <div class="insight"><span class="insight-label">Ce que ce dispositif a changé</span>Une boucle de feedback régulière entre données Marketing et retour terrain Sales, plutôt que deux équipes travaillant chacune avec leurs propres indicateurs.</div>
+      </div>
+
+      <p class="anim" style="margin-top:22px;font-size:12.5px;">* Pic observé sur le dispositif de conversion combinant 9 agendas Calendly — pas un volume quotidien constant sur l'ensemble de mon activité.</p>
+    </div>
+  </section>
+
+  <!-- ÉVÉNEMENTIEL -->
+  <div id="evenementiel"></div>
+  <section style="background:var(--off)">
+    <div class="container">
+      <span class="sl anim">Événementiel</span>
+      <h3 class="st anim">Événementiel : du dispositif Marketing à <strong>l'organisation</strong></h3>
+      <p class="lead narrow anim">Je n'ai pas occupé un poste d'Event Manager et je n'ai pas organisé seul des événements professionnels clients de A à Z.</p>
+      <p class="lead narrow anim">En revanche, mon expérience m'a confronté à l'événementiel sous deux angles complémentaires : son exploitation Marketing / Sales et l'organisation complète d'événements internes.</p>
+
+      <div class="evt-grid">
+        <div class="evt-card anim">
+          <div class="evt-sub">Angle 1</div>
+          <h4>Faire du salon un véritable canal d'acquisition</h4>
+          <p style="margin-top:12px;">Lors des salons professionnels, mon rôle était principalement d'accompagner les équipes Sales et de déployer des méthodes permettant de mieux capter, qualifier et convertir les opportunités générées sur place.</p>
+          <p>J'intervenais également directement aux côtés des commerciaux, ce qui me permettait d'observer les comportements, d'échanger avec les prospects et clients et d'améliorer les dispositifs à partir du terrain.</p>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px;">
+            <div>
+              <div class="case-block-h blue">Scoring automatique</div>
+              <p style="margin:0;font-size:13.5px;">Qualifier rapidement les leads collectés et prioriser le suivi commercial.</p>
+            </div>
+            <div>
+              <div class="case-block-h blue">QR codes &amp; capture</div>
+              <p style="margin:0;font-size:13.5px;">Fluidifier la collecte des informations et leur exploitation.</p>
+            </div>
+            <div>
+              <div class="case-block-h blue">RDV sur le stand</div>
+              <p style="margin:0;font-size:13.5px;">Transformer directement l'intérêt en prochaine étape commerciale.</p>
+            </div>
+            <div>
+              <div class="case-block-h blue">Challenges commerciaux</div>
+              <p style="margin:0;font-size:13.5px;">Stimuler la génération de leads et l'implication des équipes.</p>
+            </div>
+          </div>
+
+          <div class="flow-scroll" style="margin-top:22px;">
+            <div class="flow flow-sm">
+              <div class="flow-step">Avant<br><span style="font-weight:400;font-size:11px;color:var(--muted);">Ciblage / préparation / dispositifs</span></div><div class="flow-arrow">→</div>
+              <div class="flow-step">Pendant<br><span style="font-weight:400;font-size:11px;color:var(--muted);">Capture / qualification / RDV</span></div><div class="flow-arrow">→</div>
+              <div class="flow-step">Après<br><span style="font-weight:400;font-size:11px;color:var(--muted);">CRM / scoring / follow-up / opportunités</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="evt-card anim">
+          <div class="evt-sub">Angle 2</div>
+          <h4>7 ans comme Trésorier du CSE</h4>
+          <p style="margin-top:12px;">En parallèle, mes 7 années comme Trésorier du CSE de Sarbacane m'ont donné une expérience concrète de l'organisation d'événements internes : soirées de Noël, Garden Parties et autres temps forts.</p>
+          <div class="tag-list" style="margin-top:18px;">
+            <span class="tag">Budget &amp; négociation</span>
+            <span class="tag">Fournisseurs</span>
+            <span class="tag">Communication interne</span>
+            <span class="tag">Logistique &amp; coordination</span>
+          </div>
+          <p style="margin-top:18px;font-size:13.5px;">Une expérience différente de l'événementiel B2B, mais qui m'a appris à gérer concrètement un événement, ses prestataires, son budget et ses contraintes opérationnelles.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 90 PREMIERS JOURS -->
+  <div id="90jours"></div>
+  <section>
+    <div class="container">
+      <span class="sl anim">Projection</span>
+      <h3 class="st anim">Comprendre avant de <strong>transformer</strong></h3>
+      <p class="lead narrow anim">Je ne connais pas encore les trois entités concernées, leurs objectifs, leurs équipes, leurs outils ni les dispositifs existants. Un plan sérieux ne peut donc pas commencer par une liste de solutions. Il doit commencer par l'écoute et le diagnostic.</p>
+
+      <div class="days-grid anim">
+        <div class="days-card">
+          <div class="days-range">J0 → J30</div>
+          <h4>Comprendre</h4>
+          <ul>
+            <li>Objectifs business des 3 entités</li>
+            <li>Dirigeants et équipes</li>
+            <li>ICP / personas</li>
+            <li>Offres et parcours</li>
+            <li>Acquisition existante</li>
+            <li>Contenus et événements</li>
+            <li>CRM et data</li>
+            <li>Automatisations</li>
+            <li>Relation Marketing / Sales</li>
+            <li>KPI actuels</li>
+          </ul>
+          <div class="days-deliv"><strong>À l'issue de cette phase</strong>Une vision claire des enjeux, priorités et spécificités des trois entités.</div>
+        </div>
+        <div class="days-card">
+          <div class="days-range">J30 → J60</div>
+          <h4>Prioriser</h4>
+          <ul>
+            <li>Identifier les points de friction</li>
+            <li>Distinguer quick wins et chantiers structurants</li>
+            <li>Mesurer impact / effort</li>
+            <li>Identifier ce qui peut être mutualisé entre les entités</li>
+            <li>Définir les premiers KPI</li>
+          </ul>
+          <div class="days-deliv"><strong>À l'issue de cette phase</strong>Des priorités partagées avec les équipes et les dirigeants.</div>
+        </div>
+        <div class="days-card">
+          <div class="days-range">J60 → J90</div>
+          <h4>Déployer &amp; mesurer</h4>
+          <ul>
+            <li>Premiers quick wins</li>
+            <li>Campagnes prioritaires</li>
+            <li>Optimisations des parcours</li>
+            <li>Premières automatisations pertinentes</li>
+            <li>Dashboards</li>
+            <li>Boucles de feedback Marketing / Sales</li>
+            <li>Préparation de la roadmap suivante</li>
+          </ul>
+          <div class="days-deliv"><strong>À l'issue de cette phase</strong>Les premières actions déployées et mesurées, avec une feuille de route pour la suite.</div>
+        </div>
+      </div>
+
+      <p class="pull-quote anim">Je ne souhaite pas copier les recettes de Positive chez Batka. Je souhaite <strong>capitaliser sur ce qui a fonctionné</strong> pour construire les bonnes recettes avec les équipes Batka.</p>
+    </div>
+  </section>
+
+  <!-- RECOMMANDATION -->
+  <div id="recommandation"></div>
+  <section>
+    <div class="container narrow">
+      <span class="sl anim">Ce qu'on retient de moi</span>
+      <h3 class="st anim">Au-delà des process, le <strong>collectif</strong></h3>
+      <p class="lead anim">Les outils et les méthodes comptent. Mais après huit années dans la même entreprise, je sais aussi que les résultats dépendent de la capacité à travailler avec les autres, à écouter, à challenger avec bienveillance et à contribuer à une culture collective.</p>
+
+      <div class="reco-wrap anim">
+        <div class="reco-card">
+          <div class="reco-head">
+            <img src="paul-de-fombelle.jpeg" alt="Paul de Fombelle" class="reco-avatar" loading="lazy">
+            <div>
+              <div class="reco-name">Paul de Fombelle</div>
+              <div class="reco-role">CEO, Positive</div>
+            </div>
+          </div>
+          <div class="reco-quote-mark">"</div>
+          <p class="reco-text">We had the pleasure of working with Simon for several years across different roles. During all this time, his professional attitude was always perfect. Simon is someone of great character, always positive and with a real desire to help the team succeed. He is very dedicated and truly cares about the company culture. I recommend him for his 'can-do' mindset and the great spirit he brings to a team.</p>
+          <p class="reco-lang-note">Recommandation LinkedIn — février 2026</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCLUSION / CV -->
+  <section class="contact">
+    <div class="container contact-grid">
+      <div class="contact-info anim-l">
+        <span class="sl sl-dark">Conclusion</span>
+        <h2 class="st light" style="margin-top:4px;">Savoir-faire opérationnel. Savoir-être <strong>collectif</strong>.</h2>
+        <p>Je peux apporter des méthodes, des campagnes, des automatisations et une forte culture de la performance.</p>
+        <p>Mais je sais également que la réussite d'un projet ne dépend jamais uniquement des outils. Elle dépend de la capacité à écouter les équipes, travailler avec les Sales, comprendre les attentes des dirigeants, tester, parfois se tromper, apprendre rapidement et avancer collectivement.</p>
+        <p style="color:rgba(255,255,255,.88);font-weight:600;font-size:16px;">C'est cette combinaison entre savoir-faire opérationnel et savoir-être que j'aimerais aujourd'hui mettre au service de Batka.</p>
+        <div class="c-links">
+          <a href="tel:0612431027" class="c-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            06 12 43 10 27
+          </a>
+          <a href="mailto:vanderosieren.simon@gmail.com?subject=%C3%89change%20%E2%80%93%20Chef%20de%20Projet%20Marketing%20%28Batka%29" class="c-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            vanderosieren.simon@gmail.com
+          </a>
+          <a href="https://linkedin.com/in/simon-vanderosieren" target="_blank" rel="noopener" class="c-link">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://simon-vdr.com" target="_blank" rel="noopener" class="c-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            simon-vdr.com
+          </a>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="mailto:vanderosieren.simon@gmail.com?subject=%C3%89change%20%E2%80%93%20Chef%20de%20Projet%20Marketing%20%28Batka%29" class="btn btn-p">Échanger sur les enjeux des 3 entités</a>
+          <a href="CV_Simon_VandeRosieren_Batka.pdf" class="btn btn-s-dark" download>Télécharger mon CV</a>
+        </div>
+      </div>
+      <div class="contact-photo-card anim-r">
+        <img src="DSC06925-2.jpeg" alt="Simon Vande Rosieren" class="contact-photo" loading="lazy">
+        <div>
+          <div class="contact-photo-name">Simon Vande Rosieren</div>
+          <div class="contact-photo-role">Growth Marketing &amp; Revenue Manager<br>Candidat — Chef de Projet Marketing, Batka</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="foot">
+        <span>&copy; 2026 Simon Vande Rosieren &middot; Page réalisée à l'attention de Batka</span>
+        <div class="foot-links">
+          <a href="index.html">Portfolio complet</a>
+          <a href="mailto:vanderosieren.simon@gmail.com">Email</a>
+          <a href="https://linkedin.com/in/simon-vanderosieren" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 20));
+
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.anim, .anim-l, .anim-r').forEach(el => obs.observe(el));
+
+    // Indique visuellement que les schémas horizontaux peuvent être parcourus au scroll
+    function checkOverflow(el) {
+      if (!el) return;
+      el.classList.toggle('has-scroll', el.scrollWidth > el.clientWidth + 4);
+    }
+    const scrollables = document.querySelectorAll('.pipeline-scroll');
+    function checkAllOverflow() { scrollables.forEach(checkOverflow); }
+    checkAllOverflow();
+    window.addEventListener('resize', checkAllOverflow);
+  </script>
+</body>
+</html>
